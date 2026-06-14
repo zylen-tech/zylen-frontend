@@ -3,3 +3,46 @@
 @tailwind components;
 
 @tailwind utilities;
+
+/* 360° spin animation for active nav label on click */
+@keyframes spin360 {
+  0%   { transform: rotate(0deg) scale(1); opacity: 1; }
+  40%  { transform: rotate(180deg) scale(0.7); opacity: 0.4; }
+  70%  { transform: rotate(300deg) scale(0.9); opacity: 0.8; }
+  100% { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
+/* Dot bounces during spin */
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.8); opacity: 0.5; }
+}
+
+/* Dropdown fade-in slide-down */
+@keyframes dropdownEnter {
+  0%   { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.nav-label-spin {
+  display: inline-block;
+  animation: spin360 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.nav-dot-spin {
+  animation: dotPulse 0.45s ease-in-out;
+}
+
+.dropdown-enter {
+  animation: dropdownEnter 0.2s ease-out forwards;
+}
+
+/* Page-level route transition */
+@keyframes pageFadeIn {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.page-transition-enter {
+  animation: pageFadeIn 0.35s ease-out forwards;
+}

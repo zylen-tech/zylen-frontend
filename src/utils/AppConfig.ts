@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'Starter',
-  title: 'Nextjs Starter',
-  description: 'Starter code for your Nextjs Boilerplate with Tailwind CSS',
+  site_name: 'Zylen',
+  title: 'Zylen - E-Invoice Integration Service',
+  description: 'Zylen provides seamless e-invoice integration services.',
   locale: 'en',
 };
