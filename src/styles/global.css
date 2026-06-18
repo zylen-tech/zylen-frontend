@@ -4,40 +4,175 @@
 
 @tailwind utilities;
 
-/* 360° spin animation for active nav label on click */
-@keyframes spin360 {
-  0%   { transform: rotate(0deg) scale(1); opacity: 1; }
-  40%  { transform: rotate(180deg) scale(0.7); opacity: 0.4; }
-  70%  { transform: rotate(300deg) scale(0.9); opacity: 0.8; }
-  100% { transform: rotate(360deg) scale(1); opacity: 1; }
+/* ─── Typography base ────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* Dot bounces during spin */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #334155;
+}
+
+/* ─── Nav animations ─────────────────────────────── */
+
+@keyframes spin180 {
+  0%   { transform: rotate(0deg) scale(1);    opacity: 1; }
+  50%  { transform: rotate(-90deg) scale(0.75); opacity: 0.3; }
+  100% { transform: rotate(-180deg) scale(1); opacity: 1; }
+}
+
 @keyframes dotPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%       { transform: scale(1.8); opacity: 0.5; }
-}
-
-/* Dropdown fade-in slide-down */
-@keyframes dropdownEnter {
-  0%   { opacity: 0; transform: translateY(-8px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(0.3); opacity: 0.3; }
 }
 
 .nav-label-spin {
   display: inline-block;
-  animation: spin360 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: spin180 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .nav-dot-spin {
-  animation: dotPulse 0.45s ease-in-out;
+  animation: dotPulse 0.4s ease-in-out;
 }
 
-.dropdown-enter {
-  animation: dropdownEnter 0.2s ease-out forwards;
+/* ─── Hero orbs ──────────────────────────────────── */
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
 }
 
-/* Page-level route transition */
+.orb-1 {
+  width: 520px;
+  height: 520px;
+  top: -80px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(5,57,89,0.75) 0%, rgba(5,57,89,0.10) 70%);
+  animation: orbFloat1 14s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 480px;
+  height: 480px;
+  bottom: -60px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(26,127,191,0.55) 0%, rgba(14,165,233,0.08) 70%);
+  animation: orbFloat2 18s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 380px;
+  height: 380px;
+  top: 40%;
+  left: 55%;
+  background: radial-gradient(circle, rgba(76,29,122,0.45) 0%, rgba(76,29,122,0.05) 70%);
+  animation: orbFloat3 22s ease-in-out infinite;
+}
+
+.orb-4 {
+  width: 260px;
+  height: 260px;
+  bottom: 20%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(14,165,233,0.30) 0%, transparent 70%);
+  animation: orbFloat2 16s ease-in-out infinite reverse;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(40px, -30px) scale(1.06); }
+  66%       { transform: translate(-25px, 20px) scale(0.96); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-50px, 35px) scale(1.08); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%       { transform: translate(20px, -40px) scale(1.04); }
+  75%       { transform: translate(-30px, 25px) scale(0.94); }
+}
+
+/* ─── Hero headline ──────────────────────────────── */
+
+.hero-word-highlight {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.wavy-line {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  overflow: visible;
+  animation: wavyDraw 1s ease-out 0.4s both;
+}
+
+@keyframes wavyDraw {
+  from { stroke-dashoffset: 400; stroke-dasharray: 400; }
+  to   { stroke-dashoffset: 0;   stroke-dasharray: 400; }
+}
+
+.wavy-line path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+  animation: wavyDraw 1s ease-out 0.4s both;
+}
+
+.hero-word-alt .wavy-line path {
+  animation-delay: 0.65s;
+}
+
+/* ─── Hero CTA ───────────────────────────────────── */
+
+.hero-cta-primary {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-1px);
+}
+
+/* ─── Scroll mouse indicator ─────────────────────── */
+
+.scroll-mouse {
+  width: 22px;
+  height: 34px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-mouse::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 6px;
+  background: rgba(255,255,255,0.55);
+  border-radius: 9999px;
+  animation: scrollDot 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  80%  { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
+}
+
+/* ─── Page route transition ──────────────────────── */
+
 @keyframes pageFadeIn {
   0%   { opacity: 0; transform: translateY(12px); }
   100% { opacity: 1; transform: translateY(0); }

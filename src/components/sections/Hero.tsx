@@ -1,0 +1,99 @@
+import { motion } from 'framer-motion';
+
+import { HERO } from '../../constants/content';
+import { Button } from '../ui/Button';
+
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
+
+const Hero = () => (
+  <section className="py-20 md:py-28">
+    <div className="mx-auto max-w-6xl px-4 text-center">
+      {/* Badge */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease }}
+        className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
+        style={{
+          borderColor: 'rgba(255,255,255,0.2)',
+          background: 'rgba(255,255,255,0.1)',
+        }}
+      >
+        <span className="text-sm font-medium" style={{ color: '#ffffff' }}>
+          {HERO.badge}
+        </span>
+      </motion.div>
+
+      {/* Headline */}
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1, ease }}
+        className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl"
+        style={{
+          fontFamily: 'Montserrat, sans-serif',
+          color: '#ffffff',
+          letterSpacing: '-0.025em',
+        }}
+      >
+        {HERO.headline}
+      </motion.h1>
+
+      {/* Subheadline */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2, ease }}
+        className="mx-auto mt-6 max-w-2xl text-base leading-relaxed md:text-lg"
+        style={{ color: 'rgba(255,255,255,0.75)' }}
+      >
+        {HERO.subheadline}
+      </motion.p>
+
+      {/* CTAs */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3, ease }}
+        className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+      >
+        <Button href="#book-demo" variant="white">
+          {HERO.ctaPrimary}
+        </Button>
+        <Button href="#book-demo" variant="outline-white">
+          {HERO.ctaSecondary}
+        </Button>
+      </motion.div>
+
+      {/* Trust bar */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.45 }}
+        className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+      >
+        {HERO.trustItems.map((item) => (
+          <span
+            key={item}
+            className="flex items-center gap-1.5 text-sm font-medium"
+            style={{ color: 'rgba(255,255,255,0.85)' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="rgba(255,255,255,0.15)" />
+              <path
+                d="M4.5 8l2.5 2.5 4.5-4.5"
+                stroke="#ffffff"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {item}
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  </section>
+);
+
+export { Hero };

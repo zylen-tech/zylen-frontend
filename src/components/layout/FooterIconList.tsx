@@ -11,19 +11,21 @@ const FooterIconList = (props: IFooterIconListProps) => (
     <style jsx>
       {`
         .footer-icon-list :global(a:not(:last-child)) {
-          @apply mr-3;
+          margin-right: 0.75rem;
         }
 
         .footer-icon-list :global(a) {
-          @apply text-gray-500;
+          color: #a0aec0;
         }
 
         .footer-icon-list :global(a:hover) {
-          @apply text-gray-700;
+          color: #4a5568;
         }
 
         .footer-icon-list :global(svg) {
-          @apply fill-current w-5 h-5;
+          fill: currentColor;
+          width: 1.25rem;
+          height: 1.25rem;
         }
       `}
     </style>

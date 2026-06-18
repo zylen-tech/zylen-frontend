@@ -1,7 +1,7 @@
 import className from 'classnames';
 import { useRouter } from 'next/router';
 
-type IVerticalFeatureRowProps = {
+type IFeatureRowProps = {
   title: string;
   description: string;
   image: string;
@@ -9,21 +9,15 @@ type IVerticalFeatureRowProps = {
   reverse?: boolean;
 };
 
-const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
-  const verticalFeatureClass = className(
-    'mt-20',
-    'flex',
-    'flex-wrap',
-    'items-center',
-    {
-      'flex-row-reverse': props.reverse,
-    },
-  );
+const FeatureRow = (props: IFeatureRowProps) => {
+  const rowClass = className('mt-20', 'flex', 'flex-wrap', 'items-center', {
+    'flex-row-reverse': props.reverse,
+  });
 
   const router = useRouter();
 
   return (
-    <div className={verticalFeatureClass}>
+    <div className={rowClass}>
       <div className="w-full text-center sm:w-1/2 sm:px-6">
         <h3 className="text-3xl font-semibold text-gray-900">{props.title}</h3>
         <div className="mt-6 text-xl leading-9">{props.description}</div>
@@ -36,4 +30,4 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
   );
 };
 
-export { VerticalFeatureRow };
+export { FeatureRow };
