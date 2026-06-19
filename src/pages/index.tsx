@@ -1,5 +1,9 @@
-import { Base } from '../templates/Base';
+import { ComingSoon } from '../templates/ComingSoon';
 
-const Index = () => <Base />;
+const ComingSoonPage = () => (
+  <div className="px-5 py-6">
+    <ComingSoon />
+  </div>
+);
 
-export default Index;
+export default ComingSoonPage;
