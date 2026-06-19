@@ -35,20 +35,50 @@ const Header = () => {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between p-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link
+          href="/"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.625rem',
+            textDecoration: 'none',
+          }}
+        >
           <Image
-            src="/assets/brand/logo/white-icon-bg.png"
-            alt="Zylen"
-            width={28}
-            height={28}
-            className="h-7 w-auto object-contain"
+            src="/assets/brand/logo/white_icon-bg.png"
+            alt="Zylen icon"
+            width={40}
+            height={40}
+            style={{ height: '2.5rem', width: 'auto', objectFit: 'contain' }}
+            priority
           />
-          <span
-            className="text-lg font-extrabold tracking-tight"
-            style={{ fontFamily: 'Montserrat, sans-serif', color: '#ffffff' }}
+          <div
+            style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}
           >
-            ZYLEN
-          </span>
+            <span
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontWeight: 800,
+                fontSize: '1.125rem',
+                letterSpacing: '-0.01em',
+                color: '#ffffff',
+              }}
+            >
+              ZYLEN
+            </span>
+            <span
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontWeight: 500,
+                fontSize: '0.5rem',
+                letterSpacing: '0.12em',
+                color: 'rgba(255,255,255,0.55)',
+                marginTop: '0.2rem',
+              }}
+            >
+              E-INVOICE INTEGRATION SERVICE
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}

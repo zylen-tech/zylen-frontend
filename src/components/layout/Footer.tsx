@@ -17,20 +17,54 @@ const Footer = () => (
       <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         {/* Brand column */}
         <div className="sm:col-span-2 md:col-span-1">
-          <Link href="/" className="mb-4 flex items-center gap-2">
+          <Link
+            href="/"
+            className="mb-4"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.625rem',
+              textDecoration: 'none',
+            }}
+          >
             <Image
-              src="/assets/brand/logo/white-icon-bg.png"
-              alt="Zylen"
-              width={24}
-              height={24}
-              className="h-6 w-auto object-contain"
+              src="/assets/brand/logo/white_icon-bg.png"
+              alt="Zylen icon"
+              width={40}
+              height={40}
+              style={{ height: '2.5rem', width: 'auto', objectFit: 'contain' }}
             />
-            <span
-              className="text-base font-extrabold"
-              style={{ fontFamily: 'Montserrat, sans-serif', color: '#ffffff' }}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                lineHeight: 1,
+              }}
             >
-              ZYLEN
-            </span>
+              <span
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 800,
+                  fontSize: '1.125rem',
+                  letterSpacing: '-0.01em',
+                  color: '#ffffff',
+                }}
+              >
+                ZYLEN
+              </span>
+              <span
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 500,
+                  fontSize: '0.5rem',
+                  letterSpacing: '0.12em',
+                  color: 'rgba(255,255,255,0.55)',
+                  marginTop: '0.2rem',
+                }}
+              >
+                E-INVOICE INTEGRATION SERVICE
+              </span>
+            </div>
           </Link>
           <p
             className="mb-5 text-sm leading-relaxed"
