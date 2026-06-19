@@ -1,16 +1,14 @@
 import Image from 'next/image';
 
+import { ASSETS } from '../../constants/content';
+
 type ILogoProps = {
   white?: boolean;
 };
 
 const Logo = (props: ILogoProps) => (
   <Image
-    src={
-      props.white
-        ? '/assets/brand/logo/white icon.png'
-        : '/assets/brand/logo/icon.png'
-    }
+    src={props.white ? ASSETS.logo.whiteIcon : ASSETS.logo.icon}
     alt="Zylen"
     width={40}
     height={40}

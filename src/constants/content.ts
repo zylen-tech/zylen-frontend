@@ -1,3 +1,16 @@
+// ─── Assets ───────────────────────────────────────────────────────────────────
+
+export const ASSETS = {
+  logo: {
+    icon: '/assets/brand/logo/icon.png',
+    logo: '/assets/brand/logo/logo.png',
+    whiteIcon: '/assets/brand/logo/white-icon.png',
+    whiteLogo: '/assets/brand/logo/white-logo.png',
+    whiteIconBg: '/assets/brand/logo/white-icon-bg.png',
+    whiteLogoBg: '/assets/brand/logo/white-logo-bg.png',
+  },
+};
+
 // ─── Brand ───────────────────────────────────────────────────────────────────
 
 export const BRAND = {

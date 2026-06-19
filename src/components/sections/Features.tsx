@@ -131,16 +131,10 @@ const Features = () => (
   <section id="solutions" className="bg-white py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
-        <span
-          className="mb-3 inline-block rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-widest"
-          style={{ background: '#e8eff4', color: '#053959' }}
-        >
+        <span className="mb-3 inline-block rounded-full bg-lightPrimary px-4 py-1 text-xs font-semibold uppercase tracking-widest text-primary-500">
           Features
         </span>
-        <h2
-          className="text-3xl font-bold md:text-4xl lg:text-5xl"
-          style={{ color: '#053959', letterSpacing: '-0.02em' }}
-        >
+        <h2 className="mt-2 font-montserrat text-3xl font-bold tracking-[-0.02em] text-primary-500 md:text-4xl lg:text-5xl">
           Everything you need to
           <br className="hidden md:block" /> run e-invoicing at scale
         </h2>
@@ -154,19 +148,12 @@ const Features = () => (
         {features.map(({ icon, title, description }) => (
           <div
             key={title}
-            className="group rounded-2xl border border-gray-100 bg-white p-7 transition-shadow duration-200 hover:shadow-lg"
-            style={{ boxSizing: 'border-box' }}
+            className="group box-border rounded-2xl border border-gray-100 bg-white p-7 transition-shadow duration-200 hover:shadow-lg"
           >
-            <div
-              className="mb-5 inline-flex items-center justify-center rounded-xl p-3"
-              style={{ background: '#e8eff4', color: '#053959' }}
-            >
+            <div className="mb-5 inline-flex items-center justify-center rounded-xl bg-lightPrimary p-3 text-primary-500">
               {icon}
             </div>
-            <h3
-              className="mb-2 text-base font-semibold"
-              style={{ color: '#053959' }}
-            >
+            <h3 className="mb-2 text-base font-semibold text-primary-500">
               {title}
             </h3>
             <p className="text-sm leading-relaxed text-gray-500">

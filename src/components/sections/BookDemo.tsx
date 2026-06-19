@@ -28,10 +28,7 @@ const BookDemo = () => (
               transition={{ duration: 0.45, delay: i * 0.08, ease: EASE }}
               className="flex items-start gap-3"
             >
-              <span
-                className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full"
-                style={{ background: '#e8eff4' }}
-              >
+              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-lightPrimary">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                   <path
                     d="M1.5 5l2.5 2.5 4.5-4.5"
@@ -42,10 +39,7 @@ const BookDemo = () => (
                   />
                 </svg>
               </span>
-              <span
-                className="text-sm leading-relaxed"
-                style={{ color: '#334155' }}
-              >
+              <span className="text-sm leading-relaxed text-slate-700">
                 {bullet}
               </span>
             </motion.li>
@@ -62,9 +56,7 @@ const BookDemo = () => (
         </FadeIn>
 
         <FadeIn delay={0.25}>
-          <p className="mt-6 text-xs" style={{ color: '#6B7280' }}>
-            {BOOK_DEMO.trustNote}
-          </p>
+          <p className="mt-6 text-xs text-[#6B7280]">{BOOK_DEMO.trustNote}</p>
         </FadeIn>
       </div>
     </div>

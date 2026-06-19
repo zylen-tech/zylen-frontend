@@ -26,51 +26,29 @@ const Services = () => (
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.12, ease: EASE }}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            className="relative flex flex-col rounded-xl border p-8"
-            style={{
-              background: '#ffffff',
-              borderColor: card.popular ? '#053959' : '#E2E8F0',
-              boxShadow: card.popular ? '0 0 0 2px #05395920' : undefined,
-            }}
+            className={`relative flex flex-col rounded-xl border bg-white p-8 ${
+              card.popular
+                ? 'border-primary-500 shadow-[0_0_0_2px_#05395920]'
+                : 'border-slate-200'
+            }`}
           >
             {card.popular && (
-              <span
-                className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-0.5 text-xs font-semibold text-white"
-                style={{ background: '#053959' }}
-              >
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary-500 px-4 py-0.5 text-xs font-semibold text-white">
                 Most Popular
               </span>
             )}
 
             <div>
-              <h3
-                className="text-lg font-bold"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  color: '#053959',
-                }}
-              >
+              <h3 className="font-montserrat text-lg font-bold text-primary-500">
                 {card.name}
               </h3>
-              <div
-                className="mt-3 text-2xl font-extrabold"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  color: '#053959',
-                }}
-              >
+              <div className="mt-3 font-montserrat text-2xl font-extrabold text-primary-500">
                 {card.price}
               </div>
-              <div
-                className="mt-1 text-sm font-medium"
-                style={{ color: '#6B7280' }}
-              >
+              <div className="mt-1 text-sm font-medium text-[#6B7280]">
                 ⏱ {card.timeline}
               </div>
-              <p
-                className="mt-4 text-sm leading-relaxed"
-                style={{ color: '#334155' }}
-              >
+              <p className="mt-4 text-sm leading-relaxed text-slate-700">
                 {card.description}
               </p>
             </div>

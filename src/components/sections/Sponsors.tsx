@@ -17,10 +17,7 @@ const Sponsors = () => (
             key={label}
             className="flex flex-col items-center gap-1 text-center"
           >
-            <span
-              className="text-4xl font-bold md:text-5xl"
-              style={{ color: '#053959' }}
-            >
+            <span className="text-4xl font-bold text-primary-500 md:text-5xl">
               {value}
             </span>
             <span className="text-sm text-gray-500">{label}</span>

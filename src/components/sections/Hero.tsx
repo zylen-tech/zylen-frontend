@@ -13,15 +13,9 @@ const Hero = () => (
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease }}
-        className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
-        style={{
-          borderColor: 'rgba(255,255,255,0.2)',
-          background: 'rgba(255,255,255,0.1)',
-        }}
+        className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5"
       >
-        <span className="text-sm font-medium" style={{ color: '#ffffff' }}>
-          {HERO.badge}
-        </span>
+        <span className="text-sm font-medium text-white">{HERO.badge}</span>
       </motion.div>
 
       {/* Headline */}
@@ -29,12 +23,7 @@ const Hero = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1, ease }}
-        className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl"
-        style={{
-          fontFamily: 'Montserrat, sans-serif',
-          color: '#ffffff',
-          letterSpacing: '-0.025em',
-        }}
+        className="mx-auto max-w-4xl font-montserrat text-4xl font-extrabold leading-tight tracking-[-0.025em] text-white md:text-5xl lg:text-6xl"
       >
         {HERO.headline}
       </motion.h1>
@@ -44,8 +33,7 @@ const Hero = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2, ease }}
-        className="mx-auto mt-6 max-w-2xl text-base leading-relaxed md:text-lg"
-        style={{ color: 'rgba(255,255,255,0.75)' }}
+        className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg"
       >
         {HERO.subheadline}
       </motion.p>
@@ -75,8 +63,7 @@ const Hero = () => (
         {HERO.trustItems.map((item) => (
           <span
             key={item}
-            className="flex items-center gap-1.5 text-sm font-medium"
-            style={{ color: 'rgba(255,255,255,0.85)' }}
+            className="flex items-center gap-1.5 text-sm font-medium text-white/85"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <circle cx="8" cy="8" r="8" fill="rgba(255,255,255,0.15)" />

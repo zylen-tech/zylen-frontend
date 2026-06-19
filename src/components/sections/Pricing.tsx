@@ -23,50 +23,31 @@ const Pricing = () => (
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.12, ease: EASE }}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            className="relative flex flex-col rounded-xl border p-8"
-            style={{
-              background: '#ffffff',
-              borderColor: tier.recommended ? '#053959' : '#E2E8F0',
-              boxShadow: tier.recommended ? '0 0 0 2px #05395920' : undefined,
-            }}
+            className={`relative flex flex-col rounded-xl border bg-white p-8 ${
+              tier.recommended
+                ? 'border-primary-500 shadow-[0_0_0_2px_#05395920]'
+                : 'border-slate-200'
+            }`}
           >
             {tier.recommended && (
-              <span
-                className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-0.5 text-xs font-semibold text-white"
-                style={{ background: '#053959' }}
-              >
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary-500 px-4 py-0.5 text-xs font-semibold text-white">
                 Recommended
               </span>
             )}
 
             <div className="flex-1">
-              <h3
-                className="text-base font-bold"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  color: '#053959',
-                }}
-              >
+              <h3 className="font-montserrat text-base font-bold text-primary-500">
                 {tier.name}
               </h3>
               <div className="mt-3">
-                <span
-                  className="text-2xl font-extrabold"
-                  style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    color: '#053959',
-                  }}
-                >
+                <span className="font-montserrat text-2xl font-extrabold text-primary-500">
                   {tier.price}
                 </span>
-                <span className="ml-1 text-sm" style={{ color: '#6B7280' }}>
+                <span className="ml-1 text-sm text-[#6B7280]">
                   / {tier.period}
                 </span>
               </div>
-              <p
-                className="mt-3 text-sm leading-relaxed"
-                style={{ color: '#6B7280' }}
-              >
+              <p className="mt-3 text-sm leading-relaxed text-[#6B7280]">
                 {tier.description}
               </p>
 
@@ -74,8 +55,7 @@ const Pricing = () => (
                 {tier.features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-center gap-2 text-sm"
-                    style={{ color: '#334155' }}
+                    className="flex items-center gap-2 text-sm text-slate-700"
                   >
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <circle
@@ -113,7 +93,7 @@ const Pricing = () => (
       </div>
 
       <FadeIn delay={0.2}>
-        <p className="mt-8 text-center text-sm" style={{ color: '#6B7280' }}>
+        <p className="mt-8 text-center text-sm text-[#6B7280]">
           {PRICING.note}
         </p>
       </FadeIn>

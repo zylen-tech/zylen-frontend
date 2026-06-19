@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { NAV_LINKS } from '../../constants/content';
+import { ASSETS, NAV_LINKS } from '../../constants/content';
 import { Button } from '../ui/Button';
 
 const Header = () => {
@@ -18,64 +18,28 @@ const Header = () => {
 
   return (
     <header
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-        background: scrolled ? 'rgba(2, 23, 36, 0.92)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(14px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
-        borderBottom: scrolled
-          ? '1px solid rgba(255,255,255,0.08)'
-          : '1px solid transparent',
-        boxSizing: 'border-box',
-        transition:
-          'background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease',
-      }}
+      className={`sticky top-0 z-50 box-border border-b transition-[background,backdrop-filter,border-color] duration-[350ms] ease-linear ${
+        scrolled
+          ? 'border-white/[0.08] bg-primary-900/[0.92] backdrop-blur-[14px]'
+          : 'border-transparent bg-transparent'
+      }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between p-4">
         {/* Logo */}
-        <Link
-          href="/"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.625rem',
-            textDecoration: 'none',
-          }}
-        >
+        <Link href="/" className="flex items-center gap-3 no-underline">
           <Image
-            src="/assets/brand/logo/white_icon-bg.png"
+            src={ASSETS.logo.whiteIconBg}
             alt="Zylen icon"
-            width={40}
-            height={40}
-            style={{ height: '2.5rem', width: 'auto', objectFit: 'contain' }}
+            width={48}
+            height={48}
+            className="h-12 w-auto object-contain"
             priority
           />
-          <div
-            style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}
-          >
-            <span
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 800,
-                fontSize: '1.125rem',
-                letterSpacing: '-0.01em',
-                color: '#ffffff',
-              }}
-            >
+          <div className="flex flex-col leading-none">
+            <span className="font-montserrat text-xl font-extrabold tracking-tight text-white">
               ZYLEN
             </span>
-            <span
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 500,
-                fontSize: '0.5rem',
-                letterSpacing: '0.12em',
-                color: 'rgba(255,255,255,0.55)',
-                marginTop: '0.2rem',
-              }}
-            >
+            <span className="mt-1 font-montserrat text-[0.5625rem] font-medium tracking-[0.12em] text-white/55">
               E-INVOICE INTEGRATION SERVICE
             </span>
           </div>
@@ -87,19 +51,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              className="rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-150"
-              style={{ color: 'rgba(255,255,255,0.8)' }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.color = '#ffffff';
-                (e.currentTarget as HTMLElement).style.background =
-                  'rgba(255,255,255,0.1)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.color =
-                  'rgba(255,255,255,0.8)';
-                (e.currentTarget as HTMLElement).style.background =
-                  'transparent';
-              }}
+              className="rounded-lg px-4 py-2 text-sm font-medium text-white/80 transition-colors duration-150 hover:bg-white/10 hover:text-white"
             >
               {link.label}
             </a>
@@ -118,49 +70,33 @@ const Header = () => {
           type="button"
           aria-label="Toggle menu"
           onClick={() => setMobileOpen((o) => !o)}
-          className="flex size-9 flex-col items-center justify-center gap-1.5 rounded-lg border md:hidden"
-          style={{ borderColor: 'rgba(255,255,255,0.25)' }}
+          className="flex size-9 flex-col items-center justify-center gap-1.5 rounded-lg border border-white/25 md:hidden"
         >
           <span
-            className="block h-0.5 w-5 rounded-full"
-            style={{
-              background: '#ffffff',
-              transition: 'transform 0.25s ease',
-              transform: mobileOpen ? 'translateY(8px) rotate(45deg)' : 'none',
-            }}
+            className={`block h-0.5 w-5 rounded-full bg-white transition-transform duration-[250ms] ease-linear ${
+              mobileOpen ? 'translate-y-2 rotate-45' : ''
+            }`}
           />
           <span
-            className="block h-0.5 w-5 rounded-full"
-            style={{
-              background: '#ffffff',
-              opacity: mobileOpen ? 0 : 1,
-              transition: 'opacity 0.25s ease',
-            }}
+            className={`block h-0.5 w-5 rounded-full bg-white transition-opacity duration-[250ms] ease-linear ${
+              mobileOpen ? 'opacity-0' : 'opacity-100'
+            }`}
           />
           <span
-            className="block h-0.5 w-5 rounded-full"
-            style={{
-              background: '#ffffff',
-              transition: 'transform 0.25s ease',
-              transform: mobileOpen
-                ? 'translateY(-8px) rotate(-45deg)'
-                : 'none',
-            }}
+            className={`block h-0.5 w-5 rounded-full bg-white transition-transform duration-[250ms] ease-linear ${
+              mobileOpen ? '-translate-y-2 -rotate-45' : ''
+            }`}
           />
         </button>
       </div>
 
       {/* Mobile menu */}
       <div
-        className="overflow-hidden md:hidden"
-        style={{
-          maxHeight: mobileOpen ? '400px' : '0px',
-          transition: 'max-height 0.3s cubic-bezier(0.4,0,0.2,1)',
-          borderTop: mobileOpen ? '1px solid rgba(255,255,255,0.08)' : 'none',
-          background: 'rgba(2, 23, 36, 0.96)',
-          backdropFilter: 'blur(14px)',
-          WebkitBackdropFilter: 'blur(14px)',
-        }}
+        className={`overflow-hidden transition-[max-height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] md:hidden ${
+          mobileOpen
+            ? 'max-h-[400px] border-t border-white/[0.08]'
+            : 'max-h-0 border-t border-transparent'
+        } bg-primary-900/[0.96] backdrop-blur-[14px]`}
       >
         <div className="flex flex-col gap-1 px-4 pb-5 pt-3">
           {NAV_LINKS.map((link) => (
@@ -168,8 +104,7 @@ const Header = () => {
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-4 py-2.5 text-sm font-medium"
-              style={{ color: 'rgba(255,255,255,0.8)' }}
+              className="rounded-lg px-4 py-2.5 text-sm font-medium text-white/80"
             >
               {link.label}
             </a>

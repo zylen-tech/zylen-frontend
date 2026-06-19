@@ -19,10 +19,7 @@ const HowItWorks = () => (
       {/* Desktop: horizontal timeline */}
       <div className="hidden md:block">
         <div className="relative">
-          <div
-            className="absolute inset-x-0 top-8 h-0.5"
-            style={{ background: '#E2E8F0', zIndex: 0 }}
-          />
+          <div className="absolute inset-x-0 top-8 z-0 h-0.5 bg-slate-200" />
           <div className="relative z-10 grid grid-cols-5 gap-4">
             {HOW_IT_WORKS.steps.map((step, i) => (
               <motion.div
@@ -33,29 +30,13 @@ const HowItWorks = () => (
                 transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
                 className="flex flex-col items-center text-center"
               >
-                <div
-                  className="flex size-16 items-center justify-center rounded-full border-2 bg-white text-sm font-extrabold"
-                  style={{
-                    borderColor: '#053959',
-                    color: '#053959',
-                    fontFamily: 'Montserrat, sans-serif',
-                  }}
-                >
+                <div className="flex size-16 items-center justify-center rounded-full border-2 border-primary-500 bg-white font-montserrat text-sm font-extrabold text-primary-500">
                   {step.number}
                 </div>
-                <h4
-                  className="mt-4 text-sm font-bold"
-                  style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    color: '#053959',
-                  }}
-                >
+                <h4 className="mt-4 font-montserrat text-sm font-bold text-primary-500">
                   {step.title}
                 </h4>
-                <p
-                  className="mt-2 text-xs leading-relaxed"
-                  style={{ color: '#6B7280' }}
-                >
+                <p className="mt-2 text-xs leading-relaxed text-[#6B7280]">
                   {step.description}
                 </p>
               </motion.div>
@@ -76,37 +57,18 @@ const HowItWorks = () => (
             className="flex gap-4"
           >
             <div className="flex flex-col items-center">
-              <div
-                className="flex size-10 shrink-0 items-center justify-center rounded-full border-2 bg-white text-xs font-extrabold"
-                style={{
-                  borderColor: '#053959',
-                  color: '#053959',
-                  fontFamily: 'Montserrat, sans-serif',
-                }}
-              >
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-primary-500 bg-white font-montserrat text-xs font-extrabold text-primary-500">
                 {step.number}
               </div>
               {i < HOW_IT_WORKS.steps.length - 1 && (
-                <div
-                  className="mt-2 w-0.5 flex-1"
-                  style={{ background: '#E2E8F0', minHeight: '32px' }}
-                />
+                <div className="mt-2 min-h-8 w-0.5 flex-1 bg-slate-200" />
               )}
             </div>
             <div className="pb-2">
-              <h4
-                className="text-sm font-bold"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  color: '#053959',
-                }}
-              >
+              <h4 className="font-montserrat text-sm font-bold text-primary-500">
                 {step.title}
               </h4>
-              <p
-                className="mt-1 text-sm leading-relaxed"
-                style={{ color: '#6B7280' }}
-              >
+              <p className="mt-1 text-sm leading-relaxed text-[#6B7280]">
                 {step.description}
               </p>
             </div>

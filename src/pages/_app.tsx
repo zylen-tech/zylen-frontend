@@ -37,11 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <div
       ref={wrapperRef}
-      className="page-transition-enter"
-      style={{
-        opacity: transitioning ? 0.3 : undefined,
-        transition: 'opacity 0.2s ease',
-      }}
+      className={`page-transition-enter transition-opacity duration-200 ${transitioning ? 'opacity-30' : 'opacity-100'}`}
     >
       <Component {...pageProps} />
     </div>
