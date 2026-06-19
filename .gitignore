@@ -17,7 +17,6 @@
 
 # misc
 .DS_Store
-*.pem
 Thumbs.db
 
 # debug
@@ -25,11 +24,45 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# dotenv local files
-.env*.local
+# dotenv — ignore all env files except .env.example
+.env
+.env.*
+!.env.example
 
 # local folder
 local
 
 # vercel
 .vercel
+
+# private keys & certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.crt
+*.p8
+
+# credential / secret files
+serviceAccountKey.json
+credentials.json
+secrets.json
+*-service-account.json
+firebase-adminsdk*.json
+auth.json
+gcloud-key.json
+
+# IDE
+.idea/
+*.iml
+.vscode/settings.json
+.vscode/launch.json
+
+# logs
+logs/
+*.log
+pnpm-debug.log*
+
+# OS
+Desktop.ini
