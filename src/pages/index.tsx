@@ -8,15 +8,20 @@ import { HowItWorks } from '../components/sections/HowItWorks';
 import { Pricing } from '../components/sections/Pricing';
 import { Problem } from '../components/sections/Problem';
 import { Services } from '../components/sections/Services';
+import { Background } from '../components/ui/Background';
 import { AppConfig } from '../config/site.config';
 
 const HomePage = () => (
   <div className="px-5 py-6 antialiased">
     <Meta title={AppConfig.title} description={AppConfig.description} />
-    <div className="relative z-10 overflow-hidden rounded-xl bg-[url('/assets/background/blur-img-bg-1.png')] bg-cover bg-[top_center] bg-no-repeat">
+    <Background
+      variant="blur"
+      position="top"
+      className="relative z-10 overflow-hidden rounded-xl"
+    >
       <Header />
       <Hero />
-    </div>
+    </Background>
     <main>
       <Problem />
       <Services />

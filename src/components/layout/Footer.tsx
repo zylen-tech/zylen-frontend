@@ -2,9 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { ASSETS, BRAND, FOOTER } from '../../constants/content';
+import { Background } from '../ui/Background';
 
 const Footer = () => (
-  <footer className="rounded-xl border-t border-gray-200 bg-[url('/assets/background/blur-img-bg-1.png')] bg-cover bg-center bg-no-repeat pt-10">
+  <Background
+    as="footer"
+    variant="blur"
+    className="rounded-xl border-t border-gray-200 pt-10"
+  >
     <div className="mx-auto max-w-6xl px-4 pb-8 pt-14">
       <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         {/* Brand column */}
@@ -104,7 +109,7 @@ const Footer = () => (
         © {new Date().getFullYear()} Zylen Sdn Bhd. All rights reserved.
       </div>
     </div>
-  </footer>
+  </Background>
 );
 
 export { Footer };

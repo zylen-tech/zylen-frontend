@@ -9,6 +9,10 @@ export const ASSETS = {
     whiteIconBg: '/assets/brand/logo/white-icon-bg.png',
     whiteLogoBg: '/assets/brand/logo/white-logo-bg.png',
   },
+  background: {
+    blur: '/assets/background/blur-img-bg-1.png',
+    blurAlt: '/assets/background/blur-img-bg.png',
+  },
 };
 
 // ─── Brand ───────────────────────────────────────────────────────────────────
