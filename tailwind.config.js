@@ -60,6 +60,16 @@ module.exports = {
       lightPrimary: '#e8eff4',
       blueSecondary: '#CE1126',
       brandLinear: '#4CAF82',
+      gold: {
+        50: '#fdf8e7',
+        100: '#fbf0cc',
+        200: '#f7e199',
+        300: '#f3d166',
+        400: '#d4a017',
+        500: '#b8860b',
+        600: '#9a6f09',
+        700: '#7c5907',
+      },
       primary: {
         50: '#f0f5f8',
         100: '#e6ebee',
