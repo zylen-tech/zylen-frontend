@@ -1,18 +1,17 @@
 import '../styles/global.css';
 
-import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+import type { AppPropsWithLayout } from '../types/next';
+
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const router = useRouter();
   const [transitioning, setTransitioning] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleStart = () => {
-      setTransitioning(true);
-    };
+    const handleStart = () => setTransitioning(true);
     const handleComplete = () => {
       setTransitioning(false);
       if (wrapperRef.current) {
@@ -34,12 +33,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     };
   }, [router]);
 
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <div
       ref={wrapperRef}
-      className={`page-transition-enter transition-opacity duration-200 ${transitioning ? 'opacity-30' : 'opacity-100'}`}
+      className={`page-transition-enter transition-opacity duration-200 ${
+        transitioning ? 'opacity-30' : 'opacity-100'
+      }`}
     >
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </div>
   );
 };

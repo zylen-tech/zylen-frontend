@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { ASSETS, NAV_LINKS } from '../../constants/content';
 import { Button } from '../ui/Button';
 
 const Header = () => {
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -16,6 +18,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [router.pathname]);
+
+  const isActive = (href: string) => {
+    const path = href.split('#')[0] ?? href;
+    return path === '/'
+      ? router.pathname === '/'
+      : router.pathname.startsWith(path);
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 box-border border-b transition-[background,backdrop-filter,border-color] duration-[350ms] ease-linear ${
@@ -24,7 +38,7 @@ const Header = () => {
           : 'border-transparent bg-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between p-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 no-underline">
           <Image
@@ -48,19 +62,23 @@ const Header = () => {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
-              className="rounded-lg px-4 py-2 text-sm font-medium text-white/80 transition-colors duration-150 hover:bg-white/10 hover:text-white"
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-150 ${
+                isActive(link.href)
+                  ? 'bg-white/10 text-white'
+                  : 'text-white/80 hover:bg-white/10 hover:text-white'
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <Button href="#book-demo" variant="white">
+          <Button href="/contact" variant="white">
             Get a Free Estimate
           </Button>
         </div>
@@ -98,19 +116,20 @@ const Header = () => {
             : 'max-h-0 border-t border-transparent'
         } bg-primary-900/[0.96] backdrop-blur-[14px]`}
       >
-        <div className="flex flex-col gap-1 px-4 pb-5 pt-3">
+        <div className="flex flex-col gap-1 px-5 pb-5 pt-3">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-4 py-2.5 text-sm font-medium text-white/80"
+              className={`rounded-lg px-4 py-2.5 text-sm font-medium transition-colors duration-150 ${
+                isActive(link.href) ? 'bg-white/10 text-white' : 'text-white/80'
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <div className="mt-2">
-            <Button href="#book-demo" variant="white" className="w-full">
+            <Button href="/contact" variant="white" className="w-full">
               Get a Free Estimate
             </Button>
           </div>
