@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import type { ReactNode } from 'react';
 
 type ReusableHeroProps = {
   headline: string;
   headlineAccent?: string;
   description?: string;
-  actions?: ReactNode;
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -15,10 +13,9 @@ const ReusableHero = ({
   headline,
   headlineAccent,
   description,
-  actions,
 }: ReusableHeroProps) => (
   <section className="relative overflow-hidden bg-white py-24 md:py-32">
-    {/* Corner grid decorations */}
+    {/* Top-left corner decoration */}
     <Image
       src="/assets/img/icons/registration-icon.png"
       alt=""
@@ -27,12 +24,14 @@ const ReusableHero = ({
       className="pointer-events-none absolute left-0 top-0 select-none"
       aria-hidden="true"
     />
+
+    {/* Bottom-right corner decoration */}
     <Image
       src="/assets/img/icons/registration-icon.png"
       alt=""
       width={280}
       height={280}
-      className="pointer-events-none absolute right-0 top-0 -scale-x-100 select-none"
+      className="pointer-events-none absolute bottom-0 right-0 rotate-180 select-none"
       aria-hidden="true"
     />
 
@@ -79,18 +78,6 @@ const ReusableHero = ({
         >
           {description}
         </motion.p>
-      )}
-
-      {/* Actions */}
-      {actions && (
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.48, ease }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
-        >
-          {actions}
-        </motion.div>
       )}
     </div>
   </section>
