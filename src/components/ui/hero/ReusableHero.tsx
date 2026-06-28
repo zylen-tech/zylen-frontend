@@ -14,7 +14,7 @@ const ReusableHero = ({
   headlineAccent,
   description,
 }: ReusableHeroProps) => (
-  <section className="relative overflow-hidden bg-white py-24 md:py-32">
+  <section className="relative overflow-hidden bg-white py-20 md:py-28">
     {/* Top-left corner decoration */}
     <Image
       src="/assets/img/icons/registration-icon.png"
@@ -58,7 +58,7 @@ const ReusableHero = ({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.38, ease }}
-          className="mx-auto max-w-xl text-base leading-relaxed text-slate-500 md:text-lg"
+          className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-500 md:mt-8 md:text-lg"
         >
           {description}
         </motion.p>
