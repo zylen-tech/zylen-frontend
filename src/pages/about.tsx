@@ -16,15 +16,15 @@ const AboutPage: NextPageWithLayout = () => (
       description="A Kuala Lumpur-based software agency dedicated to making Malaysian e-invoice compliance fast, affordable, and stress-free."
     />
     <ReusableHero
-      eyebrow={PAGE_HEROES.about.eyebrow}
-      headline={PAGE_HEROES.about.headline}
+      headline="Built by Engineers,"
+      headlineAccent="Focused on Your Compliance."
       description={PAGE_HEROES.about.description}
       actions={
         <>
-          <Button href="/contact" variant="white">
+          <Button href="/contact" variant="primary">
             Book a Free Call
           </Button>
-          <Button href={BRAND.whatsapp} variant="outline-white">
+          <Button href={BRAND.whatsapp} variant="secondary">
             WhatsApp Us
           </Button>
         </>

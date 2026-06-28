@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import type { ReactNode } from 'react';
 
 type ReusableHeroProps = {
-  eyebrow?: string;
-  headline: ReactNode;
+  headline: string;
+  headlineAccent?: string;
   description?: string;
   actions?: ReactNode;
 };
@@ -11,50 +12,82 @@ type ReusableHeroProps = {
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const ReusableHero = ({
-  eyebrow,
   headline,
+  headlineAccent,
   description,
   actions,
 }: ReusableHeroProps) => (
-  <section className="bg-primary-900 py-20 md:py-28">
-    <div className="mx-auto max-w-7xl px-5 text-center md:px-8">
-      {eyebrow && (
-        <motion.span
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease }}
-          className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white/80"
-        >
-          {eyebrow}
-        </motion.span>
-      )}
+  <section className="relative overflow-hidden bg-white py-24 md:py-32">
+    {/* Corner grid decorations */}
+    <Image
+      src="/assets/img/icons/registration-icon.png"
+      alt=""
+      width={280}
+      height={280}
+      className="pointer-events-none absolute left-0 top-0 select-none"
+      aria-hidden="true"
+    />
+    <Image
+      src="/assets/img/icons/registration-icon.png"
+      alt=""
+      width={280}
+      height={280}
+      className="pointer-events-none absolute right-0 top-0 -scale-x-100 select-none"
+      aria-hidden="true"
+    />
 
+    <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
+      {/* Two-line headline */}
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, delay: 0.1, ease }}
-        className="mx-auto mt-4 max-w-3xl font-montserrat text-4xl font-extrabold leading-tight tracking-[-0.025em] text-white md:text-5xl"
+        transition={{ duration: 0.6, ease }}
+        className="font-montserrat text-5xl font-normal leading-tight tracking-tight text-slate-900 md:text-6xl lg:text-[4.5rem]"
       >
         {headline}
+        {headlineAccent && (
+          <>
+            <br />
+            <span className="text-[#1a7fbf]">{headlineAccent}</span>
+          </>
+        )}
       </motion.h1>
 
+      {/* Crosshair divider */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4, delay: 0.28, ease }}
+        className="mx-auto my-9 w-12"
+        aria-hidden="true"
+      >
+        <Image
+          src="/assets/img/icons/crosshair-icon.png"
+          alt=""
+          width={48}
+          height={48}
+        />
+      </motion.div>
+
+      {/* Description */}
       {description && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.2, ease }}
-          className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg"
+          transition={{ duration: 0.55, delay: 0.38, ease }}
+          className="mx-auto max-w-xl text-base leading-relaxed text-slate-500 md:text-lg"
         >
           {description}
         </motion.p>
       )}
 
+      {/* Actions */}
       {actions && (
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3, ease }}
-          className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          transition={{ duration: 0.5, delay: 0.48, ease }}
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           {actions}
         </motion.div>
