@@ -76,15 +76,18 @@ const PublicNavbar = ({ variant = 'dark' }: PublicNavbarProps) => {
     return isDark ? 'text-white' : 'text-primary-900';
   };
 
+  const getHeaderCls = () => {
+    if (scrolled) return 'border-b border-slate-200/80 bg-white shadow-sm';
+    if (isDark)
+      return 'border-b border-white/[0.08] bg-primary-900/70 backdrop-blur-md';
+    return 'border-b border-slate-200/60 bg-white/80 backdrop-blur-md';
+  };
+
   const barCls = getBarCls();
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? 'border-b border-slate-200/80 bg-white shadow-sm'
-          : 'bg-transparent'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${getHeaderCls()}`}
     >
       <div className="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         {/* Logo — left */}
