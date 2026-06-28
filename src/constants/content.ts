@@ -2,12 +2,12 @@
 
 export const ASSETS = {
   logo: {
-    icon: '/assets/brand/logo/icon.png',
-    logo: '/assets/brand/logo/logo.png',
-    whiteIcon: '/assets/brand/logo/white-icon.png',
-    whiteLogo: '/assets/brand/logo/white-logo.png',
-    whiteIconBg: '/assets/brand/logo/white-icon-bg.png',
-    whiteLogoBg: '/assets/brand/logo/white-logo-bg.png',
+    icon: '/assets/img/brand/logo/icon.png',
+    logo: '/assets/img/brand/logo/logo.png',
+    whiteIcon: '/assets/img/brand/logo/white-icon.png',
+    whiteLogo: '/assets/img/brand/logo/white-logo.png',
+    whiteIconBg: '/assets/img/brand/logo/white-icon-bg.png',
+    whiteLogoBg: '/assets/img/brand/logo/white-logo-bg.png',
   },
   background: {
     blur: '/assets/background/blur-img-bg-1.png',
