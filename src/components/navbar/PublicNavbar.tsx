@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { ASSETS, NAV_LINKS } from '../../constants/content';
 import { Button } from '../ui/Button';
 
-const Header = () => {
+const PublicNavbar = () => {
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -139,4 +139,4 @@ const Header = () => {
   );
 };
 
-export { Header };
+export { PublicNavbar };
