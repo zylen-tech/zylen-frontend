@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
 import { BookDemo } from '../components/public/shared/BookDemo';
-import { PageHero } from '../components/public/shared/PageHero';
+import { ReusableHero } from '../components/ui/hero';
 import { BRAND, PAGE_HEROES } from '../constants/content';
 import { PublicLayout } from '../layouts/PublicLayout';
 import type { NextPageWithLayout } from '../types/next';
@@ -13,9 +13,10 @@ const ContactPage: NextPageWithLayout = () => (
       title="Contact — Zylen E-Invoice Integration"
       description="Book a free 30-minute call. We review your setup and deliver a fixed-price proposal within 24 hours."
     />
-    <PageHero
+    <ReusableHero
       eyebrow={PAGE_HEROES.contact.eyebrow}
       headline={PAGE_HEROES.contact.headline}
+      headlineAccent={PAGE_HEROES.contact.headlineAccent}
       description={PAGE_HEROES.contact.description}
     />
     <BookDemo />
@@ -102,7 +103,7 @@ const ContactPage: NextPageWithLayout = () => (
 );
 
 ContactPage.getLayout = (page: ReactElement) => (
-  <PublicLayout>{page}</PublicLayout>
+  <PublicLayout navVariant="light">{page}</PublicLayout>
 );
 
 export default ContactPage;

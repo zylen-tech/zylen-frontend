@@ -15,8 +15,9 @@ const AboutPage: NextPageWithLayout = () => (
       description="A Kuala Lumpur-based software agency dedicated to making Malaysian e-invoice compliance fast, affordable, and stress-free."
     />
     <ReusableHero
-      headline="Built by Engineers,"
-      headlineAccent="Focused on Your Compliance."
+      eyebrow={PAGE_HEROES.about.eyebrow}
+      headline={PAGE_HEROES.about.headline}
+      headlineAccent={PAGE_HEROES.about.headlineAccent}
       description={PAGE_HEROES.about.description}
     />
     <TeamSection />

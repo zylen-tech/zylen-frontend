@@ -31,6 +31,7 @@ export const BRAND = {
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
+  { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'Pricing', href: '/services#pricing' },
   { label: 'About', href: '/about' },
@@ -42,19 +43,22 @@ export const NAV_LINKS = [
 export const PAGE_HEROES = {
   services: {
     eyebrow: 'What We Build',
-    headline: 'E-Invoice Integration Solutions',
+    headline: 'E-Invoice Integration',
+    headlineAccent: 'Solutions.',
     description:
       'From standard accounting software to fully custom ERP systems — Zylen connects your business to LHDN MyInvois in 7 to 14 days.',
   },
   about: {
     eyebrow: 'Who We Are',
-    headline: 'Built by Engineers. Focused on Your Compliance.',
+    headline: 'Built by Engineers,',
+    headlineAccent: 'Focused on Your Compliance.',
     description:
       'A Kuala Lumpur-based software agency dedicated to making Malaysian e-invoice compliance fast, affordable, and stress-free.',
   },
   contact: {
     eyebrow: 'Get In Touch',
-    headline: "Let's Talk About Your Integration",
+    headline: "Let's Talk About",
+    headlineAccent: 'Your Integration.',
     description:
       'Book a free 30-minute call. We review your setup and deliver a fixed-price proposal within 24 hours.',
   },
