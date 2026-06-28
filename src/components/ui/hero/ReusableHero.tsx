@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 type ReusableHeroProps = {
+  eyebrow?: string;
   headline: string;
   headlineAccent?: string;
   description?: string;
@@ -10,6 +11,7 @@ type ReusableHeroProps = {
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const ReusableHero = ({
+  eyebrow,
   headline,
   headlineAccent,
   description,
@@ -36,6 +38,18 @@ const ReusableHero = ({
     />
 
     <div className="relative mx-auto max-w-4xl px-6 text-center md:px-10">
+      {/* Eyebrow */}
+      {eyebrow && (
+        <motion.span
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease }}
+          className="mb-4 inline-block rounded-full border border-slate-200 bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-slate-500"
+        >
+          {eyebrow}
+        </motion.span>
+      )}
+
       {/* Two-line headline */}
       <motion.h1
         initial={{ opacity: 0, y: 24 }}
