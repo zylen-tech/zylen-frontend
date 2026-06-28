@@ -1,11 +1,11 @@
 import type { ReactElement } from 'react';
 
-import { Layout } from '../components/layout/Layout';
 import { Meta } from '../components/layout/Meta';
-import { About } from '../components/sections/About';
-import { BookDemo } from '../components/sections/BookDemo';
-import { PageHero } from '../components/sections/PageHero';
+import { About } from '../components/public/about/About';
+import { BookDemo } from '../components/public/shared/BookDemo';
+import { PageHero } from '../components/public/shared/PageHero';
 import { PAGE_HEROES } from '../constants/content';
+import { PublicLayout } from '../layouts/PublicLayout';
 import type { NextPageWithLayout } from '../types/next';
 
 const AboutPage: NextPageWithLayout = () => (
@@ -24,6 +24,8 @@ const AboutPage: NextPageWithLayout = () => (
   </>
 );
 
-AboutPage.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+AboutPage.getLayout = (page: ReactElement) => (
+  <PublicLayout>{page}</PublicLayout>
+);
 
 export default AboutPage;

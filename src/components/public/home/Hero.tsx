@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
-import { HERO } from '../../constants/content';
-import { Button } from '../ui/Button';
+import { HERO } from '../../../constants/content';
+import { Button } from '../../ui/Button';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 

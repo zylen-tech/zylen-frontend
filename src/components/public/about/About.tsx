@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
-import { ABOUT } from '../../constants/content';
-import { FadeIn } from '../ui/FadeIn';
-import { SectionHeading } from '../ui/SectionHeading';
+import { ABOUT } from '../../../constants/content';
+import { FadeIn } from '../../ui/FadeIn';
+import { SectionHeading } from '../../ui/SectionHeading';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 

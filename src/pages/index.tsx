@@ -1,15 +1,15 @@
 import type { ReactElement } from 'react';
 
-import { Layout } from '../components/layout/Layout';
 import { Meta } from '../components/layout/Meta';
-import { BookDemo } from '../components/sections/BookDemo';
-import { Hero } from '../components/sections/Hero';
-import { HowItWorks } from '../components/sections/HowItWorks';
-import { Problem } from '../components/sections/Problem';
-import { Services } from '../components/sections/Services';
-import { Sponsors } from '../components/sections/Sponsors';
+import { Hero } from '../components/public/home/Hero';
+import { Problem } from '../components/public/home/Problem';
+import { Sponsors } from '../components/public/home/Sponsors';
+import { BookDemo } from '../components/public/shared/BookDemo';
+import { HowItWorks } from '../components/public/shared/HowItWorks';
+import { Services } from '../components/public/shared/Services';
 import { Background } from '../components/ui/Background';
 import { AppConfig } from '../config/site.config';
+import { PublicLayout } from '../layouts/PublicLayout';
 import type { NextPageWithLayout } from '../types/next';
 
 const HomePage: NextPageWithLayout = () => (
@@ -26,6 +26,8 @@ const HomePage: NextPageWithLayout = () => (
   </>
 );
 
-HomePage.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+HomePage.getLayout = (page: ReactElement) => (
+  <PublicLayout>{page}</PublicLayout>
+);
 
 export default HomePage;

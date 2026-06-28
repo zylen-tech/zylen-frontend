@@ -1,13 +1,13 @@
 import type { ReactElement } from 'react';
 
-import { Layout } from '../components/layout/Layout';
 import { Meta } from '../components/layout/Meta';
-import { BookDemo } from '../components/sections/BookDemo';
-import { Features } from '../components/sections/Features';
-import { PageHero } from '../components/sections/PageHero';
-import { Pricing } from '../components/sections/Pricing';
-import { Services } from '../components/sections/Services';
+import { Features } from '../components/public/services/Features';
+import { Pricing } from '../components/public/services/Pricing';
+import { BookDemo } from '../components/public/shared/BookDemo';
+import { PageHero } from '../components/public/shared/PageHero';
+import { Services } from '../components/public/shared/Services';
 import { PAGE_HEROES } from '../constants/content';
+import { PublicLayout } from '../layouts/PublicLayout';
 import type { NextPageWithLayout } from '../types/next';
 
 const ServicesPage: NextPageWithLayout = () => (
@@ -28,6 +28,8 @@ const ServicesPage: NextPageWithLayout = () => (
   </>
 );
 
-ServicesPage.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+ServicesPage.getLayout = (page: ReactElement) => (
+  <PublicLayout>{page}</PublicLayout>
+);
 
 export default ServicesPage;

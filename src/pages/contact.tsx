@@ -1,10 +1,10 @@
 import type { ReactElement } from 'react';
 
-import { Layout } from '../components/layout/Layout';
 import { Meta } from '../components/layout/Meta';
-import { BookDemo } from '../components/sections/BookDemo';
-import { PageHero } from '../components/sections/PageHero';
+import { BookDemo } from '../components/public/shared/BookDemo';
+import { PageHero } from '../components/public/shared/PageHero';
 import { BRAND, PAGE_HEROES } from '../constants/content';
+import { PublicLayout } from '../layouts/PublicLayout';
 import type { NextPageWithLayout } from '../types/next';
 
 const ContactPage: NextPageWithLayout = () => (
@@ -101,6 +101,8 @@ const ContactPage: NextPageWithLayout = () => (
   </>
 );
 
-ContactPage.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+ContactPage.getLayout = (page: ReactElement) => (
+  <PublicLayout>{page}</PublicLayout>
+);
 
 export default ContactPage;
