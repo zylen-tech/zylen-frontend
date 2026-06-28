@@ -21,7 +21,7 @@ const ReusableHero = ({
       alt=""
       width={280}
       height={280}
-      className="pointer-events-none absolute left-0 top-0 select-none"
+      className="pointer-events-none absolute left-0 top-0 select-none opacity-50"
       aria-hidden="true"
     />
 
@@ -31,7 +31,7 @@ const ReusableHero = ({
       alt=""
       width={280}
       height={280}
-      className="pointer-events-none absolute bottom-0 right-0 rotate-180 select-none"
+      className="pointer-events-none absolute bottom-0 right-0 rotate-180 select-none opacity-50"
       aria-hidden="true"
     />
 
@@ -51,22 +51,6 @@ const ReusableHero = ({
           </>
         )}
       </motion.h1>
-
-      {/* Crosshair divider */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4, delay: 0.28, ease }}
-        className="mx-auto my-9 w-12"
-        aria-hidden="true"
-      >
-        <Image
-          src="/assets/img/icons/crosshair-icon.png"
-          alt=""
-          width={48}
-          height={48}
-        />
-      </motion.div>
 
       {/* Description */}
       {description && (
