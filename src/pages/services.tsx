@@ -1,11 +1,11 @@
 import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
-import { Features } from '../components/public/services/Features';
 import { Pricing } from '../components/public/services/Pricing';
+import { ProductFeatures } from '../components/public/services/ProductFeatures';
 import { BookDemo } from '../components/public/shared/BookDemo';
 import { PageHero } from '../components/public/shared/PageHero';
-import { Services } from '../components/public/shared/Services';
+import { ServicePackages } from '../components/public/shared/ServicePackages';
 import { PAGE_HEROES } from '../constants/content';
 import { PublicLayout } from '../layouts/PublicLayout';
 import type { NextPageWithLayout } from '../types/next';
@@ -21,8 +21,8 @@ const ServicesPage: NextPageWithLayout = () => (
       headline={PAGE_HEROES.services.headline}
       description={PAGE_HEROES.services.description}
     />
-    <Features />
-    <Services />
+    <ProductFeatures />
+    <ServicePackages />
     <Pricing />
     <BookDemo />
   </>

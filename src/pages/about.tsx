@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
-import { About } from '../components/public/about/About';
+import { TeamSection } from '../components/public/about/TeamSection';
 import { BookDemo } from '../components/public/shared/BookDemo';
 import { PageHero } from '../components/public/shared/PageHero';
 import { PAGE_HEROES } from '../constants/content';
@@ -19,7 +19,7 @@ const AboutPage: NextPageWithLayout = () => (
       headline={PAGE_HEROES.about.headline}
       description={PAGE_HEROES.about.description}
     />
-    <About />
+    <TeamSection />
     <BookDemo />
   </>
 );

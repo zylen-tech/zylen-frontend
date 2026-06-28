@@ -127,7 +127,7 @@ const features = [
   },
 ];
 
-const Features = () => (
+const ProductFeatures = () => (
   <section id="solutions" className="bg-white py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
@@ -166,4 +166,4 @@ const Features = () => (
   </section>
 );
 
-export { Features };
+export { ProductFeatures };

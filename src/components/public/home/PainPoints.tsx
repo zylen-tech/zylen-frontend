@@ -6,7 +6,7 @@ import { SectionHeading } from '../../ui/SectionHeading';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const Problem = () => (
+const PainPoints = () => (
   <section id="problem" className="py-20 md:py-28">
     <div className="mx-auto max-w-6xl px-4">
       <FadeIn className="mb-12 text-center">
@@ -55,4 +55,4 @@ const Problem = () => (
   </section>
 );
 
-export { Problem };
+export { PainPoints };

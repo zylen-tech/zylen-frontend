@@ -2,11 +2,11 @@ import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
 import { Hero } from '../components/public/home/Hero';
-import { Problem } from '../components/public/home/Problem';
-import { Sponsors } from '../components/public/home/Sponsors';
+import { PainPoints } from '../components/public/home/PainPoints';
+import { SocialProof } from '../components/public/home/SocialProof';
 import { BookDemo } from '../components/public/shared/BookDemo';
 import { HowItWorks } from '../components/public/shared/HowItWorks';
-import { Services } from '../components/public/shared/Services';
+import { ServicePackages } from '../components/public/shared/ServicePackages';
 import { Background } from '../components/ui/Background';
 import { AppConfig } from '../config/site.config';
 import { PublicLayout } from '../layouts/PublicLayout';
@@ -18,9 +18,9 @@ const HomePage: NextPageWithLayout = () => (
     <Background variant="blur" position="top">
       <Hero />
     </Background>
-    <Problem />
-    <Sponsors />
-    <Services />
+    <PainPoints />
+    <SocialProof />
+    <ServicePackages />
     <HowItWorks />
     <BookDemo />
   </>

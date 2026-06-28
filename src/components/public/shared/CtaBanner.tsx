@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Banner = () => (
+const CtaBanner = () => (
   <section className="bg-white py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 text-center md:px-8">
       <span className="mb-4 inline-block rounded-full border border-[rgba(26,127,191,0.20)] bg-[rgba(26,127,191,0.10)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#1a7fbf]">
@@ -39,4 +39,4 @@ const Banner = () => (
   </section>
 );
 
-export { Banner };
+export { CtaBanner };

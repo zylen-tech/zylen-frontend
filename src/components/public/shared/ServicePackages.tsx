@@ -7,7 +7,7 @@ import { SectionHeading } from '../../ui/SectionHeading';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const Services = () => (
+const ServicePackages = () => (
   <section id="services" className="bg-white py-20 md:py-28">
     <div className="mx-auto max-w-6xl px-4">
       <FadeIn className="mb-12 text-center">
@@ -69,4 +69,4 @@ const Services = () => (
   </section>
 );
 
-export { Services };
+export { ServicePackages };

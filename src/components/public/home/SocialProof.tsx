@@ -5,7 +5,7 @@ const stats = [
   { value: 'SOC 2', label: 'Type II Certified' },
 ];
 
-const Sponsors = () => (
+const SocialProof = () => (
   <section className="border-b border-gray-100 bg-white py-14">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <p className="mb-10 text-center text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
@@ -28,4 +28,4 @@ const Sponsors = () => (
   </section>
 );
 
-export { Sponsors };
+export { SocialProof };
