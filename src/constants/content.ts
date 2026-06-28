@@ -350,6 +350,55 @@ export const FINAL_CTA = {
   note: 'No commitment required · Fixed-price proposal within 24 hours',
 };
 
+// ─── FAQ ──────────────────────────────────────────────────────────────────────
+
+export const FAQ = {
+  headline: 'Frequently Asked',
+  headlineAccent: 'Questions',
+  items: [
+    {
+      question: 'Do I need to change my existing accounting software?',
+      answer:
+        'No. Zylen builds an integration layer that sits between your existing software and LHDN MyInvois. AutoCount, SQL Accounting, Xero, QuickBooks — you keep using exactly what you have today. We handle the connection to the government portal.',
+    },
+    {
+      question: 'How long does the integration take?',
+      answer:
+        'Standard accounting software integrations take 7–10 working days from project kick-off to go-live. Custom ERP or POS systems typically take 10–14 days. Enterprise multi-entity setups are scoped individually but rarely exceed 4 weeks.',
+    },
+    {
+      question: 'What exactly is LHDN MyInvois?',
+      answer:
+        "MyInvois is the Malaysian government's e-invoicing portal operated by LHDN (Inland Revenue Board). Under the Finance Act 2023, businesses above RM 1M annual revenue must submit all invoices through MyInvois in a structured XML/JSON format with 55 mandatory fields. The deadline for most SMEs is 1 January 2027.",
+    },
+    {
+      question: 'How much does it cost?',
+      answer:
+        'Integration projects are fixed-price: RM 4,000–RM 8,000 one-time depending on your system complexity. You receive the source code and 30 days of post-launch support. Monthly maintenance (for LHDN API updates and monitoring) starts from RM 300/month. Our SaaS option, Zylen Connect, starts at RM 150/month.',
+    },
+    {
+      question: 'What happens when LHDN updates their API?',
+      answer:
+        'LHDN periodically updates MyInvois field requirements and API versions. If you are on our monthly maintenance plan, all updates are included at no extra cost. If you took the one-time project, we offer update packages on request.',
+    },
+    {
+      question: 'Is this a one-time build or an ongoing subscription?',
+      answer:
+        'Both options exist. The Integration Project is a one-time fixed-price build — you own the code. The Zylen Connect SaaS is a monthly subscription with zero setup effort, auto-updates, and a submission dashboard. Most clients on custom ERP start with the project and add the maintenance plan.',
+    },
+    {
+      question: 'What if we have a custom-built or in-house system?',
+      answer:
+        'That is our speciality. Our Custom Connect package is designed for businesses on proprietary ERP, custom POS, or legacy systems. We analyse your data model, map your invoice fields to the 55 MyInvois requirements, and build a tailored API bridge.',
+    },
+    {
+      question: 'Do you guarantee LHDN approval after integration?',
+      answer:
+        'Yes. Every integration goes through full LHDN sandbox validation before go-live — including credit notes, debit notes, cancellations, and rejection scenarios. We do not sign off until your setup is fully validated against the official MyInvois test environment.',
+    },
+  ],
+};
+
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 export const FOOTER = {
