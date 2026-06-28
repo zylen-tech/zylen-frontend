@@ -18,32 +18,33 @@ const PublicNavbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [router.pathname]);
 
+  // Hash links (e.g. /services#pricing) are anchor scrolls, not page routes —
+  // never mark them as the active page.
   const isActive = (href: string) => {
-    const path = href.split('#')[0] ?? href;
-    return path === '/'
+    if (href.includes('#')) return false;
+    return href === '/'
       ? router.pathname === '/'
-      : router.pathname.startsWith(path);
+      : router.pathname.startsWith(href);
   };
 
   return (
     <header
-      className={`sticky top-0 z-50 box-border border-b transition-[background,backdrop-filter,border-color] duration-[350ms] ease-linear ${
+      className={`sticky top-0 z-50 border-b transition-[background,backdrop-filter,border-color] duration-300 ${
         scrolled
-          ? 'border-white/[0.08] bg-primary-900/[0.92] backdrop-blur-[14px]'
-          : 'border-transparent bg-transparent'
+          ? 'border-white/[0.08] bg-primary-900/95 backdrop-blur-[14px]'
+          : 'border-transparent bg-primary-900'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 no-underline">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src={ASSETS.logo.whiteIconBg}
-            alt="Zylen icon"
+            alt="Zylen"
             width={48}
             height={48}
             className="h-12 w-auto object-contain"
@@ -68,7 +69,7 @@ const PublicNavbar = () => {
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-150 ${
                 isActive(link.href)
                   ? 'bg-white/10 text-white'
-                  : 'text-white/80 hover:bg-white/10 hover:text-white'
+                  : 'text-white/75 hover:bg-white/10 hover:text-white'
               }`}
             >
               {link.label}
@@ -86,49 +87,51 @@ const PublicNavbar = () => {
         {/* Mobile hamburger */}
         <button
           type="button"
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setMobileOpen((o) => !o)}
           className="flex size-9 flex-col items-center justify-center gap-1.5 rounded-lg border border-white/25 md:hidden"
         >
           <span
-            className={`block h-0.5 w-5 rounded-full bg-white transition-transform duration-[250ms] ease-linear ${
+            className={`duration-250 block h-0.5 w-5 rounded-full bg-white transition-transform ${
               mobileOpen ? 'translate-y-2 rotate-45' : ''
             }`}
           />
           <span
-            className={`block h-0.5 w-5 rounded-full bg-white transition-opacity duration-[250ms] ease-linear ${
+            className={`duration-250 block h-0.5 w-5 rounded-full bg-white transition-opacity ${
               mobileOpen ? 'opacity-0' : 'opacity-100'
             }`}
           />
           <span
-            className={`block h-0.5 w-5 rounded-full bg-white transition-transform duration-[250ms] ease-linear ${
+            className={`duration-250 block h-0.5 w-5 rounded-full bg-white transition-transform ${
               mobileOpen ? '-translate-y-2 -rotate-45' : ''
             }`}
           />
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       <div
         className={`overflow-hidden transition-[max-height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] md:hidden ${
           mobileOpen
-            ? 'max-h-[400px] border-t border-white/[0.08]'
+            ? 'max-h-[420px] border-t border-white/[0.08]'
             : 'max-h-0 border-t border-transparent'
-        } bg-primary-900/[0.96] backdrop-blur-[14px]`}
+        } bg-primary-900/98 backdrop-blur-[14px]`}
       >
         <div className="flex flex-col gap-1 px-5 pb-5 pt-3">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className={`rounded-lg px-4 py-2.5 text-sm font-medium transition-colors duration-150 ${
-                isActive(link.href) ? 'bg-white/10 text-white' : 'text-white/80'
+              className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors duration-150 ${
+                isActive(link.href)
+                  ? 'bg-white/10 text-white'
+                  : 'text-white/75 hover:bg-white/10 hover:text-white'
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <div className="mt-2">
+          <div className="mt-3 border-t border-white/[0.08] pt-4">
             <Button href="/contact" variant="white" className="w-full">
               Get a Free Estimate
             </Button>
