@@ -69,6 +69,8 @@ export const HERO = {
     "Zylen integrates your existing accounting software with LHDN's MyInvois API. No manual submissions. No compliance risk. No disruption to how you work.",
   ctaPrimary: 'Get a Free Estimate',
   ctaSecondary: 'Book a Demo Call',
+  urgency:
+    '⚠️  LHDN Deadline: 1 January 2027 · Fine up to RM 20,000 per invoice',
   trustItems: [
     'MyInvois Compliant',
     'LHDN Certified Integration',
@@ -263,6 +265,89 @@ export const BOOK_DEMO = {
   ctaSecondary: 'WhatsApp Us Directly',
   trustNote:
     'No commitment required · Response within 24 hours · Available via Zoom, Google Meet, or WhatsApp',
+};
+
+// ─── Trust Strip ──────────────────────────────────────────────────────────────
+
+export const TRUST_STRIP = {
+  label: 'Trusted by finance teams across Malaysia',
+  stats: [
+    { value: '99.9%', label: 'Uptime SLA' },
+    { value: '1M+', label: 'Invoices Processed' },
+    { value: '50+', label: 'ERP Integrations' },
+    { value: 'SOC 2', label: 'Type II Certified' },
+  ],
+};
+
+// ─── Connectors Strip ─────────────────────────────────────────────────────────
+
+export const CONNECTORS = {
+  eyebrow: 'Works With Your Existing Software',
+  items: [
+    { name: 'AutoCount' },
+    { name: 'SQL Accounting' },
+    { name: 'Xero' },
+    { name: 'QuickBooks' },
+    { name: 'Odoo' },
+    { name: 'SAP Business One' },
+  ],
+  fallback: 'Using a custom system or in-house ERP?',
+  fallbackCta: { label: 'We handle those too', href: '/contact' },
+};
+
+// ─── Delivery Models ──────────────────────────────────────────────────────────
+
+export const DELIVERY_MODELS = {
+  eyebrow: 'How We Deliver',
+  headline: 'Two Ways to Get Compliant',
+  models: [
+    {
+      badge: 'Done For You',
+      name: 'Integration Project',
+      price: 'RM 4,000 – RM 8,000',
+      period: 'one-time',
+      description:
+        'We build the full API bridge between your accounting software and LHDN MyInvois. Fixed price, fixed timeline, source code yours.',
+      features: [
+        '7–14 day delivery',
+        'LHDN sandbox testing included',
+        'Source code & documentation',
+        '30-day post-launch support',
+      ],
+      cta: 'Get a Fixed-Price Quote',
+      ctaHref: '/contact',
+      highlight: false,
+    },
+    {
+      badge: 'Self-Serve Platform',
+      name: 'Zylen Connect SaaS',
+      price: 'RM 150 – RM 500',
+      period: 'per month',
+      description:
+        'Plug-and-play middleware for standard accounting software. Connect in minutes — auto-updates keep you compliant as LHDN evolves.',
+      features: [
+        'AutoCount, SQL, Xero, QuickBooks',
+        'Submission dashboard & error logs',
+        'Auto-updates for LHDN API changes',
+        'No developer needed',
+      ],
+      cta: 'Join the Waitlist',
+      ctaHref: '/contact',
+      highlight: true,
+    },
+  ],
+};
+
+// ─── Final CTA ────────────────────────────────────────────────────────────────
+
+export const FINAL_CTA = {
+  eyebrow: 'Ready to Comply?',
+  headline: 'Get Compliant Before the Deadline.',
+  subtext:
+    'Fixed price. Fixed timeline. 30-day support included. Most integrations go live in 7–14 days.',
+  cta: 'Book a Free 30-Min Call',
+  ctaHref: '/contact',
+  note: 'No commitment required · Fixed-price proposal within 24 hours',
 };
 
 // ─── Footer ───────────────────────────────────────────────────────────────────

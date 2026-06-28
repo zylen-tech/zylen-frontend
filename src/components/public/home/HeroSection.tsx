@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 
-import { HERO } from '../../../constants/content';
+import { BRAND, HERO } from '../../../constants/content';
 import { Button } from '../../ui/Button';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
-const Hero = () => (
+const HeroSection = () => (
   <section className="py-20 md:py-28">
     <div className="mx-auto max-w-6xl px-4 text-center">
-      {/* Badge */}
+      {/* Eyebrow */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -38,27 +38,39 @@ const Hero = () => (
         {HERO.subheadline}
       </motion.p>
 
-      {/* CTAs */}
+      {/* CTA buttons */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3, ease }}
         className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
       >
-        <Button href="#book-demo" variant="white">
+        <Button href="/contact" variant="white">
           {HERO.ctaPrimary}
         </Button>
-        <Button href="#book-demo" variant="outline-white">
+        <Button href={BRAND.calendly} variant="outline-white">
           {HERO.ctaSecondary}
         </Button>
       </motion.div>
 
-      {/* Trust bar */}
+      {/* Urgency badge */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.45 }}
-        className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        transition={{ duration: 0.6, delay: 0.42 }}
+        className="mt-5 inline-flex items-center gap-2 rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-1.5"
+      >
+        <span className="text-xs font-semibold text-orange-300">
+          {HERO.urgency}
+        </span>
+      </motion.div>
+
+      {/* Trust items */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.55 }}
+        className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
       >
         {HERO.trustItems.map((item) => (
           <span
@@ -83,4 +95,4 @@ const Hero = () => (
   </section>
 );
 
-export { Hero };
+export { HeroSection };

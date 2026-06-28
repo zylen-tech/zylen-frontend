@@ -1,12 +1,13 @@
 import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
-import { Hero } from '../components/public/home/Hero';
-import { PainPoints } from '../components/public/home/PainPoints';
-import { SocialProof } from '../components/public/home/SocialProof';
-import { BookDemo } from '../components/public/shared/BookDemo';
+import { ConnectorsStrip } from '../components/public/home/ConnectorsStrip';
+import { DeliveryModels } from '../components/public/home/DeliveryModels';
+import { FinalCTA } from '../components/public/home/FinalCTA';
+import { HeroSection } from '../components/public/home/HeroSection';
+import { ProblemStrip } from '../components/public/home/ProblemStrip';
+import { TrustStrip } from '../components/public/home/TrustStrip';
 import { HowItWorks } from '../components/public/shared/HowItWorks';
-import { ServicePackages } from '../components/public/shared/ServicePackages';
 import { Background } from '../components/ui/Background';
 import { AppConfig } from '../config/site.config';
 import { PublicLayout } from '../layouts/PublicLayout';
@@ -16,13 +17,14 @@ const HomePage: NextPageWithLayout = () => (
   <>
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Background variant="blur" position="top">
-      <Hero />
+      <HeroSection />
     </Background>
-    <PainPoints />
-    <SocialProof />
-    <ServicePackages />
+    <ProblemStrip />
     <HowItWorks />
-    <BookDemo />
+    <DeliveryModels />
+    <ConnectorsStrip />
+    <TrustStrip />
+    <FinalCTA />
   </>
 );
 
