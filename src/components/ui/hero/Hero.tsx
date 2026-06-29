@@ -22,7 +22,7 @@ const Hero = ({
   footer,
   className = '',
 }: HeroProps) => (
-  <section className={`pb-20 pt-32 md:pb-28 md:pt-36 ${className}`}>
+  <section className={`pb-20 pt-24 md:pb-28 md:pt-32 ${className}`}>
     <div className="mx-auto max-w-6xl px-4 text-center">
       {badge && (
         <motion.div

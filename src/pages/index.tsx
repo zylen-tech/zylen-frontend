@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
+import { ComparisonSection } from '../components/public/home/ComparisonSection';
 import { ConnectorsStrip } from '../components/public/home/ConnectorsStrip';
 import { DeliveryModels } from '../components/public/home/DeliveryModels';
 import { FinalCTA } from '../components/public/home/FinalCTA';
@@ -20,11 +21,12 @@ const HomePage: NextPageWithLayout = () => (
       <HeroSection />
     </Background>
     <ProblemStrip />
+    <ComparisonSection />
     <HowItWorks />
     <DeliveryModels />
     <ConnectorsStrip />
-    <TrustStrip />
     <FinalCTA />
+    <TrustStrip />
   </>
 );
 

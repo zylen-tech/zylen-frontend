@@ -16,7 +16,7 @@ const ReusableHero = ({
   headlineAccent,
   description,
 }: ReusableHeroProps) => (
-  <section className="relative overflow-hidden bg-white pb-16 pt-28 sm:pb-20 sm:pt-28 md:pb-24 md:pt-36">
+  <section className="relative overflow-hidden bg-white pb-16 pt-24 sm:pb-20 sm:pt-24 md:pb-24 md:pt-32">
     {/* Top-left corner decoration */}
     <Image
       src="/assets/img/icons/registration-icon.png"
