@@ -12,17 +12,8 @@ type NavbarProps = {
 };
 
 const NavLinkIcon = () => (
-  <svg
-    width="13"
-    height="13"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polyline points="9 18 15 12 9 6" />
+  <svg width="7" height="7" viewBox="0 0 7 7" fill="currentColor">
+    <circle cx="3.5" cy="3.5" r="3.5" />
   </svg>
 );
 
@@ -165,7 +156,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                 <motion.span
                   className="shrink-0"
                   initial={false}
-                  whileHover={{ x: 3, scale: 1.2 }}
+                  whileHover={{ scale: 1.5 }}
                   transition={ICON_SPRING}
                   style={{ display: 'inline-flex' }}
                 >
@@ -235,7 +226,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                   >
                     <motion.span
                       className={`shrink-0 ${active ? 'text-brand-500' : 'text-slate-400 group-hover:text-brand-400'}`}
-                      whileHover={{ x: 3, scale: 1.2 }}
+                      whileHover={{ scale: 1.5 }}
                       transition={ICON_SPRING}
                       style={{ display: 'inline-flex' }}
                     >
