@@ -60,6 +60,7 @@ const ICON_SPRING = { type: 'spring', stiffness: 600, damping: 25 } as const;
 const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const router = useRouter();
 
   const isDark = variant === 'dark';
@@ -141,21 +142,28 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden flex-1 items-center justify-center gap-1 md:flex lg:gap-1">
+        <div
+          className="hidden flex-1 items-center justify-center gap-1 md:flex lg:gap-1"
+          onMouseLeave={() => setHoveredHref(null)}
+        >
           {NAV_LINKS.map((link) => {
             const active = isActive(link.href);
+            const hovered = hoveredHref === link.href;
+            const showDot = active || hovered;
             return (
               <Link
                 key={link.href}
                 href={link.href}
+                onMouseEnter={() => setHoveredHref(link.href)}
                 className={`group relative flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition-colors duration-200 lg:text-sm ${
                   active ? getLinkActiveCls() : getLinkCls()
                 }`}
               >
-                {/* Icon animates on group hover */}
+                {/* Dot — only visible when active or hovered */}
                 <motion.span
                   className="shrink-0"
                   initial={false}
+                  animate={{ scale: showDot ? 1 : 0, opacity: showDot ? 1 : 0 }}
                   whileHover={{ scale: 1.5 }}
                   transition={ICON_SPRING}
                   style={{ display: 'inline-flex' }}
@@ -218,20 +226,24 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`group flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
+                    className={`group flex items-center gap-2 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
                       active
                         ? 'bg-brand-50 text-brand-500'
                         : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
                     }`}
                   >
-                    <motion.span
-                      className={`shrink-0 ${active ? 'text-brand-500' : 'text-slate-400 group-hover:text-brand-400'}`}
-                      whileHover={{ scale: 1.5 }}
-                      transition={ICON_SPRING}
-                      style={{ display: 'inline-flex' }}
-                    >
-                      <NavLinkIcon />
-                    </motion.span>
+                    {/* Dot — only on active in mobile */}
+                    {active && (
+                      <motion.span
+                        className="shrink-0 text-brand-500"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={ICON_SPRING}
+                        style={{ display: 'inline-flex' }}
+                      >
+                        <NavLinkIcon />
+                      </motion.span>
+                    )}
                     {link.label}
                   </Link>
                 );
