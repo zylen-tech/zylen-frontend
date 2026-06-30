@@ -22,10 +22,11 @@ Multi-page marketing website for **Zylen**, a Malaysian e-invoicing middleware t
 
 | Route | File | Sections |
 |---|---|---|
-| `/` | `pages/index.tsx` | Hero, Problem, Sponsors, Services, How It Works, Book Demo |
-| `/services` | `pages/services.tsx` | Features, Services, Pricing, Book Demo |
-| `/about` | `pages/about.tsx` | Team, Company story, Book Demo |
-| `/contact` | `pages/contact.tsx` | Book Demo, Email / WhatsApp / Calendly cards |
+| `/` | `pages/index.tsx` | Hero, Trust stats, Connectors, Comparison (sticky scroll), Why Zylen, How It Works, Delivery Models, FAQ, CTA |
+| `/services` | `pages/services.tsx` | Hero, Service Overview (flow), Product Features, Supported Systems, Process, Packages, Compliance & Security, FAQ, Book Demo |
+| `/pricing` | `pages/pricing.tsx` | Hero, Trust bar, Tiers (monthly/annual toggle), Comparison table, Add-ons, FAQ, CTA |
+| `/about` | `pages/about.tsx` | Hero, Mission Statement, Our Values, Meet the Team, Who We Work With, Book Demo |
+| `/contact` | `pages/contact.tsx` | Hero, Contact Options (email/WhatsApp/website), Book Demo, FAQ, Social links |
 
 ---
 
@@ -37,65 +38,63 @@ src/
 ├── pages/                        # Thin view wrappers — one import + one return
 │   ├── index.tsx                 # /
 │   ├── services.tsx              # /services
+│   ├── pricing.tsx               # /pricing
 │   ├── about.tsx                 # /about
 │   ├── contact.tsx               # /contact
-│   ├── _app.tsx                  # getLayout pattern + page transitions
+│   ├── _app.tsx                  # getLayout pattern + Lenis smooth scroll
 │   └── _document.tsx
 │
-├── layouts/                      # One layout per user role
-│   └── PublicLayout.tsx          # Header + main + Footer (used by all current pages)
-│   # AuthLayout.tsx              ← Phase 2
-│   # AdminLayout.tsx             ← Phase 3
+├── layouts/
+│   └── PublicLayout.tsx          # Navbar + main + Footer
 │
 ├── components/
-│   ├── public/                   # Public-facing sections — no API calls
-│   │   ├── home/                 # Hero.tsx  Problem.tsx  Sponsors.tsx
-│   │   ├── services/             # Features.tsx  Pricing.tsx
-│   │   ├── about/                # About.tsx
-│   │   └── shared/               # Services.tsx  HowItWorks.tsx  BookDemo.tsx
-│   │                             # PageHero.tsx  Banner.tsx
+│   ├── navbar/
+│   │   └── Navbar.tsx            # Fixed, scroll-aware, dark/light variant, page icons
 │   │
-│   ├── features/                 # Business logic per feature (Phase 1+)
-│   │   # Pattern: services/ hooks/ components/ constants/
-│   │
-│   ├── forms/                    # Controlled form field components (Phase 1+)
-│   │
-│   ├── layout/                   # Navigation shell
-│   │   ├── Header.tsx            # Sticky, transparent→dark on scroll, active links
-│   │   ├── Footer.tsx            # Background as="footer" variant="blur"
+│   ├── layout/
+│   │   ├── Footer.tsx            # 4-column: brand + services + company + legal
 │   │   └── Meta.tsx
 │   │
-│   └── ui/                       # Generic reusable UI — no business logic
-│       ├── Background.tsx        # variant: blur|blur-alt|white|light|dark|none
-│       ├── Button.tsx
-│       ├── FadeIn.tsx
-│       ├── SectionHeading.tsx
-│       └── Logo.tsx
-│
-├── services/
-│   └── api.ts                    # Fetch wrapper (get/post/put/patch/delete)
-│                                 # Auth header + 401 handling ready for backend
-│
-├── hooks/
-│   └── useInView.ts              # IntersectionObserver hook → { ref, inView }
+│   ├── public/
+│   │   ├── home/                 # HeroSection, ComparisonSection (sticky scroll),
+│   │   │                         # TrustStrip, ConnectorsStrip, ProblemStrip,
+│   │   │                         # WhyZylen, DeliveryModels, FinalCTA
+│   │   ├── about/                # MissionStatement, OurValues, TeamSection,
+│   │   │                         # WhoWeWorkWith
+│   │   ├── services/             # ServiceOverview, ProductFeatures, SupportedSystems,
+│   │   │                         # ServiceProcess, ComplianceSecurity
+│   │   ├── pricing/              # PricingTiers, ComparisonTable, AddOns,
+│   │   │                         # PricingFaq, PricingCTA, PricingTrustBar
+│   │   ├── contact/              # ContactOptions, ContactFaq, SocialLinks
+│   │   └── shared/               # BookDemo, FaqSection, HowItWorks,
+│   │                             # ServicePackages, PageHero, CtaBanner
+│   │
+│   └── ui/                       # Generic reusable UI
+│       ├── Background.tsx        # variant: gradient|blur|white|…
+│       ├── SectionHeading.tsx    # eyebrow + headline + optional description
+│       ├── FadeIn.tsx            # whileInView wrapper
+│       ├── SplitText.tsx         # Word-level stagger animation
+│       ├── hero/
+│       │   └── ReusableHero.tsx  # Dark navy hero for inner pages
+│       └── buttons/
+│           ├── Button.tsx
+│           └── ArrowButton.tsx
 │
 ├── constants/
-│   └── content.ts                # All copy + ASSETS + BRAND + NAV_LINKS + PAGE_HEROES
-│
-├── config/
-│   └── site.config.ts            # AppConfig (title, description)
+│   └── content.ts                # Single source of truth — BRAND, ASSETS, NAV_LINKS,
+│                                 # PAGE_HEROES, FOOTER, ABOUT_*, PRICING_*, …
 │
 ├── types/
-│   └── next.ts                   # NextPageWithLayout + AppPropsWithLayout
+│   └── next.ts                   # NextPageWithLayout
 │
 └── styles/
     └── global.css
 
 public/
   assets/
-    background/                   # blur-img-bg-1.png  blur-img-bg.png
+    background/
     brand/
-      logo/                       # white-icon-bg.png (used in Header + Footer)
+      logo/                       # icon.png  white-icon-bg.png  dark-bg.png
       favicon_io/
 ```
 
@@ -142,10 +141,13 @@ import { ASSETS } from '../constants/content';
 
 | Token | Value | Usage |
 |---|---|---|
-| `primary-500` | `#053959` | Text, borders, icons |
-| `primary-900` | `#021724` | Dark bg, header blur |
-| `lightPrimary` | `#e8eff4` | Eyebrow badges, icon backgrounds |
+| `brand-500` | `#053959` | Primary text, borders, icons |
+| `brand-900` | `#021724` | Dark backgrounds |
+| `brand-100` | `#e8eff4` | Eyebrow badges, icon backgrounds |
 | `font-montserrat` | Montserrat | Headings, prices, step numbers |
+
+**Hero backgrounds** (ReusableHero / inner pages):
+`linear-gradient(160deg, #020a14 0%, #053959 100%)` with a 40px line grid overlay (`rgba(255,255,255,0.06)`).
 
 ---
 

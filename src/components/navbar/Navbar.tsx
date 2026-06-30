@@ -11,6 +11,99 @@ type NavbarProps = {
   variant?: 'dark' | 'light';
 };
 
+// ── Nav icons ─────────────────────────────────────────────────────────────────
+
+const HomeIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    <polyline points="9 22 9 12 15 12 15 22" />
+  </svg>
+);
+
+const ServicesIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+  </svg>
+);
+
+const PricingIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="12" y1="1" x2="12" y2="23" />
+    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+  </svg>
+);
+
+const AboutIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
+
+const ContactIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+    <polyline points="22,6 12,13 2,6" />
+  </svg>
+);
+
+const NAV_ICONS: Record<string, () => JSX.Element> = {
+  '/': HomeIcon,
+  '/services': ServicesIcon,
+  '/pricing': PricingIcon,
+  '/about': AboutIcon,
+  '/contact': ContactIcon,
+};
+
+// ── Hamburger / Close ──────────────────────────────────────────────────────────
+
 const MenuIcon = () => (
   <svg
     width="20"
@@ -49,6 +142,8 @@ const slideDown = {
   transition: { duration: 0.22, ease: 'easeInOut' as const },
 };
 
+// ── Component ─────────────────────────────────────────────────────────────────
+
 const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -85,8 +180,8 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
     scrolled || !isDark ? 'text-brand-500' : 'text-white';
   const getLinkCls = () =>
     scrolled || !isDark
-      ? 'text-slate-600 hover:text-brand-900'
-      : 'text-white/80 hover:text-white';
+      ? 'text-slate-500 hover:text-brand-900'
+      : 'text-white/75 hover:text-white';
   const getUnderlineCls = () =>
     scrolled || !isDark ? 'bg-brand-500' : 'bg-white';
   const getToggleCls = () =>
@@ -138,19 +233,31 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
           </div>
         </Link>
 
-        {/* Desktop nav — centred */}
-        <div className="hidden flex-1 items-center justify-center gap-5 md:flex lg:gap-7">
+        {/* Desktop nav */}
+        <div className="hidden flex-1 items-center justify-center gap-1 md:flex lg:gap-1">
           {NAV_LINKS.map((link) => {
             const active = isActive(link.href);
+            const Icon = NAV_ICONS[link.href];
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative pb-0.5 text-xs font-medium transition-colors duration-300 lg:text-sm ${active ? getLinkActiveCls() : getLinkCls()}`}
+                className={`group relative flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition-colors duration-200 lg:text-sm ${
+                  active ? getLinkActiveCls() : getLinkCls()
+                }`}
               >
+                {Icon && (
+                  <span className="shrink-0 transition-transform duration-200 group-hover:scale-110">
+                    <Icon />
+                  </span>
+                )}
                 {link.label}
                 <span
-                  className={`absolute -bottom-0.5 left-0 h-[2px] rounded-full transition-all duration-200 ${getUnderlineCls()} ${active ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                  className={`absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full transition-all duration-200 ${getUnderlineCls()} ${
+                    active
+                      ? 'opacity-100'
+                      : 'w-0 opacity-0 group-hover:w-[calc(100%-1.5rem)] group-hover:opacity-100'
+                  }`}
                 />
               </Link>
             );
@@ -193,16 +300,24 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
             <div className="flex flex-col gap-1 p-4">
               {NAV_LINKS.map((link) => {
                 const active = isActive(link.href);
+                const Icon = NAV_ICONS[link.href];
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
+                    className={`flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
                       active
-                        ? 'bg-brand-100 text-brand-500'
+                        ? 'bg-brand-50 text-brand-500'
                         : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
                     }`}
                   >
+                    {Icon && (
+                      <span
+                        className={`shrink-0 ${active ? 'text-brand-500' : 'text-slate-400'}`}
+                      >
+                        <Icon />
+                      </span>
+                    )}
                     {link.label}
                   </Link>
                 );

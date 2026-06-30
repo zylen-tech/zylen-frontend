@@ -41,17 +41,11 @@ const TeamSection = () => (
               {member.initials}
             </div>
 
-            <h3
-              className="font-montserrat font-bold text-slate-900"
-              style={{ fontSize: '22px' }}
-            >
+            <h3 className="font-montserrat text-lg font-bold text-slate-900 md:text-xl">
               {member.name}
             </h3>
 
-            <p
-              className="mt-1 font-medium italic text-brand-500"
-              style={{ fontSize: '16px' }}
-            >
+            <p className="mt-1 text-base font-medium italic text-brand-500">
               {member.role}
             </p>
 
