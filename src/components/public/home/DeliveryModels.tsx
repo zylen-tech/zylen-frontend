@@ -34,7 +34,7 @@ const DeliveryModels = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.12, ease: EASE }}
-            className={`flex flex-col rounded-2xl border bg-white p-8 ${
+            className={`flex flex-col rounded-2xl border bg-white p-5 md:p-8 ${
               model.highlight
                 ? 'border-brand-500 shadow-[0_0_0_3px_#05395914]'
                 : 'border-slate-200'

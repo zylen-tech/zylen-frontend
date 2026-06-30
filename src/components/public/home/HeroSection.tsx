@@ -33,7 +33,7 @@ const HeroSection = () => {
     >
       {/* Radial glow — center top */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/4 rounded-full opacity-30 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 -translate-y-1/4 rounded-full opacity-30 blur-[120px] md:h-[600px] md:w-[900px]"
         style={{
           background: 'radial-gradient(ellipse, #053959 0%, transparent 70%)',
         }}
@@ -71,7 +71,7 @@ const HeroSection = () => {
         {/* Headline */}
         <motion.h1
           {...fadeUp(0.1)}
-          className="mx-auto max-w-4xl font-montserrat text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]"
+          className="mx-auto max-w-4xl font-montserrat text-3xl font-extrabold leading-[1.08] tracking-[-0.03em] text-white sm:text-4xl md:text-6xl lg:text-[4.25rem]"
         >
           Connect Your Business to <br className="hidden sm:block" />
           {"Malaysia's E-Invoice System "}

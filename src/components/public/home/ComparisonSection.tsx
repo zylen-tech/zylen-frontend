@@ -69,7 +69,7 @@ const ComparisonCard = ({
 
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-3xl ${
+      className={`relative size-full overflow-hidden rounded-3xl ${
         isDark
           ? 'shadow-[0_8px_60px_rgba(2,10,20,0.5)]'
           : 'shadow-[0_8px_48px_rgba(5,57,89,0.12)]'
@@ -84,35 +84,32 @@ const ComparisonCard = ({
         className="pointer-events-none absolute inset-0"
         style={{
           background: isDark
-            ? 'radial-gradient(ellipse at 80% 20%, rgba(100,117,246,0.3) 0%, transparent 60%)'
+            ? 'linear-gradient(135deg, #020a14, #053959)'
             : 'radial-gradient(ellipse at 20% 80%, rgba(209,224,255,0.5) 0%, transparent 60%)',
         }}
       />
 
-      <div className="relative flex flex-col sm:flex-row">
+      <div className="relative flex h-full flex-col md:flex-row">
         {/* Illustration */}
-        <div
-          className={`flex shrink-0 items-center justify-center p-8 sm:w-[38%] sm:p-10 ${
-            isDark ? 'bg-white/[0.06]' : 'bg-[#E8F0FE]/60'
-          }`}
-        >
-          <Image
-            src={illustration}
-            alt={illustrationAlt}
-            width={240}
-            height={240}
-            className="h-auto w-36 drop-shadow-2xl sm:w-44 md:w-52"
-          />
+        <div className="flex shrink-0 items-center justify-center p-4 md:h-auto md:w-[42%] md:self-stretch md:p-10">
+          <div className="relative aspect-square w-full overflow-hidden rounded-3xl">
+            <Image
+              src={illustration}
+              alt={illustrationAlt}
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
 
         <div
-          className={`hidden w-px self-stretch sm:block ${isDark ? 'bg-white/10' : 'bg-[#D1E0FF]/60'}`}
+          className={`hidden w-px self-stretch md:block ${isDark ? 'bg-white/10' : 'bg-[#D1E0FF]/60'}`}
         />
 
         {/* Content */}
-        <div className="flex flex-1 flex-col justify-center p-7 md:p-10">
+        <div className="flex flex-1 flex-col justify-center p-5 sm:p-6 md:p-10">
           <h3
-            className={`font-montserrat text-xl font-extrabold tracking-[-0.02em] md:text-2xl ${
+            className={`font-montserrat text-lg font-extrabold tracking-[-0.02em] sm:text-xl md:text-2xl ${
               isDark ? 'text-white' : 'text-[#171717]'
             }`}
           >
@@ -124,7 +121,7 @@ const ComparisonCard = ({
             {subtitle}
           </p>
 
-          <ul className="space-y-3.5">
+          <ul className="space-y-2.5 sm:space-y-3.5">
             {items.map((item) => (
               <li key={item} className="flex items-center gap-3">
                 <span
@@ -192,9 +189,6 @@ const ComparisonSection = () => {
   const card2Y = useTransform(scrollYProgress, [0.38, 0.62], [120, 0]);
   const card2Scale = useTransform(scrollYProgress, [0.38, 0.62], [0.93, 1]);
 
-  // Background darkens slightly behind card 2
-  const overlayOpacity = useTransform(scrollYProgress, [0.38, 0.68], [0, 1]);
-
   // Progress track fills top-to-bottom with scroll
   const trackFill = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const label1Opacity = useTransform(
@@ -204,11 +198,8 @@ const ComparisonSection = () => {
   );
   const label2Opacity = useTransform(scrollYProgress, [0.38, 0.62], [0, 1]);
 
-  // Scroll hint disappears after user starts scrolling
-  const hintOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
-
   return (
-    <section className="bg-brand-50">
+    <section className="bg-white">
       {/* ── Heading ──────────────────────────────────────────────── */}
       <div className="mx-auto max-w-7xl px-5 pb-0 pt-20 md:px-8 md:pt-28">
         <div className="text-center">
@@ -226,12 +217,6 @@ const ComparisonSection = () => {
           className="sticky overflow-hidden"
           style={{ top: '80px', height: 'calc(100vh - 80px)' }}
         >
-          {/* Dark overlay — fades in behind card 2 */}
-          <motion.div
-            style={{ opacity: overlayOpacity }}
-            className="pointer-events-none absolute inset-0 z-0 bg-[#020a14]"
-          />
-
           {/* Side progress indicator */}
           <div className="absolute right-6 top-1/2 z-20 flex -translate-y-1/2 flex-col items-center gap-3 xl:right-10">
             {/* Counter label */}
@@ -263,60 +248,32 @@ const ComparisonSection = () => {
             </span>
           </div>
 
-          {/* Card stack — perspective wrapper for 3D effect */}
-          <div className="relative mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
-            {/* Card 1 — 3D push-back */}
+          {/* Card stack */}
+          <div className="relative mx-auto size-full max-w-7xl px-5 md:px-8">
+            {/* Card 1 */}
             <motion.div
               style={{
                 opacity: card1Opacity,
                 scale: card1Scale,
                 y: card1Y,
               }}
-              className="absolute inset-x-5 md:inset-x-8"
+              className="absolute inset-x-5 inset-y-3 md:inset-x-8 md:inset-y-5"
             >
               <ComparisonCard {...card1Data} />
             </motion.div>
 
-            {/* Card 2 — slides up */}
+            {/* Card 2 */}
             <motion.div
               style={{
                 opacity: card2Opacity,
                 y: card2Y,
                 scale: card2Scale,
               }}
-              className="absolute inset-x-5 md:inset-x-8"
+              className="absolute inset-x-5 inset-y-3 md:inset-x-8 md:inset-y-5"
             >
               <ComparisonCard {...card2Data} />
             </motion.div>
           </div>
-
-          {/* Scroll hint */}
-          <motion.div
-            style={{ opacity: hintOpacity }}
-            className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5"
-          >
-            <span className="text-xs font-semibold uppercase tracking-widest text-brand-400">
-              Scroll to compare
-            </span>
-            <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.4,
-                ease: 'easeInOut',
-              }}
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M8 3v10M4 9l4 4 4-4"
-                  stroke="#053959"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </motion.div>
-          </motion.div>
         </div>
       </div>
 

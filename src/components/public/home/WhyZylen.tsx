@@ -106,7 +106,7 @@ const WhyZylen = () => (
           <motion.div
             key={title}
             variants={cardItem}
-            className="group flex h-full flex-col rounded-2xl border border-brand-100 bg-brand-50 p-7 transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(5,57,89,0.08)]"
+            className="group flex h-full flex-col rounded-2xl border border-brand-100 bg-brand-50 p-5 transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(5,57,89,0.08)] md:p-7"
           >
             <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-500 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
               <Icon />

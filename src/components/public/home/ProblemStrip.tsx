@@ -23,7 +23,7 @@ const ProblemStrip = () => (
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.1, ease: EASE }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="rounded-xl border border-slate-200 bg-white p-8 text-center"
+            className="rounded-xl border border-slate-200 bg-white p-5 text-center sm:p-6 md:p-8"
           >
             <div className="font-montserrat text-2xl font-extrabold text-brand-500 sm:text-3xl md:text-4xl">
               {value}
@@ -42,7 +42,7 @@ const ProblemStrip = () => (
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-l-4 border-[#fde8cc] border-l-orange-500 bg-[#fff8f0] p-6">
+        <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-l-4 border-[#fde8cc] border-l-orange-500 bg-[#fff8f0] p-4 sm:p-6">
           <div className="flex gap-3">
             <span className="mt-0.5 text-xl">⚠️</span>
             <p className="text-sm font-medium leading-relaxed text-orange-800">

@@ -35,13 +35,13 @@ const ConnectorsStrip = () => (
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-60px' }}
-        className="flex flex-wrap items-center justify-center gap-3"
+        className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
       >
         {CONNECTORS.items.map((item) => (
           <motion.span
             key={item.name}
             variants={pillItem}
-            className="rounded-full border border-slate-200 bg-slate-50 px-5 py-2 text-sm font-semibold text-brand-500"
+            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-brand-500 sm:px-5 sm:py-2 sm:text-sm"
           >
             {item.name}
           </motion.span>
@@ -49,7 +49,7 @@ const ConnectorsStrip = () => (
       </motion.div>
 
       <FadeIn delay={0.4}>
-        <p className="mt-7 text-center text-sm text-gray-500">
+        <p className="mt-7 text-center text-xs text-gray-500 sm:text-sm">
           {CONNECTORS.fallback}{' '}
           <Link
             href={CONNECTORS.fallbackCta.href}

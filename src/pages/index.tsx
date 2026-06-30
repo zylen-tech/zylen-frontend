@@ -10,7 +10,6 @@ import { ProblemStrip } from '../components/public/home/ProblemStrip';
 import { TrustStrip } from '../components/public/home/TrustStrip';
 import { WhyZylen } from '../components/public/home/WhyZylen';
 import { HowItWorks } from '../components/public/shared/HowItWorks';
-import { Background } from '../components/ui/Background';
 import { AppConfig } from '../config/site.config';
 import { PublicLayout } from '../layouts/PublicLayout';
 import type { NextPageWithLayout } from '../types/next';
@@ -18,9 +17,7 @@ import type { NextPageWithLayout } from '../types/next';
 const HomePage: NextPageWithLayout = () => (
   <>
     <Meta title={AppConfig.title} description={AppConfig.description} />
-    <Background variant="blur" position="top">
-      <HeroSection />
-    </Background>
+    <HeroSection />
     <ProblemStrip />
     <WhyZylen />
     <ComparisonSection />
