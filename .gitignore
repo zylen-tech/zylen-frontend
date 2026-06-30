@@ -110,9 +110,20 @@ next-env.d.ts
 # ─── Vercel ───────────────────────────────────────────────────────────────────
 .vercel
 
+# ─── Sentry ───────────────────────────────────────────────────────────────────
+.sentryclirc
+*.sentry-native-cache
+
 # ─── Misc ─────────────────────────────────────────────────────────────────────
 /local
 .cache
 .turbo
 *.tgz
 *.tar.gz
+*.zip
+bundle-stats.json
+.bundle-analyzer/
+
+# ─── AI assistant config ──────────────────────────────────────────────────────
+# Uncomment to exclude AI-assistant project memory from the repo:
+# .claude/

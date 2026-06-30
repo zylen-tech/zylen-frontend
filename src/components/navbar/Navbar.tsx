@@ -11,6 +11,12 @@ type NavbarProps = {
   variant?: 'dark' | 'light';
 };
 
+const NavLinkIcon = () => (
+  <svg width="7" height="7" viewBox="0 0 7 7" fill="currentColor">
+    <circle cx="3.5" cy="3.5" r="3.5" />
+  </svg>
+);
+
 const MenuIcon = () => (
   <svg
     width="20"
@@ -49,12 +55,16 @@ const slideDown = {
   transition: { duration: 0.22, ease: 'easeInOut' as const },
 };
 
+const ICON_SPRING = { type: 'spring', stiffness: 600, damping: 25 } as const;
+
 const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const router = useRouter();
 
   const isDark = variant === 'dark';
+  const light = scrolled || !isDark;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -81,30 +91,22 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
       : 'bg-white border-b border-slate-100 shadow-sm';
   };
 
-  const getLinkActiveCls = () =>
-    scrolled || !isDark ? 'text-brand-500' : 'text-white';
+  const getLinkActiveCls = () => (light ? 'text-brand-500' : 'text-white');
   const getLinkCls = () =>
-    scrolled || !isDark
-      ? 'text-slate-600 hover:text-brand-900'
-      : 'text-white/80 hover:text-white';
-  const getUnderlineCls = () =>
-    scrolled || !isDark ? 'bg-brand-500' : 'bg-white';
+    light
+      ? 'text-slate-500 hover:text-brand-900'
+      : 'text-white/75 hover:text-white';
   const getToggleCls = () =>
-    scrolled || !isDark
+    light
       ? 'text-slate-600 hover:bg-slate-50 hover:text-brand-900'
       : 'text-white hover:bg-white/10';
-  const getLogoNameCls = () =>
-    scrolled || !isDark ? 'text-brand-900' : 'text-white';
-  const getLogoSubCls = () =>
-    scrolled || !isDark ? 'text-brand-400' : 'text-white/60';
-  const getLogoSrc = () =>
-    scrolled || !isDark ? ASSETS.logo.icon : ASSETS.logo.whiteIconBg;
+  const getLogoNameCls = () => (light ? 'text-brand-900' : 'text-white');
+  const getLogoSubCls = () => (light ? 'text-brand-400' : 'text-white/60');
+  const getLogoSrc = () => (light ? ASSETS.logo.icon : ASSETS.logo.whiteIconBg);
   const getWhatsappVariant = () =>
-    (scrolled || !isDark ? 'secondary' : 'outline-white') as
-      | 'secondary'
-      | 'outline-white';
+    (light ? 'secondary' : 'outline-white') as 'secondary' | 'outline-white';
   const getCallVariant = () =>
-    (scrolled || !isDark ? 'primary' : 'white') as 'primary' | 'white';
+    (light ? 'primary' : 'white') as 'primary' | 'white';
 
   return (
     <motion.nav
@@ -138,20 +140,37 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
           </div>
         </Link>
 
-        {/* Desktop nav — centred */}
-        <div className="hidden flex-1 items-center justify-center gap-5 md:flex lg:gap-7">
+        {/* Desktop nav */}
+        <div
+          className="hidden flex-1 items-center justify-center gap-1 md:flex lg:gap-1"
+          onMouseLeave={() => setHoveredHref(null)}
+        >
           {NAV_LINKS.map((link) => {
             const active = isActive(link.href);
+            const hovered = hoveredHref === link.href;
+            const showDot = active || hovered;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative pb-0.5 text-xs font-medium transition-colors duration-300 lg:text-sm ${active ? getLinkActiveCls() : getLinkCls()}`}
+                onMouseEnter={() => setHoveredHref(link.href)}
+                className={`group relative flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition-colors duration-200 lg:text-sm ${
+                  active ? getLinkActiveCls() : getLinkCls()
+                }`}
               >
+                {/* Dot — only visible when active or hovered */}
+                <motion.span
+                  className="shrink-0"
+                  initial={false}
+                  animate={{ scale: showDot ? 1 : 0, opacity: showDot ? 1 : 0 }}
+                  whileHover={{ scale: 1.5 }}
+                  transition={ICON_SPRING}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <NavLinkIcon />
+                </motion.span>
+
                 {link.label}
-                <span
-                  className={`absolute -bottom-0.5 left-0 h-[2px] rounded-full transition-all duration-200 ${getUnderlineCls()} ${active ? 'w-full' : 'w-0 group-hover:w-full'}`}
-                />
               </Link>
             );
           })}
@@ -197,17 +216,29 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
+                    className={`group flex items-center gap-2 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
                       active
-                        ? 'bg-brand-100 text-brand-500'
+                        ? 'bg-brand-50 text-brand-500'
                         : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
                     }`}
                   >
+                    {/* Dot — only on active in mobile */}
+                    {active && (
+                      <motion.span
+                        className="shrink-0 text-brand-500"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={ICON_SPRING}
+                        style={{ display: 'inline-flex' }}
+                      >
+                        <NavLinkIcon />
+                      </motion.span>
+                    )}
                     {link.label}
                   </Link>
                 );
               })}
-              <div className="mt-3 flex flex-col gap-4 border-t border-slate-100 pt-3">
+              <div className="mt-3 flex flex-col gap-3 border-t border-slate-100 pt-3">
                 <Button
                   href={BRAND.whatsapp}
                   variant="secondary"
