@@ -1,0 +1,35 @@
+import type { ReactElement } from 'react';
+
+import { Meta } from '../components/layout/Meta';
+import { ContactFaq } from '../components/public/contact/ContactFaq';
+import { ContactOptions } from '../components/public/contact/ContactOptions';
+import { SocialLinks } from '../components/public/contact/SocialLinks';
+import { BookDemo } from '../components/public/shared/BookDemo';
+import { ReusableHero } from '../components/ui/hero';
+import { PAGE_HEROES } from '../constants/content';
+import { PublicLayout } from '../layouts/PublicLayout';
+import type { NextPageWithLayout } from '../types/next';
+
+const ContactPage: NextPageWithLayout = () => (
+  <>
+    <Meta
+      title="Contact — Zylen E-Invoice Integration"
+      description="Have a question about e-invoice compliance? We're here to help. Email, WhatsApp, or book a free call."
+    />
+    <ReusableHero
+      eyebrow={PAGE_HEROES.contact.eyebrow}
+      headline={PAGE_HEROES.contact.headline}
+      description={PAGE_HEROES.contact.description}
+    />
+    <ContactOptions />
+    <BookDemo />
+    <ContactFaq />
+    <SocialLinks />
+  </>
+);
+
+ContactPage.getLayout = (page: ReactElement) => (
+  <PublicLayout navVariant="light">{page}</PublicLayout>
+);
+
+export default ContactPage;
