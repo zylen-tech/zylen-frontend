@@ -11,8 +11,6 @@ type NavbarProps = {
   variant?: 'dark' | 'light';
 };
 
-// ── Shared nav link icon ───────────────────────────────────────────────────────
-
 const NavLinkIcon = () => (
   <svg
     width="13"
@@ -27,8 +25,6 @@ const NavLinkIcon = () => (
     <polyline points="9 18 15 12 9 6" />
   </svg>
 );
-
-// ── Hamburger / Close ──────────────────────────────────────────────────────────
 
 const MenuIcon = () => (
   <svg
@@ -68,7 +64,7 @@ const slideDown = {
   transition: { duration: 0.22, ease: 'easeInOut' as const },
 };
 
-// ── Component ─────────────────────────────────────────────────────────────────
+const ICON_SPRING = { type: 'spring', stiffness: 600, damping: 25 } as const;
 
 const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,6 +72,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   const router = useRouter();
 
   const isDark = variant === 'dark';
+  const light = scrolled || !isDark;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -102,30 +99,23 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
       : 'bg-white border-b border-slate-100 shadow-sm';
   };
 
-  const getLinkActiveCls = () =>
-    scrolled || !isDark ? 'text-brand-500' : 'text-white';
+  const getLinkActiveCls = () => (light ? 'text-brand-500' : 'text-white');
   const getLinkCls = () =>
-    scrolled || !isDark
+    light
       ? 'text-slate-500 hover:text-brand-900'
       : 'text-white/75 hover:text-white';
-  const getUnderlineCls = () =>
-    scrolled || !isDark ? 'bg-brand-500' : 'bg-white';
+  const getUnderlineCls = () => (light ? 'bg-brand-500' : 'bg-white');
   const getToggleCls = () =>
-    scrolled || !isDark
+    light
       ? 'text-slate-600 hover:bg-slate-50 hover:text-brand-900'
       : 'text-white hover:bg-white/10';
-  const getLogoNameCls = () =>
-    scrolled || !isDark ? 'text-brand-900' : 'text-white';
-  const getLogoSubCls = () =>
-    scrolled || !isDark ? 'text-brand-400' : 'text-white/60';
-  const getLogoSrc = () =>
-    scrolled || !isDark ? ASSETS.logo.icon : ASSETS.logo.whiteIconBg;
+  const getLogoNameCls = () => (light ? 'text-brand-900' : 'text-white');
+  const getLogoSubCls = () => (light ? 'text-brand-400' : 'text-white/60');
+  const getLogoSrc = () => (light ? ASSETS.logo.icon : ASSETS.logo.whiteIconBg);
   const getWhatsappVariant = () =>
-    (scrolled || !isDark ? 'secondary' : 'outline-white') as
-      | 'secondary'
-      | 'outline-white';
+    (light ? 'secondary' : 'outline-white') as 'secondary' | 'outline-white';
   const getCallVariant = () =>
-    (scrolled || !isDark ? 'primary' : 'white') as 'primary' | 'white';
+    (light ? 'primary' : 'white') as 'primary' | 'white';
 
   return (
     <motion.nav
@@ -171,10 +161,20 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                   active ? getLinkActiveCls() : getLinkCls()
                 }`}
               >
-                <span className="shrink-0 opacity-60 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
+                {/* Icon animates on group hover */}
+                <motion.span
+                  className="shrink-0"
+                  initial={false}
+                  whileHover={{ x: 3, scale: 1.2 }}
+                  transition={ICON_SPRING}
+                  style={{ display: 'inline-flex' }}
+                >
                   <NavLinkIcon />
-                </span>
+                </motion.span>
+
                 {link.label}
+
+                {/* Underline */}
                 <span
                   className={`absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full transition-all duration-200 ${getUnderlineCls()} ${
                     active
@@ -227,22 +227,25 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
+                    className={`group flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
                       active
                         ? 'bg-brand-50 text-brand-500'
                         : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
                     }`}
                   >
-                    <span
-                      className={`shrink-0 ${active ? 'text-brand-500' : 'text-slate-400'}`}
+                    <motion.span
+                      className={`shrink-0 ${active ? 'text-brand-500' : 'text-slate-400 group-hover:text-brand-400'}`}
+                      whileHover={{ x: 3, scale: 1.2 }}
+                      transition={ICON_SPRING}
+                      style={{ display: 'inline-flex' }}
                     >
                       <NavLinkIcon />
-                    </span>
+                    </motion.span>
                     {link.label}
                   </Link>
                 );
               })}
-              <div className="mt-3 flex flex-col gap-4 border-t border-slate-100 pt-3">
+              <div className="mt-3 flex flex-col gap-3 border-t border-slate-100 pt-3">
                 <Button
                   href={BRAND.whatsapp}
                   variant="secondary"
