@@ -107,28 +107,31 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
     (scrolled || !isDark ? 'primary' : 'white') as 'primary' | 'white';
 
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${getNavBg()}`}
     >
       <div className="mx-auto flex h-[70px] max-w-7xl items-center justify-between gap-6 px-5 md:h-[80px] md:px-8">
         {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-3">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <Image
             src={getLogoSrc()}
             alt="Zylen"
-            width={44}
-            height={44}
-            className="h-11 w-auto object-contain transition-all duration-300"
+            width={40}
+            height={40}
+            className="h-9 w-auto object-contain transition-all duration-300 md:h-10"
             priority
           />
-          <div className="hidden flex-col leading-none md:flex">
+          <div className="flex flex-col leading-none">
             <p
-              className={`font-montserrat text-base font-bold leading-tight transition-colors duration-300 ${getLogoNameCls()}`}
+              className={`font-montserrat text-sm font-bold leading-tight transition-colors duration-300 md:text-base ${getLogoNameCls()}`}
             >
               ZYLEN
             </p>
             <p
-              className={`font-montserrat text-[0.5rem] font-medium tracking-[0.12em] transition-colors duration-300 ${getLogoSubCls()}`}
+              className={`hidden font-montserrat text-[0.5rem] font-medium tracking-[0.12em] transition-colors duration-300 md:block ${getLogoSubCls()}`}
             >
               E-INVOICE INTEGRATION
             </p>
@@ -136,14 +139,14 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
         </Link>
 
         {/* Desktop nav — centred */}
-        <div className="hidden flex-1 items-center justify-center gap-7 md:flex">
+        <div className="hidden flex-1 items-center justify-center gap-5 md:flex lg:gap-7">
           {NAV_LINKS.map((link) => {
             const active = isActive(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative pb-0.5 text-sm font-medium transition-colors duration-300 ${active ? getLinkActiveCls() : getLinkCls()}`}
+                className={`group relative pb-0.5 text-xs font-medium transition-colors duration-300 lg:text-sm ${active ? getLinkActiveCls() : getLinkCls()}`}
               >
                 {link.label}
                 <span
@@ -155,8 +158,12 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
         </div>
 
         {/* CTA — desktop only */}
-        <div className="hidden shrink-0 items-center gap-2 md:flex">
-          <Button href={BRAND.whatsapp} variant={getWhatsappVariant()}>
+        <div className="hidden shrink-0 items-center gap-3 md:flex">
+          <Button
+            href={BRAND.whatsapp}
+            variant={getWhatsappVariant()}
+            className="hidden lg:inline-flex"
+          >
             WhatsApp Us
           </Button>
           <Button href="/contact" variant={getCallVariant()}>
@@ -200,7 +207,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                   </Link>
                 );
               })}
-              <div className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3">
+              <div className="mt-3 flex flex-col gap-4 border-t border-slate-100 pt-3">
                 <Button
                   href={BRAND.whatsapp}
                   variant="secondary"
@@ -216,7 +223,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 

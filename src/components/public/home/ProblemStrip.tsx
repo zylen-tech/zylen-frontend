@@ -9,16 +9,16 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const ProblemStrip = () => (
   <section id="problem" className="py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
-      <FadeIn className="mb-12 text-center">
+      <div className="mb-12 text-center">
         <SectionHeading eyebrow={PROBLEM.eyebrow} headline={PROBLEM.headline} />
-      </FadeIn>
+      </div>
 
       {/* Stat cards */}
       <div className="mb-12 grid gap-4 sm:grid-cols-3">
         {PROBLEM.stats.map(({ value, label }, i) => (
           <motion.div
             key={label}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.1, ease: EASE }}

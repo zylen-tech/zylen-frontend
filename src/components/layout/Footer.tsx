@@ -7,8 +7,8 @@ import { Background } from '../ui/Background';
 const Footer = () => (
   <Background
     as="footer"
-    variant="blur"
-    className="rounded-xl border-t border-gray-200 pt-10"
+    variant="gradient"
+    className="rounded-xl border-t border-white/10 pt-10"
   >
     <div className="mx-auto max-w-7xl px-5 pb-8 pt-14 md:px-8">
       <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">

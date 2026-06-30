@@ -2,26 +2,35 @@ import { motion } from 'framer-motion';
 
 import { DELIVERY_MODELS } from '../../../constants/content';
 import { Button } from '../../ui/buttons/Button';
-import { FadeIn } from '../../ui/FadeIn';
 import { SectionHeading } from '../../ui/SectionHeading';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
+const listItem = {
+  hidden: { opacity: 0, x: -8 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.35, ease: EASE } },
+};
+
+const listContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06, delayChildren: 0.2 } },
+};
+
 const DeliveryModels = () => (
   <section className="bg-brand-100 py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
-      <FadeIn className="mb-12 text-center">
+      <div className="mb-12 text-center">
         <SectionHeading
           eyebrow={DELIVERY_MODELS.eyebrow}
           headline={DELIVERY_MODELS.headline}
         />
-      </FadeIn>
+      </div>
 
       <div className="grid gap-8 md:grid-cols-2">
         {DELIVERY_MODELS.models.map((model, i) => (
           <motion.div
             key={model.name}
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.12, ease: EASE }}
@@ -56,9 +65,19 @@ const DeliveryModels = () => (
               {model.description}
             </p>
 
-            <ul className="mt-6 flex flex-col gap-2.5">
+            <motion.ul
+              variants={listContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="mt-6 flex flex-col gap-2.5"
+            >
               {model.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-2.5">
+                <motion.li
+                  key={feature}
+                  variants={listItem}
+                  className="flex items-start gap-2.5"
+                >
                   <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-brand-100">
                     <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
                       <path
@@ -71,9 +90,9 @@ const DeliveryModels = () => (
                     </svg>
                   </span>
                   <span className="text-sm text-slate-700">{feature}</span>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
             <div className="mt-auto pt-8">
               <Button

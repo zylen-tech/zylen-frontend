@@ -75,12 +75,7 @@ export const HERO = {
   ctaSecondary: 'Book a Demo Call',
   urgency:
     '⚠️  LHDN Deadline: 1 January 2027 · Fine up to RM 20,000 per invoice',
-  trustItems: [
-    'MyInvois Compliant',
-    'LHDN Certified Integration',
-    '7–14 Day Delivery',
-    'Works with AutoCount, SQL, Xero & more',
-  ],
+  trustItems: [],
 };
 
 // ─── Problem ──────────────────────────────────────────────────────────────────

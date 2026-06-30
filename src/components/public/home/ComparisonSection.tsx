@@ -1,9 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 import { BRAND } from '../../../constants/content';
 import { Button } from '../../ui/buttons/Button';
 import { FadeIn } from '../../ui/FadeIn';
+import { SectionHeading } from '../../ui/SectionHeading';
 
 const OLD_WAY = [
   'Manual e-invoice submission to MyInvois',
@@ -23,38 +25,22 @@ const ZYLEN_WAY = [
   'Live submission status dashboard',
 ];
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-const XMark = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    className="mt-0.5 shrink-0"
-  >
-    <circle cx="8" cy="8" r="8" fill="rgba(255,255,255,0.15)" />
+const XIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
     <path
-      d="M5 5l6 6M11 5l-6 6"
-      stroke="white"
+      d="M2.5 2.5l7 7M9.5 2.5l-7 7"
+      stroke="#D11203"
       strokeWidth="1.8"
       strokeLinecap="round"
     />
   </svg>
 );
 
-const CheckMark = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    className="mt-0.5 shrink-0"
-  >
-    <circle cx="8" cy="8" r="8" fill="rgba(74,222,128,0.2)" />
+const CheckIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
     <path
-      d="M4.5 8.5l2.5 2.5 4.5-5"
-      stroke="#4ade80"
+      d="M1.5 6.5l3 3 6-6"
+      stroke="#0348D1"
       strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -62,127 +48,308 @@ const CheckMark = () => (
   </svg>
 );
 
-const ComparisonSection = () => (
-  <section className="bg-[#F8F9FC] py-20 md:py-28">
-    <div className="mx-auto max-w-7xl px-5 md:px-8">
-      {/* Heading */}
-      <FadeIn className="mb-12 text-center">
-        <span className="mb-3 inline-block rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-500">
-          The Problem
-        </span>
-        <h2 className="mx-auto mt-3 max-w-2xl font-montserrat text-2xl font-bold tracking-[-0.02em] text-brand-500 md:text-3xl lg:text-4xl">
-          Stop Struggling With Compliance.{' '}
-          <span className="text-brand-400">Start Automating.</span>
-        </h2>
-      </FadeIn>
+type CardProps = {
+  illustration: string;
+  illustrationAlt: string;
+  title: string;
+  subtitle: string;
+  items: string[];
+  variant: 'light' | 'dark';
+};
 
-      {/* Cards */}
-      <div className="grid gap-5 md:gap-6">
-        {/* ── Left card: The Old Way ─────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, x: -32 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: EASE }}
-          className="relative overflow-hidden rounded-[20px] bg-[#C0392B] shadow-xl"
+const ComparisonCard = ({
+  illustration,
+  illustrationAlt,
+  title,
+  subtitle,
+  items,
+  variant,
+}: CardProps) => {
+  const isDark = variant === 'dark';
+
+  return (
+    <div
+      className={`relative w-full overflow-hidden rounded-3xl ${
+        isDark
+          ? 'shadow-[0_8px_60px_rgba(2,10,20,0.5)]'
+          : 'shadow-[0_8px_48px_rgba(5,57,89,0.12)]'
+      }`}
+      style={
+        isDark
+          ? { background: 'linear-gradient(295deg, #003ec1 50%, #6475f6 100%)' }
+          : { backgroundColor: 'rgb(249, 252, 255)' }
+      }
+    >
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: isDark
+            ? 'radial-gradient(ellipse at 80% 20%, rgba(100,117,246,0.3) 0%, transparent 60%)'
+            : 'radial-gradient(ellipse at 20% 80%, rgba(209,224,255,0.5) 0%, transparent 60%)',
+        }}
+      />
+
+      <div className="relative flex flex-col sm:flex-row">
+        {/* Illustration */}
+        <div
+          className={`flex shrink-0 items-center justify-center p-8 sm:w-[38%] sm:p-10 ${
+            isDark ? 'bg-white/[0.06]' : 'bg-[#E8F0FE]/60'
+          }`}
         >
-          <div className="flex h-full flex-col sm:flex-row">
-            {/* Icon panel */}
-            <div className="flex shrink-0 items-center justify-center p-8 sm:w-[200px] sm:p-6 md:w-[220px]">
-              <Image
-                src="/assets/img/icons/Glassmorphism lock icon.png"
-                alt="Lock icon"
-                width={160}
-                height={160}
-                className="h-auto w-32 drop-shadow-2xl sm:w-36 md:w-40"
-              />
-            </div>
+          <Image
+            src={illustration}
+            alt={illustrationAlt}
+            width={240}
+            height={240}
+            className="h-auto w-36 drop-shadow-2xl sm:w-44 md:w-52"
+          />
+        </div>
 
-            {/* Divider */}
-            <div className="hidden w-px self-stretch bg-white/10 sm:block" />
+        <div
+          className={`hidden w-px self-stretch sm:block ${isDark ? 'bg-white/10' : 'bg-[#D1E0FF]/60'}`}
+        />
 
-            {/* Content */}
-            <div className="flex flex-col justify-center p-7 md:p-8">
-              <span className="mb-4 inline-block self-start rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white/80">
-                The Old Way
-              </span>
-              <h3 className="mb-5 font-montserrat text-lg font-bold text-white md:text-xl">
-                Manual. Risky. Stressful.
-              </h3>
-              <ul className="space-y-3">
-                {OLD_WAY.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <XMark />
-                    <span className="text-sm leading-relaxed text-white/80">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </motion.div>
+        {/* Content */}
+        <div className="flex flex-1 flex-col justify-center p-7 md:p-10">
+          <h3
+            className={`font-montserrat text-xl font-extrabold tracking-[-0.02em] md:text-2xl ${
+              isDark ? 'text-white' : 'text-[#171717]'
+            }`}
+          >
+            {title}
+          </h3>
+          <p
+            className={`mb-6 mt-1 text-sm ${isDark ? 'text-white/50' : 'text-slate-400'}`}
+          >
+            {subtitle}
+          </p>
 
-        {/* ── Right card: With Zylen ─────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, x: 32 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
-          className="relative overflow-hidden rounded-[20px] bg-brand-900 shadow-xl"
-        >
-          <div className="flex h-full flex-col sm:flex-row">
-            {/* Icon panel */}
-            <div className="flex shrink-0 items-center justify-center p-8 sm:w-[200px] sm:p-6 md:w-[220px]">
-              <Image
-                src="/assets/img/icons/Glassmorphism open folder.png"
-                alt="Open folder icon"
-                width={160}
-                height={160}
-                className="h-auto w-32 drop-shadow-2xl sm:w-36 md:w-40"
-              />
-            </div>
+          <ul className="space-y-3.5">
+            {items.map((item) => (
+              <li key={item} className="flex items-center gap-3">
+                <span
+                  className="flex size-6 shrink-0 items-center justify-center rounded-full"
+                  style={{
+                    backgroundColor: isDark
+                      ? 'rgb(235, 241, 255)'
+                      : 'rgb(209, 224, 255)',
+                  }}
+                >
+                  {isDark ? <CheckIcon /> : <XIcon />}
+                </span>
+                <span
+                  className={`text-sm leading-relaxed ${isDark ? 'text-[rgb(229,231,235)]' : 'text-[rgb(23,23,23)]'}`}
+                >
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-            {/* Divider */}
-            <div className="hidden w-px self-stretch bg-white/10 sm:block" />
+const CARD_DATA = [
+  {
+    illustration: '/assets/img/icons/Glassmorphism lock icon.png',
+    illustrationAlt: 'Lock icon',
+    title: 'The Usual Way',
+    subtitle: 'Manual. Risky. Stressful.',
+    items: OLD_WAY,
+    variant: 'light' as const,
+  },
+  {
+    illustration: '/assets/img/icons/Glassmorphism open folder.png',
+    illustrationAlt: 'Open folder icon',
+    title: 'With Zylen',
+    subtitle: 'Automated. Compliant. Effortless.',
+    items: ZYLEN_WAY,
+    variant: 'dark' as const,
+  },
+];
 
-            {/* Content */}
-            <div className="flex flex-col justify-center p-7 md:p-8">
-              <span className="mb-4 inline-block self-start rounded-full border border-brand-400/40 bg-brand-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-400">
-                With Zylen
-              </span>
-              <h3 className="mb-5 font-montserrat text-lg font-bold text-white md:text-xl">
-                Automated. Compliant. Effortless.
-              </h3>
-              <ul className="space-y-3">
-                {ZYLEN_WAY.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckMark />
-                    <span className="text-sm leading-relaxed text-white/80">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </motion.div>
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const [card1Data, card2Data] = CARD_DATA as [CardProps, CardProps];
+
+const ComparisonSection = () => {
+  const scrollZoneRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: scrollZoneRef,
+    offset: ['start start', 'end end'],
+  });
+
+  // Card 1: holds still until 40%, then quick 3D push-back exit by 62%
+  const card1Opacity = useTransform(scrollYProgress, [0, 0.4, 0.62], [1, 1, 0]);
+  const card1Scale = useTransform(scrollYProgress, [0.4, 0.62], [1, 0.86]);
+  const card1Y = useTransform(scrollYProgress, [0.4, 0.62], [0, -110]);
+
+  // Card 2: starts rising at 38%, fully locked by 62%
+  const card2Opacity = useTransform(scrollYProgress, [0.38, 0.62], [0, 1]);
+  const card2Y = useTransform(scrollYProgress, [0.38, 0.62], [120, 0]);
+  const card2Scale = useTransform(scrollYProgress, [0.38, 0.62], [0.93, 1]);
+
+  // Background darkens slightly behind card 2
+  const overlayOpacity = useTransform(scrollYProgress, [0.38, 0.68], [0, 1]);
+
+  // Progress track fills top-to-bottom with scroll
+  const trackFill = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const label1Opacity = useTransform(
+    scrollYProgress,
+    [0, 0.42, 0.62],
+    [1, 1, 0],
+  );
+  const label2Opacity = useTransform(scrollYProgress, [0.38, 0.62], [0, 1]);
+
+  // Scroll hint disappears after user starts scrolling
+  const hintOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
+
+  return (
+    <section className="bg-brand-50">
+      {/* ── Heading ──────────────────────────────────────────────── */}
+      <div className="mx-auto max-w-7xl px-5 pb-0 pt-20 md:px-8 md:pt-28">
+        <div className="text-center">
+          <SectionHeading
+            eyebrow="Transformation"
+            headline="Stop Struggling With Compliance. Start Automating."
+          />
+        </div>
       </div>
 
-      {/* Bottom CTA */}
-      <FadeIn
-        delay={0.3}
-        className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
-      >
-        <Button href="/contact" variant="primary">
-          Book a Free Call
-        </Button>
-        <Button href={BRAND.whatsapp} variant="secondary">
-          WhatsApp Us
-        </Button>
-      </FadeIn>
-    </div>
-  </section>
-);
+      {/* ── Desktop: sticky scroll stack ─────────────────────────── */}
+      <div ref={scrollZoneRef} className="relative hidden h-[280vh] md:block">
+        {/* Sticky frame */}
+        <div
+          className="sticky overflow-hidden"
+          style={{ top: '80px', height: 'calc(100vh - 80px)' }}
+        >
+          {/* Dark overlay — fades in behind card 2 */}
+          <motion.div
+            style={{ opacity: overlayOpacity }}
+            className="pointer-events-none absolute inset-0 z-0 bg-[#020a14]"
+          />
+
+          {/* Side progress indicator */}
+          <div className="absolute right-6 top-1/2 z-20 flex -translate-y-1/2 flex-col items-center gap-3 xl:right-10">
+            {/* Counter label */}
+            <div className="relative h-5 w-6 text-center">
+              <motion.span
+                style={{ opacity: label1Opacity }}
+                className="absolute inset-0 text-xs font-bold tabular-nums text-brand-500"
+              >
+                01
+              </motion.span>
+              <motion.span
+                style={{ opacity: label2Opacity }}
+                className="absolute inset-0 text-xs font-bold tabular-nums text-white"
+              >
+                02
+              </motion.span>
+            </div>
+
+            {/* Vertical track */}
+            <div className="relative h-20 w-[2px] overflow-hidden rounded-full bg-white/20">
+              <motion.div
+                style={{ height: trackFill }}
+                className="absolute top-0 w-full rounded-full bg-brand-300"
+              />
+            </div>
+
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-white/30">
+              02
+            </span>
+          </div>
+
+          {/* Card stack — perspective wrapper for 3D effect */}
+          <div className="relative mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
+            {/* Card 1 — 3D push-back */}
+            <motion.div
+              style={{
+                opacity: card1Opacity,
+                scale: card1Scale,
+                y: card1Y,
+              }}
+              className="absolute inset-x-5 md:inset-x-8"
+            >
+              <ComparisonCard {...card1Data} />
+            </motion.div>
+
+            {/* Card 2 — slides up */}
+            <motion.div
+              style={{
+                opacity: card2Opacity,
+                y: card2Y,
+                scale: card2Scale,
+              }}
+              className="absolute inset-x-5 md:inset-x-8"
+            >
+              <ComparisonCard {...card2Data} />
+            </motion.div>
+          </div>
+
+          {/* Scroll hint */}
+          <motion.div
+            style={{ opacity: hintOpacity }}
+            className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5"
+          >
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-400">
+              Scroll to compare
+            </span>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.4,
+                ease: 'easeInOut',
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M8 3v10M4 9l4 4 4-4"
+                  stroke="#053959"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* ── Mobile: normal stacked ───────────────────────────────── */}
+      <div className="mx-auto mt-10 max-w-7xl px-5 md:hidden">
+        <div className="flex flex-col gap-5">
+          {CARD_DATA.map((card, i) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: EASE }}
+            >
+              <ComparisonCard {...card} />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── CTA ──────────────────────────────────────────────────── */}
+      <div className="mx-auto max-w-7xl px-5 pb-20 pt-10 md:px-8 md:pb-28">
+        <FadeIn className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <Button href="/contact" variant="primary">
+            Book a Free Call
+          </Button>
+          <Button href={BRAND.whatsapp} variant="secondary">
+            WhatsApp Us
+          </Button>
+        </FadeIn>
+      </div>
+    </section>
+  );
+};
 
 export { ComparisonSection };

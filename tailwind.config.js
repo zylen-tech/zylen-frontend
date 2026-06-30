@@ -110,6 +110,9 @@ module.exports = {
         '98p': '98%',
         '99p': '99%',
       },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, #020a14, #053959)',
+      },
       boxShadow: {
         '3xl': '14px 17px 40px 4px',
         inset: 'inset 0px 18px 22px',

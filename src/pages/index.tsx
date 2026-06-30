@@ -8,6 +8,7 @@ import { FinalCTA } from '../components/public/home/FinalCTA';
 import { HeroSection } from '../components/public/home/HeroSection';
 import { ProblemStrip } from '../components/public/home/ProblemStrip';
 import { TrustStrip } from '../components/public/home/TrustStrip';
+import { WhyZylen } from '../components/public/home/WhyZylen';
 import { HowItWorks } from '../components/public/shared/HowItWorks';
 import { Background } from '../components/ui/Background';
 import { AppConfig } from '../config/site.config';
@@ -21,6 +22,7 @@ const HomePage: NextPageWithLayout = () => (
       <HeroSection />
     </Background>
     <ProblemStrip />
+    <WhyZylen />
     <ComparisonSection />
     <HowItWorks />
     <DeliveryModels />

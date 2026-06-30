@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 
 import { HOW_IT_WORKS } from '../../../constants/content';
-import { FadeIn } from '../../ui/FadeIn';
 import { SectionHeading } from '../../ui/SectionHeading';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -9,12 +8,12 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const HowItWorks = () => (
   <section id="how-it-works" className="py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
-      <FadeIn className="mb-14 text-center">
+      <div className="mb-14 text-center">
         <SectionHeading
           eyebrow={HOW_IT_WORKS.eyebrow}
           headline={HOW_IT_WORKS.headline}
         />
-      </FadeIn>
+      </div>
 
       {/* Desktop: horizontal timeline */}
       <div className="hidden md:block">
@@ -24,7 +23,7 @@ const HowItWorks = () => (
             {HOW_IT_WORKS.steps.map((step, i) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
@@ -50,7 +49,7 @@ const HowItWorks = () => (
         {HOW_IT_WORKS.steps.map((step, i) => (
           <motion.div
             key={step.number}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.45, delay: i * 0.08, ease: EASE }}
