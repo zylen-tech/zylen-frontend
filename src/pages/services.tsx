@@ -1,9 +1,14 @@
 import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
+import { ComplianceSecurity } from '../components/public/services/ComplianceSecurity';
 import { Pricing } from '../components/public/services/Pricing';
 import { ProductFeatures } from '../components/public/services/ProductFeatures';
+import { ServiceOverview } from '../components/public/services/ServiceOverview';
+import { ServiceProcess } from '../components/public/services/ServiceProcess';
+import { SupportedSystems } from '../components/public/services/SupportedSystems';
 import { BookDemo } from '../components/public/shared/BookDemo';
+import { FaqSection } from '../components/public/shared/FaqSection';
 import { ServicePackages } from '../components/public/shared/ServicePackages';
 import { ReusableHero } from '../components/ui/hero';
 import { PAGE_HEROES } from '../constants/content';
@@ -22,9 +27,14 @@ const ServicesPage: NextPageWithLayout = () => (
       headlineAccent={PAGE_HEROES.services.headlineAccent}
       description={PAGE_HEROES.services.description}
     />
+    <ServiceOverview />
     <ProductFeatures />
+    <SupportedSystems />
+    <ServiceProcess />
     <ServicePackages />
     <Pricing />
+    <ComplianceSecurity />
+    <FaqSection />
     <BookDemo />
   </>
 );

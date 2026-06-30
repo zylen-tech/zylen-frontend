@@ -12,7 +12,7 @@ const PublicLayout = ({ children, navVariant = 'dark' }: PublicLayoutProps) => (
   <div className="relative antialiased">
     <Navbar variant={navVariant} />
     <main>{children}</main>
-    <div className="px-5 pb-5">
+    <div className="p-5">
       <Footer />
     </div>
   </div>

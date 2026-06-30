@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 type ReusableHeroProps = {
   eyebrow?: string;
@@ -16,63 +15,72 @@ const ReusableHero = ({
   headlineAccent,
   description,
 }: ReusableHeroProps) => (
-  <section className="relative overflow-hidden bg-white pb-16 pt-24 sm:pb-20 sm:pt-24 md:pb-24 md:pt-32">
-    {/* Top-left corner decoration */}
-    <Image
-      src="/assets/img/icons/registration-icon.png"
-      alt=""
-      width={280}
-      height={280}
-      className="pointer-events-none absolute left-0 top-0 h-auto w-[100px] select-none opacity-50 sm:w-[160px] md:w-[220px] lg:w-[280px]"
-      aria-hidden="true"
+  <section
+    className="relative overflow-hidden pb-24 pt-[calc(70px+4rem)] md:pb-32 md:pt-[calc(80px+6rem)]"
+    style={{ background: 'linear-gradient(160deg, #020a14 0%, #053959 100%)' }}
+  >
+    {/* Radial glow */}
+    <div
+      className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-20 blur-[120px]"
+      style={{
+        background: 'radial-gradient(ellipse, #1d6fa4 0%, transparent 70%)',
+      }}
     />
 
-    {/* Bottom-right corner decoration */}
-    <Image
-      src="/assets/img/icons/registration-icon.png"
-      alt=""
-      width={280}
-      height={280}
-      className="pointer-events-none absolute bottom-0 right-0 h-auto w-[100px] rotate-180 select-none opacity-50 sm:w-[160px] md:w-[220px] lg:w-[280px]"
-      aria-hidden="true"
+    {/* Line grid */}
+    <div
+      className="pointer-events-none absolute inset-0"
+      style={{
+        backgroundImage:
+          'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)',
+        backgroundSize: '40px 40px',
+      }}
     />
+
+    {/* Bottom fade to white */}
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/[0.04] to-transparent" />
 
     <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
-      {/* Eyebrow */}
       {eyebrow && (
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease }}
-          className="mb-4 inline-block rounded-full border border-slate-200 bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-slate-500"
+          className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm"
         >
           {eyebrow}
         </motion.span>
       )}
 
-      {/* Two-line headline */}
       <motion.h1
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease }}
-        className="font-montserrat text-3xl font-normal leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem]"
+        className="font-montserrat text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl lg:text-[3.75rem]"
       >
         {headline}
         {headlineAccent && (
           <>
             <br />
-            <span className="text-[#1a7fbf]">{headlineAccent}</span>
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #60a5fa 0%, #93c5fd 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              {headlineAccent}
+            </span>
           </>
         )}
       </motion.h1>
 
-      {/* Description */}
       {description && (
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.38, ease }}
-          className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-slate-500 sm:text-base md:mt-7 md:text-lg"
+          transition={{ duration: 0.55, delay: 0.35, ease }}
+          className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/55 md:mt-8 md:text-lg"
         >
           {description}
         </motion.p>

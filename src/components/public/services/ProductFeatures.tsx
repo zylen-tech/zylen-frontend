@@ -1,56 +1,61 @@
-const features = [
+import { motion } from 'framer-motion';
+
+import { SectionHeading } from '../../ui/SectionHeading';
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const FEATURES = [
   {
     icon: (
       <svg
-        width="28"
-        height="28"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
-        <polyline points="13 2 13 9 20 9" />
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
         <line x1="16" y1="13" x2="8" y2="13" />
         <line x1="16" y1="17" x2="8" y2="17" />
-        <polyline points="10 9 9 9 8 9" />
       </svg>
     ),
-    title: 'Seamless E-Invoice Integration',
+    title: 'Automated Formatting',
     description:
-      'Connect Zylen to your ERP, accounting software, or custom workflow in minutes. Our RESTful API supports all major platforms with zero downtime.',
+      'Your invoice data is automatically mapped to the LHDN schema — all 55 required fields, correctly structured, every time.',
   },
   {
     icon: (
       <svg
-        width="28"
-        height="28"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <polyline points="9 12 11 14 15 10" />
+        <polyline points="9 11 12 14 22 4" />
+        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
       </svg>
     ),
-    title: 'Automated Compliance',
+    title: 'Real-Time Validation',
     description:
-      'Stay ahead of regulatory requirements. Zylen auto-validates every invoice against the latest government standards so you never face penalties.',
+      'Invoices are checked against LHDN rules before submission. Errors are caught and flagged before they become rejections.',
   },
   {
     icon: (
       <svg
-        width="28"
-        height="28"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -58,72 +63,30 @@ const features = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: 'Real-time Tracking',
+    title: 'Instant Status Tracking',
     description:
-      'Monitor every invoice from submission to approval in real time. Get instant alerts on rejections, delays, or approvals — all in one dashboard.',
+      'Every submission is tracked live. See approved, pending, and rejected invoices in one dashboard — with no manual checking.',
   },
   {
     icon: (
       <svg
-        width="28"
-        height="28"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
+        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+        <line x1="12" y1="9" x2="12" y2="13" />
+        <line x1="12" y1="17" x2="12.01" y2="17" />
       </svg>
     ),
-    title: 'Developer-First API',
+    title: 'Rejection Prevention',
     description:
-      'Comprehensive SDKs, webhooks, and sandbox environments. Integrate in days, not months — with full documentation and dedicated support.',
-  },
-  {
-    icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <line x1="18" y1="20" x2="18" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" />
-      </svg>
-    ),
-    title: 'Advanced Analytics',
-    description:
-      'Gain full visibility into your invoicing pipeline. Track processing times, identify bottlenecks, and export reports for finance teams.',
-  },
-  {
-    icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-    title: 'Multi-Entity Support',
-    description:
-      'Manage invoicing across multiple subsidiaries, branches, or legal entities from a single account — with granular role-based access control.',
+      'When LHDN rejects an invoice, Zylen decodes the error code, identifies the root cause, and flags it for re-submission.',
   },
 ];
 
@@ -131,35 +94,33 @@ const ProductFeatures = () => (
   <section id="solutions" className="bg-white py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
-        <span className="mb-3 inline-block rounded-full bg-brand-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-brand-500">
-          Features
-        </span>
-        <h2 className="mt-2 font-montserrat text-2xl font-bold tracking-[-0.02em] text-brand-500 md:text-3xl lg:text-4xl xl:text-5xl">
-          Everything you need to
-          <br className="hidden md:block" /> run e-invoicing at scale
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-500">
-          From first connection to full compliance — Zylen handles every step of
-          your e-invoicing workflow automatically.
-        </p>
+        <SectionHeading
+          eyebrow="What Zylen Does"
+          headline="Four Things That Keep You Compliant"
+          subtext="Every Zylen integration includes these capabilities — no add-ons, no extra fees."
+        />
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ icon, title, description }) => (
-          <div
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {FEATURES.map(({ icon, title, description }, i) => (
+          <motion.div
             key={title}
-            className="group box-border rounded-2xl border border-gray-100 bg-white p-7 transition-shadow duration-200 hover:shadow-lg"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.55, delay: i * 0.1, ease }}
+            className="rounded-2xl border border-slate-200 bg-white p-6 transition-shadow duration-200 hover:shadow-md md:p-7"
           >
-            <div className="mb-5 inline-flex items-center justify-center rounded-xl bg-brand-100 p-3 text-brand-500">
+            <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-500">
               {icon}
             </div>
-            <h3 className="mb-2 text-base font-semibold text-brand-500">
+            <h3 className="font-montserrat text-sm font-extrabold text-slate-900 md:text-base">
               {title}
             </h3>
-            <p className="text-sm leading-relaxed text-gray-500">
+            <p className="mt-3 text-sm leading-relaxed text-slate-500">
               {description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

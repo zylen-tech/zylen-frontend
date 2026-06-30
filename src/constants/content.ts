@@ -21,11 +21,16 @@ export const BRAND = {
   name: 'Zylen',
   tagline: 'E-Invoice Integration Made Simple.',
   email: 'hello@zylen.com.my',
-  phone: '+60 11-1234 5678',
-  location: 'Kuala Lumpur, Malaysia',
-  whatsapp: 'https://wa.me/601112345678',
+  phone: '+60 3-3977 3973',
+  website: 'zylen.tech',
+  whatsapp: 'https://wa.me/60339773973',
   calendly: 'https://calendly.com/zylen',
   ssm: 'SSM: 202301012345 (1234567-X)',
+  businessHours: 'Mon–Fri 9am–6pm · Sat 9am–1pm (MYT)',
+  social: {
+    linkedin: 'https://linkedin.com/company/zylen',
+    instagram: 'https://instagram.com/zylen.tech',
+  },
 };
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
@@ -33,7 +38,7 @@ export const BRAND = {
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'Pricing', href: '/services#pricing' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -50,17 +55,23 @@ export const PAGE_HEROES = {
   },
   about: {
     eyebrow: 'Who We Are',
-    headline: 'Built by Engineers,',
-    headlineAccent: 'Focused on Your Compliance.',
+    headline: 'Built for Malaysian Businesses,',
+    headlineAccent: 'by Malaysians.',
     description:
-      'A Kuala Lumpur-based software agency dedicated to making Malaysian e-invoice compliance fast, affordable, and stress-free.',
+      'A software agency dedicated to making Malaysian e-invoice compliance fast, affordable, and stress-free.',
   },
   contact: {
     eyebrow: 'Get In Touch',
-    headline: "Let's Talk About",
-    headlineAccent: 'Your Integration.',
+    headline: "Let's talk.",
+    headlineAccent: '',
     description:
-      'Book a free 30-minute call. We review your setup and deliver a fixed-price proposal within 24 hours.',
+      "Have a question about e-invoice compliance? We're here to help.",
+  },
+  pricing: {
+    eyebrow: 'Pricing',
+    headline: 'Simple, Transparent Pricing.',
+    headlineAccent: '',
+    description: 'No hidden fees. No long-term lock-in. Just compliance, done.',
   },
 };
 
@@ -226,27 +237,117 @@ export const PRICING = {
 export const ABOUT = {
   eyebrow: 'Who We Are',
   headline: 'Built by Engineers. Focused on Your Compliance.',
-  body: 'Zylen is a software agency founded by three engineers based in Kuala Lumpur. We built the agency we always wished existed — one that delivers on time, communicates honestly, and stays with you after go-live.',
+  body: 'Zylen is a software agency founded by engineers based in Malaysia. We built the agency we always wished existed — one that delivers on time, communicates honestly, and stays with you after go-live.',
   team: [
     {
-      name: 'Ahmad Faris',
-      role: 'Co-founder & CEO',
-      bio: 'Full-stack engineer with 8 years in fintech and ERP integrations.',
+      name: 'Ibnu Jabir',
+      role: 'Co-Founder · Software Engineer',
+      tagline: 'Full-Stack Developer & ALX-SE Graduate',
+      bio: 'Based in Alor Setar, Kedah. ALX-SE Graduate, previously at Byte of Bread Technologies.',
       linkedin: '#',
+      initials: 'IJ',
     },
     {
-      name: 'Li Wei',
-      role: 'Co-founder & CTO',
-      bio: 'API architect. Previously built compliance systems for Fortune 500 clients.',
+      name: 'Adnan Madi',
+      role: 'Co-Founder · Frontend Developer',
+      tagline: 'Software Engineer pursuing MSc at Universiti Malaya',
+      bio: 'CS graduate specialising in Software Engineering & Web Systems. Based in Petaling, Selangor.',
       linkedin: '#',
+      initials: 'AM',
     },
     {
-      name: 'Priya Nair',
-      role: 'Co-founder & Head of Delivery',
-      bio: 'Project delivery lead. Obsessed with timelines and client communication.',
+      name: 'Abderrahmane Bouzemlal',
+      role: 'Software Engineering',
+      tagline: 'Building data-driven apps with Django & REST',
+      bio: 'Based in Alor Setar, Kedah. Focused on backend web applications with Django and REST Framework.',
       linkedin: '#',
+      initials: 'AB',
     },
   ],
+};
+
+export const ABOUT_MISSION = {
+  eyebrow: 'Our Mission',
+  quote:
+    'We built Zylen because Malaysian businesses deserve e-invoice compliance that is fast, affordable, and stress-free.',
+  body: "When Malaysia's e-invoicing mandate arrived, businesses were drowning in manual submissions, cryptic LHDN error codes, and zero technical support. We built the integration agency we always wished existed — one that connects your accounting system to MyInvois without the chaos.",
+};
+
+export const ABOUT_VALUES = [
+  {
+    title: 'Compliance-First',
+    description:
+      'We never cut corners on LHDN requirements. Every integration we ship is fully validated against the MyInvois sandbox before going live.',
+    icon: 'shield',
+  },
+  {
+    title: 'Local Expertise',
+    description:
+      'Built by Malaysians who know MyInvois inside out. We speak the language of SST, LHDN, and local accounting software.',
+    icon: 'map',
+  },
+  {
+    title: 'Simplicity',
+    description:
+      'Complex e-invoice integrations, delivered simply. Fixed price, clear timelines, and no technical jargon.',
+    icon: 'zap',
+  },
+  {
+    title: 'Security',
+    description:
+      'Your financial data stays protected end-to-end. Secure API bridges, encrypted payloads, and zero data retention.',
+    icon: 'lock',
+  },
+];
+
+export const ABOUT_TIMELINE = [
+  {
+    year: '2024',
+    title: 'Zylen Founded',
+    description:
+      'Three engineers came together with one goal: make Malaysian e-invoice compliance simple for every business.',
+  },
+  {
+    year: '2024',
+    title: 'First Integration Shipped',
+    description:
+      'Delivered our first AutoCount → MyInvois integration for an SME in Kuala Lumpur in under 14 days.',
+  },
+  {
+    year: '2025',
+    title: 'LHDN Phase 2 Ready',
+    description:
+      'Expanded support to SQL Accounting, Xero, and QuickBooks ahead of the LHDN Phase 2 mandate.',
+  },
+  {
+    year: '2025',
+    title: 'Growing the Team',
+    description:
+      'Onboarded our first engineering intern and began development of Zylen Connect — our self-serve SaaS platform.',
+  },
+];
+
+export const ABOUT_WHO_WE_WORK_WITH = {
+  eyebrow: 'Who We Work With',
+  headline: 'Trusted by Malaysian Businesses',
+  categories: [
+    {
+      label: 'SMEs',
+      description:
+        'Small and medium enterprises across all sectors navigating the e-invoice mandate.',
+    },
+    {
+      label: 'Accounting Firms',
+      description:
+        'Firms managing compliance for multiple clients who need a reliable integration partner.',
+    },
+    {
+      label: 'NGOs & Non-Profits',
+      description:
+        'Organisations like MyCare, MAPIM, Hulwan, and Aqsa Syarif staying compliant with LHDN.',
+    },
+  ],
+  systems: ['AutoCount', 'SQL Accounting', 'Xero', 'QuickBooks', 'Custom ERP'],
 };
 
 // ─── Book Demo ────────────────────────────────────────────────────────────────
@@ -398,25 +499,173 @@ export const FAQ = {
   ],
 };
 
+// ─── Pricing Page ─────────────────────────────────────────────────────────────
+
+export const PRICING_TIERS = [
+  {
+    name: 'Starter',
+    tagline: 'For small businesses just getting compliant.',
+    monthlyPrice: 'RM 150',
+    annualPrice: 'RM 125',
+    annualNote: 'billed RM 1,500/year',
+    cta: 'Get Started',
+    highlight: false,
+    enterprise: false,
+    features: [
+      { label: '500 invoices/month', included: true },
+      { label: '1 accounting system', included: true },
+      { label: 'Real-time MyInvois submission', included: true },
+      { label: 'Basic dashboard', included: true },
+      { label: 'Email support', included: true },
+      { label: 'Multi-user access', included: false },
+      { label: 'Priority support', included: false },
+      { label: 'Custom ERP integration', included: false },
+      { label: 'Dedicated account manager', included: false },
+    ],
+  },
+  {
+    name: 'Growth',
+    tagline: 'For growing SMEs with higher invoice volumes.',
+    monthlyPrice: 'RM 350',
+    annualPrice: 'RM 290',
+    annualNote: 'billed RM 3,480/year',
+    cta: 'Get Started',
+    highlight: true,
+    enterprise: false,
+    features: [
+      { label: '3,000 invoices/month', included: true },
+      { label: 'Up to 3 accounting systems', included: true },
+      { label: 'Real-time MyInvois submission', included: true },
+      { label: 'Full dashboard & audit logs', included: true },
+      { label: 'Priority email & chat support', included: true },
+      { label: 'Multi-user access (5 seats)', included: true },
+      { label: 'Priority support', included: false },
+      { label: 'Custom ERP integration', included: false },
+      { label: 'Dedicated account manager', included: false },
+    ],
+  },
+  {
+    name: 'Business',
+    tagline: 'For businesses with complex or multi-branch needs.',
+    monthlyPrice: 'RM 700',
+    annualPrice: 'RM 580',
+    annualNote: 'billed RM 6,960/year',
+    cta: 'Get Started',
+    highlight: false,
+    enterprise: false,
+    features: [
+      { label: 'Unlimited invoices', included: true },
+      { label: 'Unlimited accounting systems', included: true },
+      { label: 'Real-time MyInvois submission', included: true },
+      { label: 'Full dashboard & audit logs', included: true },
+      { label: 'Priority email & chat support', included: true },
+      { label: 'Multi-user access (20 seats)', included: true },
+      { label: 'Priority support', included: true },
+      { label: 'Custom ERP integration', included: true },
+      { label: 'Dedicated account manager', included: false },
+    ],
+  },
+  {
+    name: 'Enterprise',
+    tagline: 'Custom pricing for large or multi-entity organisations.',
+    monthlyPrice: 'Custom',
+    annualPrice: 'Custom',
+    annualNote: 'tailored to your needs',
+    cta: 'Talk to Sales',
+    highlight: false,
+    enterprise: true,
+    features: [
+      { label: 'Unlimited invoices', included: true },
+      { label: 'Unlimited accounting systems', included: true },
+      { label: 'Real-time MyInvois submission', included: true },
+      { label: 'Full dashboard & audit logs', included: true },
+      { label: 'Priority email & chat support', included: true },
+      { label: 'Unlimited seats', included: true },
+      { label: 'Priority support', included: true },
+      { label: 'Custom ERP integration', included: true },
+      { label: 'Dedicated account manager', included: true },
+    ],
+  },
+];
+
+export const PRICING_ADDONS = [
+  {
+    title: 'Extra Integration',
+    description:
+      'Connect an additional accounting system or data source outside your plan.',
+    price: 'From RM 80/month',
+  },
+  {
+    title: 'Priority Onboarding',
+    description:
+      'Dedicated engineer for setup, migration, and go-live within 3 working days.',
+    price: 'RM 500 one-time',
+  },
+  {
+    title: 'Custom Training',
+    description:
+      'Live walkthrough session for your finance team — remote or on-site in KL.',
+    price: 'RM 300 per session',
+  },
+  {
+    title: 'Extended Support',
+    description:
+      'SLA-backed phone & WhatsApp support with guaranteed 2-hour response time.',
+    price: 'RM 200/month',
+  },
+];
+
+export const PRICING_FAQ = [
+  {
+    question: 'Is there a setup fee?',
+    answer:
+      'No setup fee on any plan. You pay the monthly or annual subscription price only. The onboarding process is included — we get you connected within 7 working days.',
+  },
+  {
+    question: 'Can I upgrade or downgrade anytime?',
+    answer:
+      'Yes. You can upgrade your plan at any time and the change takes effect immediately. Downgrades take effect at the start of your next billing cycle.',
+  },
+  {
+    question: 'What happens if I exceed my invoice limit?',
+    answer:
+      'On Starter and Growth plans, invoices above your monthly limit are charged at RM 0.08 per invoice. We will notify you when you reach 80% of your limit so there are no surprises.',
+  },
+  {
+    question: 'Do you offer annual discounts?',
+    answer:
+      'Yes — annual billing saves you roughly 2 months compared to paying monthly. Prices are shown with the annual toggle on the pricing cards above.',
+  },
+  {
+    question: 'Is there a free trial?',
+    answer:
+      'We do not offer a free trial, but we offer a free 30-minute discovery call where we review your system and confirm the integration is possible before you pay anything.',
+  },
+  {
+    question: 'Which accounting systems are supported on each plan?',
+    answer:
+      'Starter supports 1 system (AutoCount, SQL, Xero, or QuickBooks). Growth supports up to 3. Business and Enterprise support unlimited systems including custom ERP connections.',
+  },
+];
+
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 export const FOOTER = {
   services: [
-    { label: 'Basic Connect', href: '#services' },
-    { label: 'Custom Connect', href: '#services' },
-    { label: 'Enterprise Connect', href: '#services' },
-    { label: 'Monthly Maintenance', href: '#pricing' },
-    { label: 'Zylen Connect SaaS', href: '#pricing' },
+    { label: 'E-Invoice Integration', href: '/services' },
+    { label: 'How It Works', href: '/services#solutions' },
+    { label: 'Supported Systems', href: '/services#solutions' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Book a Free Call', href: '/contact' },
   ],
   company: [
-    { label: 'About Us', href: '#about' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Book a Demo', href: '#book-demo' },
-    { label: 'Contact', href: '#book-demo' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Meet the Team', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Contact', href: '/contact' },
   ],
   legal: [
-    { label: 'Privacy Policy', href: '#privacy' },
-    { label: 'Terms of Service', href: '#terms' },
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
   ],
 };

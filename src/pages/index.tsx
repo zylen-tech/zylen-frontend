@@ -9,6 +9,7 @@ import { HeroSection } from '../components/public/home/HeroSection';
 import { ProblemStrip } from '../components/public/home/ProblemStrip';
 import { TrustStrip } from '../components/public/home/TrustStrip';
 import { WhyZylen } from '../components/public/home/WhyZylen';
+import { FaqSection } from '../components/public/shared/FaqSection';
 import { HowItWorks } from '../components/public/shared/HowItWorks';
 import { AppConfig } from '../config/site.config';
 import { PublicLayout } from '../layouts/PublicLayout';
@@ -24,6 +25,7 @@ const HomePage: NextPageWithLayout = () => (
     <HowItWorks />
     <DeliveryModels />
     <ConnectorsStrip />
+    <FaqSection />
     <FinalCTA />
     <TrustStrip />
   </>

@@ -17,7 +17,7 @@ const listContainer = {
 };
 
 const DeliveryModels = () => (
-  <section className="bg-brand-100 py-20 md:py-28">
+  <section className="bg-white py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-12 text-center">
         <SectionHeading

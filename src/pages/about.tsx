@@ -1,7 +1,10 @@
 import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
+import { MissionStatement } from '../components/public/about/MissionStatement';
+import { OurValues } from '../components/public/about/OurValues';
 import { TeamSection } from '../components/public/about/TeamSection';
+import { WhoWeWorkWith } from '../components/public/about/WhoWeWorkWith';
 import { BookDemo } from '../components/public/shared/BookDemo';
 import { ReusableHero } from '../components/ui/hero';
 import { PAGE_HEROES } from '../constants/content';
@@ -20,7 +23,10 @@ const AboutPage: NextPageWithLayout = () => (
       headlineAccent={PAGE_HEROES.about.headlineAccent}
       description={PAGE_HEROES.about.description}
     />
+    <MissionStatement />
+    <OurValues />
     <TeamSection />
+    <WhoWeWorkWith />
     <BookDemo />
   </>
 );
