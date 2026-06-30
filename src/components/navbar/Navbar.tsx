@@ -96,7 +96,6 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
     light
       ? 'text-slate-500 hover:text-brand-900'
       : 'text-white/75 hover:text-white';
-  const getUnderlineCls = () => (light ? 'bg-brand-500' : 'bg-white');
   const getToggleCls = () =>
     light
       ? 'text-slate-600 hover:bg-slate-50 hover:text-brand-900'
@@ -172,15 +171,6 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                 </motion.span>
 
                 {link.label}
-
-                {/* Underline */}
-                <span
-                  className={`absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full transition-all duration-200 ${getUnderlineCls()} ${
-                    active
-                      ? 'opacity-100'
-                      : 'w-0 opacity-0 group-hover:w-[calc(100%-1.5rem)] group-hover:opacity-100'
-                  }`}
-                />
               </Link>
             );
           })}
