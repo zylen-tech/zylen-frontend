@@ -12,16 +12,18 @@ type ButtonProps = {
 };
 
 const variants: Record<ButtonVariant, string> = {
-  primary: 'bg-primary-500 text-white hover:opacity-90',
+  primary:
+    'ring-2 ring-brand-500 ring-offset-2 bg-brand-500 text-white hover:bg-brand-600 hover:ring-brand-600',
   secondary:
-    'border-[1.5px] border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white',
-  white: 'bg-white text-primary-500 hover:opacity-90',
+    'ring-2 ring-brand-300 ring-offset-2 bg-brand-100 text-brand-500 hover:bg-brand-500 hover:text-white hover:ring-brand-500',
+  white:
+    'ring-2 ring-white ring-offset-2 ring-offset-brand-500 bg-white text-brand-500 hover:bg-white/90',
   'outline-white':
-    'border-[1.5px] border-white/[0.65] text-white hover:bg-white/10',
+    'ring-2 ring-white/60 ring-offset-2 ring-offset-transparent bg-white/10 text-white hover:bg-white/20 hover:ring-white',
 };
 
 const base =
-  'inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-200 cursor-pointer';
+  'inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 cursor-pointer';
 
 const isExternal = (href: string) =>
   href.startsWith('http') ||

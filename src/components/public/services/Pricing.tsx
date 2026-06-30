@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { PRICING } from '../../../constants/content';
-import { Button } from '../../ui/Button';
+import { Button } from '../../ui/buttons/Button';
 import { FadeIn } from '../../ui/FadeIn';
 import { SectionHeading } from '../../ui/SectionHeading';
 
@@ -9,12 +9,12 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const Pricing = () => (
   <section id="pricing" className="bg-white py-20 md:py-28">
-    <div className="mx-auto max-w-6xl px-4">
+    <div className="mx-auto max-w-7xl px-5 md:px-8">
       <FadeIn className="mb-12 text-center">
         <SectionHeading eyebrow={PRICING.eyebrow} headline={PRICING.headline} />
       </FadeIn>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {PRICING.tiers.map((tier, i) => (
           <motion.div
             key={tier.name}
@@ -25,22 +25,22 @@ const Pricing = () => (
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
             className={`relative flex flex-col rounded-xl border bg-white p-8 ${
               tier.recommended
-                ? 'border-primary-500 shadow-[0_0_0_2px_#05395920]'
+                ? 'border-brand-500 shadow-[0_0_0_2px_#05395920]'
                 : 'border-slate-200'
             }`}
           >
             {tier.recommended && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary-500 px-4 py-0.5 text-xs font-semibold text-white">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-4 py-0.5 text-xs font-semibold text-white">
                 Recommended
               </span>
             )}
 
             <div className="flex-1">
-              <h3 className="font-montserrat text-base font-bold text-primary-500">
+              <h3 className="font-montserrat text-base font-bold text-brand-500">
                 {tier.name}
               </h3>
               <div className="mt-3">
-                <span className="font-montserrat text-2xl font-extrabold text-primary-500">
+                <span className="font-montserrat text-2xl font-extrabold text-brand-500">
                   {tier.price}
                 </span>
                 <span className="ml-1 text-sm text-[#6B7280]">

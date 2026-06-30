@@ -8,7 +8,7 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const ProblemStrip = () => (
   <section id="problem" className="py-20 md:py-28">
-    <div className="mx-auto max-w-6xl px-4">
+    <div className="mx-auto max-w-7xl px-5 md:px-8">
       <FadeIn className="mb-12 text-center">
         <SectionHeading eyebrow={PROBLEM.eyebrow} headline={PROBLEM.headline} />
       </FadeIn>
@@ -25,7 +25,7 @@ const ProblemStrip = () => (
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             className="rounded-xl border border-slate-200 bg-white p-8 text-center"
           >
-            <div className="font-montserrat text-3xl font-extrabold text-primary-500 md:text-4xl">
+            <div className="font-montserrat text-2xl font-extrabold text-brand-500 sm:text-3xl md:text-4xl">
               {value}
             </div>
             <div className="mt-2 text-sm font-medium text-[#6B7280]">

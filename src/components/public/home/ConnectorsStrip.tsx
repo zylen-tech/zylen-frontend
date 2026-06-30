@@ -15,7 +15,7 @@ const ConnectorsStrip = () => (
           {CONNECTORS.items.map((item) => (
             <span
               key={item.name}
-              className="rounded-full border border-slate-200 bg-slate-50 px-5 py-2 text-sm font-semibold text-primary-500"
+              className="rounded-full border border-slate-200 bg-slate-50 px-5 py-2 text-sm font-semibold text-brand-500"
             >
               {item.name}
             </span>
@@ -26,7 +26,7 @@ const ConnectorsStrip = () => (
           {CONNECTORS.fallback}{' '}
           <Link
             href={CONNECTORS.fallbackCta.href}
-            className="font-semibold text-primary-500 underline-offset-2 hover:underline"
+            className="font-semibold text-brand-500 underline-offset-2 hover:underline"
           >
             {CONNECTORS.fallbackCta.label} →
           </Link>

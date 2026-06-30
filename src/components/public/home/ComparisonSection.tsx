@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 
-import { ASSETS } from '../../../constants/content';
+import { BRAND } from '../../../constants/content';
+import { Button } from '../../ui/buttons/Button';
 import { FadeIn } from '../../ui/FadeIn';
 
 const OLD_WAY = [
@@ -67,82 +67,59 @@ const ComparisonSection = () => (
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       {/* Heading */}
       <FadeIn className="mb-12 text-center">
-        <span className="mb-3 inline-block rounded-full bg-lightPrimary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary-500">
+        <span className="mb-3 inline-block rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-500">
           The Problem
         </span>
-        <h2 className="mx-auto mt-3 max-w-2xl font-montserrat text-3xl font-bold tracking-[-0.02em] text-primary-500 md:text-4xl">
+        <h2 className="mx-auto mt-3 max-w-2xl font-montserrat text-2xl font-bold tracking-[-0.02em] text-brand-500 md:text-3xl lg:text-4xl">
           Stop Struggling With Compliance.{' '}
-          <span className="text-gold-400">Start Automating.</span>
+          <span className="text-brand-400">Start Automating.</span>
         </h2>
       </FadeIn>
 
       {/* Cards */}
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid gap-5 md:gap-6">
         {/* ── Left card: The Old Way ─────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: EASE }}
-          className="relative overflow-hidden rounded-[20px] bg-[#C0392B] p-8 shadow-xl md:p-10"
+          className="relative overflow-hidden rounded-[20px] bg-[#C0392B] shadow-xl"
         >
-          {/* Frosted watermark logo */}
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <Image
-              src={ASSETS.logo.whiteIcon}
-              alt=""
-              width={220}
-              height={220}
-              className="select-none opacity-[0.07]"
-              aria-hidden
-            />
-          </div>
-
-          {/* Noise texture overlay for depth */}
-          <div
-            className="pointer-events-none absolute inset-0 rounded-[20px] opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
-            }}
-          />
-
-          {/* Content */}
-          <div className="relative z-10">
-            {/* Badge */}
-            <span className="inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white/80">
-              The Old Way
-            </span>
-
-            {/* Icon spotlight */}
-            <div className="my-7 flex justify-center">
-              <div className="relative flex size-20 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
-                <Image
-                  src={ASSETS.logo.whiteIcon}
-                  alt="Zylen"
-                  width={44}
-                  height={44}
-                  className="opacity-40"
-                />
-              </div>
+          <div className="flex h-full flex-col sm:flex-row">
+            {/* Icon panel */}
+            <div className="flex shrink-0 items-center justify-center p-8 sm:w-[200px] sm:p-6 md:w-[220px]">
+              <Image
+                src="/assets/img/icons/Glassmorphism lock icon.png"
+                alt="Lock icon"
+                width={160}
+                height={160}
+                className="h-auto w-32 drop-shadow-2xl sm:w-36 md:w-40"
+              />
             </div>
 
-            {/* Heading */}
-            <h3 className="mb-6 font-montserrat text-xl font-bold text-white md:text-2xl">
-              Manual. Risky. Stressful.
-            </h3>
+            {/* Divider */}
+            <div className="hidden w-px self-stretch bg-white/10 sm:block" />
 
-            {/* Items */}
-            <ul className="space-y-3.5">
-              {OLD_WAY.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <XMark />
-                  <span className="text-sm leading-relaxed text-white/80 md:text-base">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {/* Content */}
+            <div className="flex flex-col justify-center p-7 md:p-8">
+              <span className="mb-4 inline-block self-start rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white/80">
+                The Old Way
+              </span>
+              <h3 className="mb-5 font-montserrat text-lg font-bold text-white md:text-xl">
+                Manual. Risky. Stressful.
+              </h3>
+              <ul className="space-y-3">
+                {OLD_WAY.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <XMark />
+                    <span className="text-sm leading-relaxed text-white/80">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </motion.div>
 
@@ -152,86 +129,57 @@ const ComparisonSection = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
-          className="relative overflow-hidden rounded-[20px] bg-primary-900 p-8 shadow-xl md:p-10"
+          className="relative overflow-hidden rounded-[20px] bg-brand-900 shadow-xl"
         >
-          {/* Subtle radial glow behind logo */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                'radial-gradient(ellipse 60% 50% at 50% 42%, rgba(212,160,23,0.12) 0%, transparent 70%)',
-            }}
-          />
-
-          {/* Watermark logo */}
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <Image
-              src={ASSETS.logo.whiteIcon}
-              alt=""
-              width={220}
-              height={220}
-              className="select-none opacity-[0.04]"
-              aria-hidden
-            />
-          </div>
-
-          {/* Content */}
-          <div className="relative z-10">
-            {/* Badge */}
-            <span className="inline-block rounded-full border border-gold-400/30 bg-gold-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-gold-400">
-              With Zylen
-            </span>
-
-            {/* Icon spotlight */}
-            <div className="my-7 flex justify-center">
-              <div
-                className="relative flex size-20 items-center justify-center rounded-2xl border border-white/10 bg-white/5"
-                style={{
-                  boxShadow:
-                    '0 0 32px rgba(212,160,23,0.18), 0 0 0 1px rgba(255,255,255,0.06)',
-                }}
-              >
-                <Image
-                  src={ASSETS.logo.whiteIcon}
-                  alt="Zylen"
-                  width={44}
-                  height={44}
-                  className="opacity-90 drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]"
-                />
-              </div>
+          <div className="flex h-full flex-col sm:flex-row">
+            {/* Icon panel */}
+            <div className="flex shrink-0 items-center justify-center p-8 sm:w-[200px] sm:p-6 md:w-[220px]">
+              <Image
+                src="/assets/img/icons/Glassmorphism open folder.png"
+                alt="Open folder icon"
+                width={160}
+                height={160}
+                className="h-auto w-32 drop-shadow-2xl sm:w-36 md:w-40"
+              />
             </div>
 
-            {/* Heading */}
-            <h3 className="mb-6 font-montserrat text-xl font-bold text-white md:text-2xl">
-              Automated. Compliant. Effortless.
-            </h3>
+            {/* Divider */}
+            <div className="hidden w-px self-stretch bg-white/10 sm:block" />
 
-            {/* Items */}
-            <ul className="space-y-3.5">
-              {ZYLEN_WAY.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckMark />
-                  <span className="text-sm leading-relaxed text-white/80 md:text-base">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {/* Content */}
+            <div className="flex flex-col justify-center p-7 md:p-8">
+              <span className="mb-4 inline-block self-start rounded-full border border-brand-400/40 bg-brand-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-400">
+                With Zylen
+              </span>
+              <h3 className="mb-5 font-montserrat text-lg font-bold text-white md:text-xl">
+                Automated. Compliant. Effortless.
+              </h3>
+              <ul className="space-y-3">
+                {ZYLEN_WAY.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckMark />
+                    <span className="text-sm leading-relaxed text-white/80">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom CTA hint */}
-      <FadeIn delay={0.3} className="mt-10 text-center">
-        <p className="text-sm text-slate-500">
-          Ready to switch?{' '}
-          <Link
-            href="/contact"
-            className="font-semibold text-primary-500 underline-offset-2 hover:underline"
-          >
-            Book a free 30-minute call →
-          </Link>
-        </p>
+      {/* Bottom CTA */}
+      <FadeIn
+        delay={0.3}
+        className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+      >
+        <Button href="/contact" variant="primary">
+          Book a Free Call
+        </Button>
+        <Button href={BRAND.whatsapp} variant="secondary">
+          WhatsApp Us
+        </Button>
       </FadeIn>
     </div>
   </section>

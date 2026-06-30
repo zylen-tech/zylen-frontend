@@ -29,7 +29,7 @@ const FaqSection = () => {
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <h2 className="mb-12 text-center font-montserrat text-4xl font-bold leading-tight tracking-[-0.02em] text-primary-900 md:text-5xl">
+        <h2 className="mb-12 text-center font-montserrat text-3xl font-bold leading-tight tracking-[-0.02em] text-brand-900 md:text-4xl lg:text-5xl">
           {FAQ.headline}{' '}
           <span className="text-[#1a7fbf]">{FAQ.headlineAccent}</span>
         </h2>

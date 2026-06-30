@@ -23,7 +23,7 @@ const Hero = ({
   className = '',
 }: HeroProps) => (
   <section className={`pb-20 pt-24 md:pb-28 md:pt-32 ${className}`}>
-    <div className="mx-auto max-w-6xl px-4 text-center">
+    <div className="mx-auto max-w-7xl px-5 text-center md:px-8">
       {badge && (
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -39,7 +39,7 @@ const Hero = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1, ease }}
-        className="mx-auto max-w-4xl font-montserrat text-4xl font-extrabold leading-tight tracking-[-0.025em] text-white md:text-5xl lg:text-6xl"
+        className="mx-auto max-w-4xl font-montserrat text-3xl font-extrabold leading-tight tracking-[-0.025em] text-white sm:text-4xl md:text-5xl lg:text-6xl"
       >
         {headline}
       </motion.h1>

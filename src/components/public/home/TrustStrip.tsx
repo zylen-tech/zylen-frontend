@@ -1,7 +1,7 @@
 import { TRUST_STRIP } from '../../../constants/content';
 
 const TrustStrip = () => (
-  <section className="border-b border-gray-100 bg-white py-14">
+  <section className="border-b border-gray-100 bg-white py-12 md:py-14">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <p className="mb-10 text-center text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
         {TRUST_STRIP.label}
@@ -12,7 +12,7 @@ const TrustStrip = () => (
             key={label}
             className="flex flex-col items-center gap-1 text-center"
           >
-            <span className="font-montserrat text-4xl font-bold text-primary-500 md:text-5xl">
+            <span className="font-montserrat text-3xl font-bold text-brand-500 md:text-4xl lg:text-5xl">
               {value}
             </span>
             <span className="text-sm text-gray-500">{label}</span>

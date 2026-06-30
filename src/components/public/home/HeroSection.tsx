@@ -1,5 +1,5 @@
 import { BRAND, HERO } from '../../../constants/content';
-import { Button } from '../../ui/Button';
+import { Button } from '../../ui/buttons/Button';
 import { Hero } from '../../ui/hero';
 
 const CheckIcon = () => (

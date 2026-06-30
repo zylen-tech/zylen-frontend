@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 
 import { DELIVERY_MODELS } from '../../../constants/content';
-import { Button } from '../../ui/Button';
+import { Button } from '../../ui/buttons/Button';
 import { FadeIn } from '../../ui/FadeIn';
 import { SectionHeading } from '../../ui/SectionHeading';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const DeliveryModels = () => (
-  <section className="bg-lightPrimary py-20 md:py-28">
+  <section className="bg-brand-100 py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <FadeIn className="mb-12 text-center">
         <SectionHeading
@@ -27,26 +27,26 @@ const DeliveryModels = () => (
             transition={{ duration: 0.55, delay: i * 0.12, ease: EASE }}
             className={`flex flex-col rounded-2xl border bg-white p-8 ${
               model.highlight
-                ? 'border-primary-500 shadow-[0_0_0_3px_#05395914]'
+                ? 'border-brand-500 shadow-[0_0_0_3px_#05395914]'
                 : 'border-slate-200'
             }`}
           >
             <span
               className={`mb-5 self-start rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${
                 model.highlight
-                  ? 'bg-primary-500 text-white'
-                  : 'bg-lightPrimary text-primary-500'
+                  ? 'bg-brand-500 text-white'
+                  : 'bg-brand-100 text-brand-500'
               }`}
             >
               {model.badge}
             </span>
 
-            <h3 className="font-montserrat text-xl font-bold text-primary-500">
+            <h3 className="font-montserrat text-xl font-bold text-brand-500">
               {model.name}
             </h3>
 
             <div className="mt-3 flex items-baseline gap-1.5">
-              <span className="font-montserrat text-2xl font-extrabold text-primary-500">
+              <span className="font-montserrat text-2xl font-extrabold text-brand-500">
                 {model.price}
               </span>
               <span className="text-sm text-gray-500">{model.period}</span>
@@ -59,7 +59,7 @@ const DeliveryModels = () => (
             <ul className="mt-6 flex flex-col gap-2.5">
               {model.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2.5">
-                  <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-lightPrimary">
+                  <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-brand-100">
                     <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
                       <path
                         d="M1.5 5l2.5 2.5 4.5-4.5"

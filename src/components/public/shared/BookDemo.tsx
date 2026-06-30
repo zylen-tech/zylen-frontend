@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { BOOK_DEMO, BRAND } from '../../../constants/content';
-import { Button } from '../../ui/Button';
+import { Button } from '../../ui/buttons/Button';
 import { FadeIn } from '../../ui/FadeIn';
 import { SectionHeading } from '../../ui/SectionHeading';
 
@@ -9,7 +9,7 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const BookDemo = () => (
   <section id="book-demo" className="bg-white py-20 md:py-28">
-    <div className="mx-auto max-w-6xl px-4">
+    <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <FadeIn>
           <SectionHeading
@@ -28,7 +28,7 @@ const BookDemo = () => (
               transition={{ duration: 0.45, delay: i * 0.08, ease: EASE }}
               className="flex items-start gap-3"
             >
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-lightPrimary">
+              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-100">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                   <path
                     d="M1.5 5l2.5 2.5 4.5-4.5"

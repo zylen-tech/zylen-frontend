@@ -10,7 +10,7 @@ const Footer = () => (
     variant="blur"
     className="rounded-xl border-t border-gray-200 pt-10"
   >
-    <div className="mx-auto max-w-6xl px-4 pb-8 pt-14">
+    <div className="mx-auto max-w-7xl px-5 pb-8 pt-14 md:px-8">
       <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         {/* Brand column */}
         <div className="sm:col-span-2 md:col-span-1">

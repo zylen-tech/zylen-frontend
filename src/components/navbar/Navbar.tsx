@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { ASSETS, BRAND, NAV_LINKS } from '../../constants/content';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/buttons/Button';
 
 type NavbarProps = {
   variant?: 'dark' | 'light';
@@ -82,21 +82,21 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   };
 
   const getLinkActiveCls = () =>
-    scrolled || !isDark ? 'text-primary-500' : 'text-white';
+    scrolled || !isDark ? 'text-brand-500' : 'text-white';
   const getLinkCls = () =>
     scrolled || !isDark
-      ? 'text-slate-600 hover:text-primary-900'
+      ? 'text-slate-600 hover:text-brand-900'
       : 'text-white/80 hover:text-white';
   const getUnderlineCls = () =>
-    scrolled || !isDark ? 'bg-primary-500' : 'bg-white';
+    scrolled || !isDark ? 'bg-brand-500' : 'bg-white';
   const getToggleCls = () =>
     scrolled || !isDark
-      ? 'text-slate-600 hover:bg-slate-50 hover:text-primary-900'
+      ? 'text-slate-600 hover:bg-slate-50 hover:text-brand-900'
       : 'text-white hover:bg-white/10';
   const getLogoNameCls = () =>
-    scrolled || !isDark ? 'text-primary-900' : 'text-white';
+    scrolled || !isDark ? 'text-brand-900' : 'text-white';
   const getLogoSubCls = () =>
-    scrolled || !isDark ? 'text-primary-400' : 'text-white/60';
+    scrolled || !isDark ? 'text-brand-400' : 'text-white/60';
   const getLogoSrc = () =>
     scrolled || !isDark ? ASSETS.logo.icon : ASSETS.logo.whiteIconBg;
   const getWhatsappVariant = () =>
@@ -192,8 +192,8 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                     href={link.href}
                     className={`block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
                       active
-                        ? 'bg-lightPrimary text-primary-500'
-                        : 'text-slate-700 hover:bg-slate-50 hover:text-primary-900'
+                        ? 'bg-brand-100 text-brand-500'
+                        : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
                     }`}
                   >
                     {link.label}

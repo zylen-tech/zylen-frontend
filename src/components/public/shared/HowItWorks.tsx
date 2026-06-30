@@ -8,7 +8,7 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const HowItWorks = () => (
   <section id="how-it-works" className="py-20 md:py-28">
-    <div className="mx-auto max-w-6xl px-4">
+    <div className="mx-auto max-w-7xl px-5 md:px-8">
       <FadeIn className="mb-14 text-center">
         <SectionHeading
           eyebrow={HOW_IT_WORKS.eyebrow}
@@ -30,10 +30,10 @@ const HowItWorks = () => (
                 transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
                 className="flex flex-col items-center text-center"
               >
-                <div className="flex size-16 items-center justify-center rounded-full border-2 border-primary-500 bg-white font-montserrat text-sm font-extrabold text-primary-500">
+                <div className="flex size-16 items-center justify-center rounded-full border-2 border-brand-500 bg-white font-montserrat text-sm font-extrabold text-brand-500">
                   {step.number}
                 </div>
-                <h4 className="mt-4 font-montserrat text-sm font-bold text-primary-500">
+                <h4 className="mt-4 font-montserrat text-sm font-bold text-brand-500">
                   {step.title}
                 </h4>
                 <p className="mt-2 text-xs leading-relaxed text-[#6B7280]">
@@ -57,7 +57,7 @@ const HowItWorks = () => (
             className="flex gap-4"
           >
             <div className="flex flex-col items-center">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-primary-500 bg-white font-montserrat text-xs font-extrabold text-primary-500">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-brand-500 bg-white font-montserrat text-xs font-extrabold text-brand-500">
                 {step.number}
               </div>
               {i < HOW_IT_WORKS.steps.length - 1 && (
@@ -65,7 +65,7 @@ const HowItWorks = () => (
               )}
             </div>
             <div className="pb-2">
-              <h4 className="font-montserrat text-sm font-bold text-primary-500">
+              <h4 className="font-montserrat text-sm font-bold text-brand-500">
                 {step.title}
               </h4>
               <p className="mt-1 text-sm leading-relaxed text-[#6B7280]">

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { SERVICES } from '../../../constants/content';
-import { Button } from '../../ui/Button';
+import { Button } from '../../ui/buttons/Button';
 import { FadeIn } from '../../ui/FadeIn';
 import { SectionHeading } from '../../ui/SectionHeading';
 
@@ -9,7 +9,7 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const ServicePackages = () => (
   <section id="services" className="bg-white py-20 md:py-28">
-    <div className="mx-auto max-w-6xl px-4">
+    <div className="mx-auto max-w-7xl px-5 md:px-8">
       <FadeIn className="mb-12 text-center">
         <SectionHeading
           eyebrow={SERVICES.eyebrow}
@@ -17,7 +17,7 @@ const ServicePackages = () => (
         />
       </FadeIn>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.cards.map((card, i) => (
           <motion.div
             key={card.name}
@@ -28,21 +28,21 @@ const ServicePackages = () => (
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
             className={`relative flex flex-col rounded-xl border bg-white p-8 ${
               card.popular
-                ? 'border-primary-500 shadow-[0_0_0_2px_#05395920]'
+                ? 'border-brand-500 shadow-[0_0_0_2px_#05395920]'
                 : 'border-slate-200'
             }`}
           >
             {card.popular && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary-500 px-4 py-0.5 text-xs font-semibold text-white">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-4 py-0.5 text-xs font-semibold text-white">
                 Most Popular
               </span>
             )}
 
             <div>
-              <h3 className="font-montserrat text-lg font-bold text-primary-500">
+              <h3 className="font-montserrat text-lg font-bold text-brand-500">
                 {card.name}
               </h3>
-              <div className="mt-3 font-montserrat text-2xl font-extrabold text-primary-500">
+              <div className="mt-3 font-montserrat text-2xl font-extrabold text-brand-500">
                 {card.price}
               </div>
               <div className="mt-1 text-sm font-medium text-[#6B7280]">

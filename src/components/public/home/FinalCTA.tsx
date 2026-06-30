@@ -1,16 +1,16 @@
 import { BRAND, FINAL_CTA } from '../../../constants/content';
-import { Button } from '../../ui/Button';
+import { Button } from '../../ui/buttons/Button';
 import { FadeIn } from '../../ui/FadeIn';
 
 const FinalCTA = () => (
-  <section className="bg-primary-900 py-20 md:py-28">
+  <section className="bg-brand-900 py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 text-center md:px-8">
       <FadeIn>
         <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white/80">
           {FINAL_CTA.eyebrow}
         </span>
 
-        <h2 className="mx-auto mt-4 max-w-2xl font-montserrat text-4xl font-extrabold leading-tight tracking-[-0.025em] text-white md:text-5xl">
+        <h2 className="mx-auto mt-4 max-w-2xl font-montserrat text-3xl font-extrabold leading-tight tracking-[-0.025em] text-white md:text-4xl lg:text-5xl">
           {FINAL_CTA.headline}
         </h2>
 

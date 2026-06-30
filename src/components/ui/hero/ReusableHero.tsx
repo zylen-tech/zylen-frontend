@@ -37,7 +37,7 @@ const ReusableHero = ({
       aria-hidden="true"
     />
 
-    <div className="relative mx-auto max-w-4xl px-6 text-center md:px-10">
+    <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
       {/* Eyebrow */}
       {eyebrow && (
         <motion.span
@@ -55,7 +55,7 @@ const ReusableHero = ({
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease }}
-        className="font-montserrat text-[2rem] font-normal leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem]"
+        className="font-montserrat text-3xl font-normal leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem]"
       >
         {headline}
         {headlineAccent && (
