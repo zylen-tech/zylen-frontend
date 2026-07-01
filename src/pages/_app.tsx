@@ -1,5 +1,6 @@
 import '../styles/global.css';
 
+import { GeistSans } from 'geist/font/sans';
 import { ReactLenis } from 'lenis/react';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
@@ -40,7 +41,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
     <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}>
       <div
         ref={wrapperRef}
-        className={`page-transition-enter transition-opacity duration-200 ${
+        className={`${GeistSans.variable} page-transition-enter transition-opacity duration-200 ${
           transitioning ? 'opacity-30' : 'opacity-100'
         }`}
       >
