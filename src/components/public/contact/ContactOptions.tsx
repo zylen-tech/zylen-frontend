@@ -71,7 +71,7 @@ const CONTACTS = [
 ];
 
 const ContactOptions = () => (
-  <section className="bg-white py-20 md:py-28">
+  <section className="bg-white py-24 md:py-32">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="grid gap-5 sm:grid-cols-3">
         {CONTACTS.map((c, i) => (
@@ -87,15 +87,15 @@ const ContactOptions = () => (
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             className="flex flex-col items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center transition-shadow duration-200 hover:shadow-md"
           >
-            <div className="flex size-14 items-center justify-center rounded-xl bg-brand-100 text-brand-500">
+            <div className="flex size-14 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
               {c.icon}
             </div>
             <div>
-              <p className="font-montserrat text-sm font-extrabold text-slate-900">
+              <p className="font-montserrat text-sm font-extrabold text-neutral-950">
                 {c.label}
               </p>
               <p className="mt-1 font-medium text-brand-500">{c.value}</p>
-              <p className="mt-1 text-xs text-slate-400">{c.sub}</p>
+              <p className="mt-1 text-xs text-slate-500">{c.sub}</p>
             </div>
           </motion.a>
         ))}

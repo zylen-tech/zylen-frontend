@@ -8,7 +8,7 @@ import { SectionHeading } from '../../ui/SectionHeading';
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const BookDemo = () => (
-  <section id="book-demo" className="bg-white py-20 md:py-28">
+  <section id="book-demo" className="bg-white py-24 md:py-32">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <FadeIn>

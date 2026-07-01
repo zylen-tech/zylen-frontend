@@ -34,7 +34,7 @@ const SOCIALS = [
 ];
 
 const SocialLinks = () => (
-  <section className="bg-white py-16 md:py-20">
+  <section className="bg-neutral-50 py-16 md:py-24">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <p className="mb-8 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
         Follow Us
@@ -52,17 +52,17 @@ const SocialLinks = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: i * 0.1, ease }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="flex flex-1 items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5 transition-shadow duration-200 hover:shadow-md"
+            className="flex flex-1 items-center gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-5 transition-shadow duration-200 hover:shadow-md"
           >
-            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-500">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
               {s.icon}
             </div>
             <div>
-              <p className="font-montserrat text-sm font-extrabold text-slate-900">
+              <p className="font-montserrat text-sm font-extrabold text-neutral-950">
                 {s.label}
               </p>
               <p className="text-xs text-brand-500">{s.handle}</p>
-              <p className="mt-0.5 text-xs text-slate-400">{s.description}</p>
+              <p className="mt-0.5 text-xs text-slate-500">{s.description}</p>
             </div>
           </motion.a>
         ))}
