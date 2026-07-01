@@ -76,9 +76,9 @@ const ICON_MAP: Record<string, () => JSX.Element> = {
 };
 
 const OurValues = () => (
-  <section className="bg-slate-50 py-20 md:py-28">
+  <section className="bg-neutral-50 py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
-      <div className="mb-14 text-center">
+      <div className="mb-12 text-center">
         <SectionHeading eyebrow="What We Stand For" headline="Our Values" />
       </div>
 
@@ -94,10 +94,10 @@ const OurValues = () => (
               transition={{ duration: 0.55, delay: i * 0.1, ease }}
               className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
             >
-              <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-500">
+              <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
                 <Icon />
               </div>
-              <h3 className="font-montserrat text-base font-extrabold text-slate-900">
+              <h3 className="font-montserrat text-base font-extrabold text-neutral-950">
                 {value.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-500">

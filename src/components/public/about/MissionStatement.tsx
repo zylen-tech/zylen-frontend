@@ -5,7 +5,7 @@ import { ABOUT_MISSION } from '../../../constants/content';
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const MissionStatement = () => (
-  <section className="bg-white py-20 md:py-28">
+  <section className="bg-white py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <motion.p
@@ -13,7 +13,7 @@ const MissionStatement = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.45, ease }}
-          className="text-xs font-semibold uppercase tracking-widest text-brand-500"
+          className="text-xs font-semibold uppercase tracking-widest text-slate-400"
         >
           {ABOUT_MISSION.eyebrow}
         </motion.p>
@@ -23,7 +23,7 @@ const MissionStatement = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="mt-8 font-montserrat text-2xl font-bold leading-snug tracking-tight text-slate-900 sm:text-3xl md:text-[2rem]"
+          className="mt-8 font-montserrat text-2xl font-bold leading-snug tracking-tight text-neutral-950 sm:text-3xl md:text-[2rem]"
         >
           &ldquo;{ABOUT_MISSION.quote}&rdquo;
         </motion.blockquote>

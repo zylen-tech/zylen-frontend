@@ -6,9 +6,9 @@ import { SectionHeading } from '../../ui/SectionHeading';
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const WhoWeWorkWith = () => (
-  <section className="bg-white py-20 md:py-28">
+  <section className="bg-neutral-50 py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
-      <div className="mb-14 text-center">
+      <div className="mb-12 text-center">
         <SectionHeading
           eyebrow={ABOUT_WHO_WE_WORK_WITH.eyebrow}
           headline={ABOUT_WHO_WE_WORK_WITH.headline}
@@ -16,7 +16,7 @@ const WhoWeWorkWith = () => (
       </div>
 
       {/* Category cards */}
-      <div className="mb-16 grid gap-6 sm:grid-cols-3">
+      <div className="mb-14 grid gap-6 sm:grid-cols-3">
         {ABOUT_WHO_WE_WORK_WITH.categories.map((cat, i) => (
           <motion.div
             key={cat.label}
@@ -24,9 +24,9 @@ const WhoWeWorkWith = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: i * 0.1, ease }}
-            className="rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8"
+            className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
           >
-            <h3 className="font-montserrat text-base font-extrabold text-brand-500">
+            <h3 className="font-montserrat text-base font-extrabold text-neutral-950">
               {cat.label}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-slate-500">
@@ -62,7 +62,7 @@ const WhoWeWorkWith = () => (
                   transition: { duration: 0.35, ease },
                 },
               }}
-              className="rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-600"
+              className="rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-500"
             >
               {sys}
             </motion.span>

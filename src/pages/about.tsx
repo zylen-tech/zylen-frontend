@@ -1,8 +1,10 @@
 import type { ReactElement } from 'react';
 
 import { Meta } from '../components/layout/Meta';
+import { CoreInsightBanner } from '../components/public/about/CoreInsightBanner';
+import { FoundationSection } from '../components/public/about/FoundationSection';
 import { MissionStatement } from '../components/public/about/MissionStatement';
-import { OurValues } from '../components/public/about/OurValues';
+import { StatisticsSection } from '../components/public/about/StatisticsSection';
 import { TeamSection } from '../components/public/about/TeamSection';
 import { WhoWeWorkWith } from '../components/public/about/WhoWeWorkWith';
 import { BookDemo } from '../components/public/shared/BookDemo';
@@ -23,16 +25,30 @@ const AboutPage: NextPageWithLayout = () => (
       headlineAccent={PAGE_HEROES.about.headlineAccent}
       description={PAGE_HEROES.about.description}
     />
-    <MissionStatement />
-    <OurValues />
-    <TeamSection />
-    <WhoWeWorkWith />
-    <BookDemo />
+    <FoundationSection />
+    <div className="sticky top-20 z-[10] overflow-hidden rounded-t-3xl">
+      <MissionStatement />
+    </div>
+    <div className="sticky top-20 z-[15] overflow-hidden rounded-t-3xl">
+      <CoreInsightBanner />
+    </div>
+    <div className="relative z-[20]">
+      <StatisticsSection />
+    </div>
+    <div className="relative z-[25]">
+      <TeamSection />
+    </div>
+    <div className="relative z-[30]">
+      <WhoWeWorkWith />
+    </div>
+    <div className="relative z-[35]">
+      <BookDemo />
+    </div>
   </>
 );
 
 AboutPage.getLayout = (page: ReactElement) => (
-  <PublicLayout navVariant="light">{page}</PublicLayout>
+  <PublicLayout>{page}</PublicLayout>
 );
 
 export default AboutPage;

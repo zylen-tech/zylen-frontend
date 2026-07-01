@@ -12,9 +12,9 @@ const LinkedInIcon = () => (
 );
 
 const TeamSection = () => (
-  <section className="relative overflow-hidden bg-white py-24 md:py-32">
+  <section className="relative overflow-hidden bg-white py-16 md:py-20">
     <div className="relative mx-auto max-w-7xl px-5 md:px-8">
-      <div className="mb-16 text-center">
+      <div className="mb-12 text-center">
         <SectionHeading eyebrow="The People" headline="The Team Behind Zylen" />
       </div>
 
@@ -27,21 +27,19 @@ const TeamSection = () => (
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: i * 0.12, ease }}
             whileHover={{ y: -6, transition: { duration: 0.25 } }}
-            className="flex flex-col items-center rounded-[20px] border border-slate-200 bg-slate-50 p-8 text-center"
+            className="flex flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center"
           >
-            {/* Avatar with glow ring */}
             <div
               className="mb-6 flex size-20 items-center justify-center rounded-full font-montserrat text-2xl font-extrabold text-white"
               style={{
                 background: 'linear-gradient(135deg, #1d6fa4, #053959)',
-                boxShadow:
-                  '0 0 0 3px rgba(74,158,255,0.35), 0 0 20px rgba(74,158,255,0.2)',
+                boxShadow: '0 0 0 3px rgba(5,57,89,0.2)',
               }}
             >
               {member.initials}
             </div>
 
-            <h3 className="font-montserrat text-lg font-bold text-slate-900 md:text-xl">
+            <h3 className="font-montserrat text-lg font-bold text-neutral-950 md:text-xl">
               {member.name}
             </h3>
 
