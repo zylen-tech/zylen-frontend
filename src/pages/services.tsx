@@ -40,7 +40,7 @@ const ServicesPage: NextPageWithLayout = () => (
 );
 
 ServicesPage.getLayout = (page: ReactElement) => (
-  <PublicLayout navVariant="light">{page}</PublicLayout>
+  <PublicLayout>{page}</PublicLayout>
 );
 
 export default ServicesPage;

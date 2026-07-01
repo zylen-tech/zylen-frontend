@@ -44,7 +44,7 @@ const FlowNode = ({
     }`}
   >
     <span
-      className={`font-montserrat text-base font-extrabold sm:text-lg ${accent ? 'text-white' : 'text-slate-900'}`}
+      className={`font-montserrat text-base font-extrabold sm:text-lg ${accent ? 'text-white' : 'text-neutral-950'}`}
     >
       {label}
     </span>
@@ -57,7 +57,7 @@ const FlowNode = ({
 );
 
 const ServiceOverview = () => (
-  <section className="bg-slate-50 py-20 md:py-28">
+  <section className="bg-neutral-50 py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
         <SectionHeading
@@ -116,7 +116,7 @@ const ServiceOverview = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5, ease }}
-          className="mt-8 rounded-xl border border-brand-100 bg-brand-50 px-6 py-4 text-center text-sm leading-relaxed text-brand-600"
+          className="mt-8 rounded-xl border border-brand-100 bg-brand-50 px-6 py-4 text-center text-sm leading-relaxed text-brand-500"
         >
           No manual re-entry. No LHDN portal logins. No compliance risk. Your
           invoices flow automatically — from your software to MyInvois in

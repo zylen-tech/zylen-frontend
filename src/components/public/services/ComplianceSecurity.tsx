@@ -69,7 +69,7 @@ const PILLARS = [
 ];
 
 const ComplianceSecurity = () => (
-  <section className="bg-white py-20 md:py-28">
+  <section className="bg-white py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
         <SectionHeading
@@ -86,12 +86,12 @@ const ComplianceSecurity = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.1, ease }}
-            className="rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8"
+            className="rounded-2xl border border-slate-200 bg-neutral-50 p-6 md:p-8"
           >
-            <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-500">
+            <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
               {pillar.icon}
             </div>
-            <h3 className="font-montserrat text-base font-extrabold text-slate-900">
+            <h3 className="font-montserrat text-base font-extrabold text-neutral-950">
               {pillar.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-slate-500">

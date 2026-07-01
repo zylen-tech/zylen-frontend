@@ -1,20 +1,160 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
 
+import { ASSETS } from '../../../constants/content';
 import { SectionHeading } from '../../ui/SectionHeading';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const SYSTEMS = [
-  { name: 'AutoCount', note: 'Most popular in Malaysia' },
-  { name: 'SQL Accounting', note: 'Widely used by SMEs' },
-  { name: 'Xero', note: 'Cloud-based' },
-  { name: 'QuickBooks', note: 'International standard' },
-  { name: 'Custom ERP', note: 'Any system via API' },
+const VW = 800;
+const VH = 520;
+const PH = 38;
+const PR = 19;
+const CX = 400;
+const CY = 435;
+const CR = 82;
+
+type Pill = { name: string; x: number; y: number; w: number; color: string };
+
+const PILLS: Pill[] = [
+  // Row 1 — accounting systems
+  { name: 'AutoCount', x: 119, y: 54, w: 138, color: '#3b82f6' },
+  { name: 'SQL Accounting', x: 307, y: 54, w: 138, color: '#8b5cf6' },
+  { name: 'Xero', x: 495, y: 54, w: 138, color: '#06b6d4' },
+  { name: 'QuickBooks', x: 683, y: 54, w: 138, color: '#10b981' },
+  // Row 2 — LHDN / integration features
+  { name: 'MyInvois', x: 77, y: 148, w: 110, color: '#f59e0b' },
+  { name: 'LHDN API', x: 210, y: 148, w: 110, color: '#ef4444' },
+  { name: 'Real-time Sync', x: 360, y: 148, w: 148, color: '#6366f1' },
+  { name: 'Auto-Validation', x: 531, y: 148, w: 150, color: '#14b8a6' },
+  { name: 'Error Detection', x: 703, y: 148, w: 150, color: '#f97316' },
 ];
 
+const iconTop = CY - CR;
+
+const curvePath = (pill: Pill): string => {
+  const sy = pill.y + PH / 2;
+  const cpy = sy + (iconTop - sy) * 0.55;
+  return `M ${pill.x} ${sy} C ${pill.x} ${cpy} ${CX} ${cpy} ${CX} ${iconTop}`;
+};
+
+const HubDiagram = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  return (
+    <svg
+      viewBox={`0 0 ${VW} ${VH}`}
+      className="w-full"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        {/* Gradient for center circle */}
+        <linearGradient id="hub-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#0a6aaa" />
+          <stop offset="100%" stopColor="#053959" />
+        </linearGradient>
+
+        {/* Drop shadow for center icon */}
+        <filter id="hub-shadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow
+            dx="0"
+            dy="12"
+            stdDeviation="16"
+            floodColor="#053959"
+            floodOpacity="0.2"
+          />
+        </filter>
+
+        {/* Subtle shadow for pills */}
+        <filter id="pill-shadow" x="-10%" y="-20%" width="120%" height="160%">
+          <feDropShadow
+            dx="0"
+            dy="1"
+            stdDeviation="2"
+            floodColor="#000000"
+            floodOpacity="0.06"
+          />
+        </filter>
+      </defs>
+
+      {/* Curved connecting lines */}
+      {PILLS.map((pill, i) => (
+        <path
+          key={`line-${pill.name}`}
+          d={curvePath(pill)}
+          stroke={activeIndex === i ? pill.color : '#e2e6ec'}
+          strokeWidth={activeIndex === i ? 1.2 : 0.8}
+          style={{ transition: 'stroke 0.2s ease, stroke-width 0.2s ease' }}
+        />
+      ))}
+
+      {/* Pills */}
+      {PILLS.map((pill, i) => {
+        const isActive = activeIndex === i;
+        return (
+          <g
+            key={pill.name}
+            onMouseEnter={() => setActiveIndex(i)}
+            onMouseLeave={() => setActiveIndex(null)}
+            style={{ cursor: 'default' }}
+          >
+            <rect
+              x={pill.x - pill.w / 2}
+              y={pill.y - PH / 2}
+              width={pill.w}
+              height={PH}
+              rx={PR}
+              fill="white"
+              stroke={isActive ? pill.color : '#e2e6ec'}
+              strokeWidth={isActive ? 1.2 : 0.8}
+              filter="url(#pill-shadow)"
+              style={{
+                transition: 'stroke 0.25s ease, stroke-width 0.25s ease',
+              }}
+            />
+            <text
+              x={pill.x}
+              y={pill.y + 5}
+              textAnchor="middle"
+              fontSize="13"
+              fontFamily="system-ui, -apple-system, sans-serif"
+              fontWeight="400"
+              fill="#334155"
+            >
+              {pill.name}
+            </text>
+          </g>
+        );
+      })}
+
+      {/* Outer glow ring */}
+      <circle cx={CX} cy={CY} r={CR + 14} fill="#0a6aaa" fillOpacity="0.07" />
+
+      {/* Center circle — gradient */}
+      <circle
+        cx={CX}
+        cy={CY}
+        r={CR}
+        fill="url(#hub-grad)"
+        filter="url(#hub-shadow)"
+      />
+
+      {/* White logo */}
+      <image
+        href={ASSETS.logo.whiteIconBg}
+        x={CX - 44}
+        y={CY - 44}
+        width={88}
+        height={88}
+      />
+    </svg>
+  );
+};
+
 const SupportedSystems = () => (
-  <section className="bg-white py-20 md:py-28">
+  <section className="bg-white py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
         <SectionHeading
@@ -24,43 +164,22 @@ const SupportedSystems = () => (
         />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        {SYSTEMS.map((sys, i) => (
-          <motion.div
-            key={sys.name}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: i * 0.08, ease }}
-            className={`flex flex-col items-center rounded-2xl border p-6 text-center ${
-              sys.name === 'Custom ERP'
-                ? 'border-brand-200 bg-brand-50'
-                : 'border-slate-200 bg-slate-50'
-            }`}
-          >
-            <div
-              className={`mb-3 flex size-12 items-center justify-center rounded-xl text-lg font-extrabold ${
-                sys.name === 'Custom ERP'
-                  ? 'bg-brand-100 text-brand-500'
-                  : 'bg-white text-brand-500 shadow-sm'
-              }`}
-            >
-              {sys.name.charAt(0)}
-            </div>
-            <span className="font-montserrat text-sm font-bold text-slate-900">
-              {sys.name}
-            </span>
-            <span className="mt-1 text-xs text-slate-400">{sys.note}</span>
-          </motion.div>
-        ))}
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.6, ease }}
+        className="mx-auto max-w-3xl"
+      >
+        <HubDiagram />
+      </motion.div>
 
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.4, ease }}
-        className="mt-8 text-center text-sm text-slate-400"
+        className="mt-2 text-center text-sm text-slate-400"
       >
         Using something not listed?{' '}
         <Link

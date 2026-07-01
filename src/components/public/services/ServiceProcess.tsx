@@ -32,7 +32,7 @@ const STEPS = [
 ];
 
 const ServiceProcess = () => (
-  <section className="bg-slate-50 py-20 md:py-28">
+  <section className="bg-neutral-50 py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
         <SectionHeading
@@ -60,7 +60,7 @@ const ServiceProcess = () => (
             <span className="font-montserrat text-3xl font-black text-brand-100 md:text-4xl">
               {step.number}
             </span>
-            <h3 className="mt-3 font-montserrat text-base font-extrabold text-slate-900">
+            <h3 className="mt-3 font-montserrat text-base font-extrabold text-neutral-950">
               {step.title}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-500">
