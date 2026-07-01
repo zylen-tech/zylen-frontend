@@ -17,7 +17,7 @@ const listContainer = {
 };
 
 const DeliveryModels = () => (
-  <section className="bg-white py-20 md:py-28">
+  <section className="bg-white py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-12 text-center">
         <SectionHeading
@@ -50,7 +50,7 @@ const DeliveryModels = () => (
               {model.badge}
             </span>
 
-            <h3 className="font-montserrat text-xl font-bold text-brand-500">
+            <h3 className="font-montserrat text-xl font-bold text-neutral-950">
               {model.name}
             </h3>
 
@@ -58,10 +58,10 @@ const DeliveryModels = () => (
               <span className="font-montserrat text-2xl font-extrabold text-brand-500">
                 {model.price}
               </span>
-              <span className="text-sm text-gray-500">{model.period}</span>
+              <span className="text-sm text-slate-400">{model.period}</span>
             </div>
 
-            <p className="mt-4 text-sm leading-relaxed text-slate-600">
+            <p className="mt-4 text-sm leading-relaxed text-slate-500">
               {model.description}
             </p>
 
@@ -89,7 +89,7 @@ const DeliveryModels = () => (
                       />
                     </svg>
                   </span>
-                  <span className="text-sm text-slate-700">{feature}</span>
+                  <span className="text-sm text-slate-500">{feature}</span>
                 </motion.li>
               ))}
             </motion.ul>

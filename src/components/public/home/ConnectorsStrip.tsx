@@ -22,10 +22,10 @@ const pillItem = {
 };
 
 const ConnectorsStrip = () => (
-  <section className="border-y border-gray-100 bg-white py-12 md:py-16">
+  <section className="border-y border-slate-100 bg-white py-12 md:py-16">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <FadeIn>
-        <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+        <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
           {CONNECTORS.eyebrow}
         </p>
       </FadeIn>
@@ -41,7 +41,7 @@ const ConnectorsStrip = () => (
           <motion.span
             key={item.name}
             variants={pillItem}
-            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-brand-500 sm:px-5 sm:py-2 sm:text-sm"
+            className="rounded-full border border-slate-200 bg-neutral-50 px-3 py-1.5 text-xs font-semibold text-brand-500 sm:px-5 sm:py-2 sm:text-sm"
           >
             {item.name}
           </motion.span>
@@ -49,7 +49,7 @@ const ConnectorsStrip = () => (
       </motion.div>
 
       <FadeIn delay={0.4}>
-        <p className="mt-7 text-center text-xs text-gray-500 sm:text-sm">
+        <p className="mt-7 text-center text-xs text-slate-500 sm:text-sm">
           {CONNECTORS.fallback}{' '}
           <Link
             href={CONNECTORS.fallbackCta.href}

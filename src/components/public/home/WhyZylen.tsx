@@ -85,9 +85,9 @@ const FEATURES = [
 ];
 
 const WhyZylen = () => (
-  <section className="bg-white py-20 md:py-28">
+  <section className="bg-neutral-50 py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
-      <div className="mb-4 text-center">
+      <div className="mb-14 text-center">
         <SectionHeading
           eyebrow="Why choose Zylen?"
           headline="All Your e-Invoicing Needs in One Place"
@@ -100,18 +100,18 @@ const WhyZylen = () => (
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-60px' }}
-        className="mt-14 grid gap-6 md:grid-cols-3"
+        className="grid gap-6 md:grid-cols-3"
       >
         {FEATURES.map(({ Icon, title, body }) => (
           <motion.div
             key={title}
             variants={cardItem}
-            className="group flex h-full flex-col rounded-2xl border border-brand-100 bg-brand-50 p-5 transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(5,57,89,0.08)] md:p-7"
+            className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(5,57,89,0.08)] md:p-7"
           >
-            <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-brand-100 text-brand-500 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
+            <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
               <Icon />
             </div>
-            <h3 className="mb-3 font-montserrat text-base font-bold leading-snug tracking-[-0.01em] text-brand-900 md:text-lg">
+            <h3 className="mb-3 font-montserrat text-base font-bold leading-snug tracking-[-0.01em] text-neutral-950 md:text-lg">
               {title}
             </h3>
             <p className="text-sm leading-relaxed text-slate-500">{body}</p>

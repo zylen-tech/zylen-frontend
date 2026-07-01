@@ -7,7 +7,7 @@ import { SectionHeading } from '../../ui/SectionHeading';
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const ProblemStrip = () => (
-  <section id="problem" className="py-20 md:py-28">
+  <section id="problem" className="bg-white py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-12 text-center">
         <SectionHeading eyebrow={PROBLEM.eyebrow} headline={PROBLEM.headline} />
@@ -23,7 +23,7 @@ const ProblemStrip = () => (
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: i * 0.1, ease: EASE }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="rounded-xl border border-slate-200 bg-white p-5 text-center sm:p-6 md:p-8"
+            className="rounded-xl border border-slate-200 bg-neutral-50 p-5 text-center sm:p-6 md:p-8"
           >
             <div className="font-montserrat text-2xl font-extrabold text-brand-500 sm:text-3xl md:text-4xl">
               {value}
@@ -36,7 +36,7 @@ const ProblemStrip = () => (
       </div>
 
       <FadeIn delay={0.1}>
-        <p className="mx-auto max-w-3xl text-center text-base leading-relaxed text-slate-700 md:text-lg">
+        <p className="mx-auto max-w-3xl text-center text-base leading-relaxed text-slate-500 md:text-lg">
           {PROBLEM.body}
         </p>
       </FadeIn>

@@ -94,14 +94,14 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   const getLinkActiveCls = () => (light ? 'text-brand-500' : 'text-white');
   const getLinkCls = () =>
     light
-      ? 'text-slate-500 hover:text-brand-900'
+      ? 'text-slate-500 hover:text-neutral-950'
       : 'text-white/75 hover:text-white';
   const getToggleCls = () =>
     light
-      ? 'text-slate-600 hover:bg-slate-50 hover:text-brand-900'
+      ? 'text-slate-600 hover:bg-neutral-100 hover:text-neutral-950'
       : 'text-white hover:bg-white/10';
-  const getLogoNameCls = () => (light ? 'text-brand-900' : 'text-white');
-  const getLogoSubCls = () => (light ? 'text-brand-400' : 'text-white/60');
+  const getLogoNameCls = () => (light ? 'text-neutral-950' : 'text-white');
+  const getLogoSubCls = () => (light ? 'text-slate-400' : 'text-white/60');
   const getLogoSrc = () => (light ? ASSETS.logo.icon : ASSETS.logo.whiteIconBg);
   const getWhatsappVariant = () =>
     (light ? 'secondary' : 'outline-white') as 'secondary' | 'outline-white';
@@ -219,7 +219,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                     className={`group flex items-center gap-2 rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors duration-150 ${
                       active
                         ? 'bg-brand-50 text-brand-500'
-                        : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
+                        : 'text-slate-500 hover:bg-neutral-100 hover:text-neutral-950'
                     }`}
                   >
                     {/* Dot — only on active in mobile */}

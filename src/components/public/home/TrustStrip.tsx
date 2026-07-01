@@ -6,10 +6,10 @@ import { FadeIn } from '../../ui/FadeIn';
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const TrustStrip = () => (
-  <section className="border-b border-gray-100 bg-white py-12 md:py-14">
+  <section className="border-b border-slate-100 bg-white py-12 md:py-14">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <FadeIn>
-        <p className="mb-10 text-center text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+        <p className="mb-10 text-center text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
           {TRUST_STRIP.label}
         </p>
       </FadeIn>
@@ -27,7 +27,7 @@ const TrustStrip = () => (
             <span className="font-montserrat text-2xl font-bold text-brand-500 sm:text-3xl md:text-4xl lg:text-5xl">
               {value}
             </span>
-            <span className="text-sm text-gray-500">{label}</span>
+            <span className="text-sm text-slate-500">{label}</span>
           </motion.div>
         ))}
       </div>
