@@ -28,7 +28,7 @@ const ProblemStrip = () => (
             <div className="font-montserrat text-2xl font-extrabold text-brand-500 sm:text-3xl md:text-4xl">
               {value}
             </div>
-            <div className="mt-2 text-sm font-medium text-[#6B7280]">
+            <div className="mt-2 text-sm font-medium text-slate-500">
               {label}
             </div>
           </motion.div>
@@ -42,7 +42,7 @@ const ProblemStrip = () => (
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-l-4 border-[#fde8cc] border-l-orange-500 bg-[#fff8f0] p-4 sm:p-6">
+        <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-l-4 border-orange-200 border-l-orange-500 bg-orange-50 p-4 sm:p-6">
           <div className="flex gap-3">
             <span className="mt-0.5 text-xl">⚠️</span>
             <p className="text-sm font-medium leading-relaxed text-orange-800">

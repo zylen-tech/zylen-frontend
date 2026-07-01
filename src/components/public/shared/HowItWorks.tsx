@@ -286,7 +286,7 @@ const HowItWorks = () => {
                     <p className="mb-1 text-sm font-semibold text-brand-400">
                       {extra?.subtitle}
                     </p>
-                    <h3 className="mb-5 font-montserrat text-2xl font-black uppercase tracking-tight text-[#0f172a] md:text-3xl">
+                    <h3 className="mb-5 font-montserrat text-2xl font-black uppercase tracking-tight text-slate-900 md:text-3xl">
                       {step.title}
                     </h3>
 
@@ -306,7 +306,7 @@ const HowItWorks = () => {
                         >
                           <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-400" />
                           <span className="text-base leading-relaxed text-slate-500">
-                            <span className="font-bold text-[#0f172a]">
+                            <span className="font-bold text-slate-900">
                               {b.bold}
                             </span>
                             {b.rest}

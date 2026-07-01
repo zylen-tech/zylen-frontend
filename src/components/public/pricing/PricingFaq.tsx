@@ -12,11 +12,11 @@ const ChevronIcon = ({ open }: { open: boolean }) => (
     height="18"
     viewBox="0 0 24 24"
     fill="none"
-    stroke={open ? '#053959' : '#9ca3af'}
+    stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="shrink-0"
+    className={`shrink-0 transition-colors duration-200 ${open ? 'text-brand-500' : 'text-slate-400'}`}
   >
     <polyline points="6 9 12 15 18 9" />
   </motion.svg>

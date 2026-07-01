@@ -45,7 +45,7 @@ const ServicePackages = () => (
               <div className="mt-3 font-montserrat text-2xl font-extrabold text-brand-500">
                 {card.price}
               </div>
-              <div className="mt-1 text-sm font-medium text-[#6B7280]">
+              <div className="mt-1 text-sm font-medium text-slate-500">
                 ⏱ {card.timeline}
               </div>
               <p className="mt-4 text-sm leading-relaxed text-slate-700">

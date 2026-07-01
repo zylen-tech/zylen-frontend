@@ -56,7 +56,7 @@ const BookDemo = () => (
         </FadeIn>
 
         <FadeIn delay={0.25}>
-          <p className="mt-6 text-xs text-[#6B7280]">{BOOK_DEMO.trustNote}</p>
+          <p className="mt-6 text-xs text-slate-500">{BOOK_DEMO.trustNote}</p>
         </FadeIn>
       </div>
     </div>

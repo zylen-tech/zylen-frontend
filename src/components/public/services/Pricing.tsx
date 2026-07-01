@@ -43,11 +43,11 @@ const Pricing = () => (
                 <span className="font-montserrat text-2xl font-extrabold text-brand-500">
                   {tier.price}
                 </span>
-                <span className="ml-1 text-sm text-[#6B7280]">
+                <span className="ml-1 text-sm text-slate-500">
                   / {tier.period}
                 </span>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-[#6B7280]">
+              <p className="mt-3 text-sm leading-relaxed text-slate-500">
                 {tier.description}
               </p>
 
@@ -93,7 +93,7 @@ const Pricing = () => (
       </div>
 
       <FadeIn delay={0.2}>
-        <p className="mt-8 text-center text-sm text-[#6B7280]">
+        <p className="mt-8 text-center text-sm text-slate-500">
           {PRICING.note}
         </p>
       </FadeIn>
