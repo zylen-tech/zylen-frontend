@@ -34,7 +34,7 @@ const SOCIALS = [
 ];
 
 const SocialLinks = () => (
-  <section className="bg-neutral-50 py-16 md:py-24">
+  <section className="bg-neutral-50 py-12 md:py-16">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <p className="mb-8 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
         Follow Us

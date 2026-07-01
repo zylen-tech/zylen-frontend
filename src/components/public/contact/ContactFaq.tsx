@@ -48,7 +48,7 @@ const ContactFaq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-neutral-50 py-24 md:py-32">
+    <section className="bg-neutral-50 py-16 md:py-20">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
         <div className="mb-12 text-center">
           <SectionHeading
@@ -93,7 +93,7 @@ const ContactFaq = () => {
                       className="overflow-hidden"
                     >
                       <div className="border-t border-brand-100 px-6 pb-6 pt-4">
-                        <p className="text-sm leading-relaxed text-slate-600">
+                        <p className="text-sm leading-relaxed text-slate-700">
                           {item.answer}
                         </p>
                       </div>

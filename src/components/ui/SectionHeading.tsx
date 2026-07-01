@@ -34,7 +34,7 @@ const SectionHeading = ({
       stagger={0.055}
       justify={centered ? 'center' : 'flex-start'}
       className={`mt-2 font-montserrat text-2xl font-bold tracking-[-0.02em] md:text-3xl lg:text-4xl ${
-        light ? 'text-white' : 'text-brand-500'
+        light ? 'text-white' : 'text-neutral-950'
       }`}
     />
 

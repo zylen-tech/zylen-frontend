@@ -71,7 +71,7 @@ const CONTACTS = [
 ];
 
 const ContactOptions = () => (
-  <section className="bg-white py-24 md:py-32">
+  <section className="bg-white py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="grid gap-5 sm:grid-cols-3">
         {CONTACTS.map((c, i) => (
