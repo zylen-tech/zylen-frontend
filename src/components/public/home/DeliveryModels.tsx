@@ -36,15 +36,15 @@ const DeliveryModels = () => (
             transition={{ duration: 0.55, delay: i * 0.12, ease: EASE }}
             className={`flex flex-col rounded-2xl border bg-white p-5 md:p-8 ${
               model.highlight
-                ? 'border-brand-500 shadow-[0_0_0_3px_#05395914]'
+                ? 'border-neutral-950 shadow-[0_0_0_3px_rgba(15,23,42,0.08)]'
                 : 'border-slate-200'
             }`}
           >
             <span
               className={`mb-5 self-start rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${
                 model.highlight
-                  ? 'bg-brand-500 text-white'
-                  : 'bg-brand-100 text-brand-500'
+                  ? 'bg-neutral-950 text-white'
+                  : 'bg-neutral-100 text-neutral-950'
               }`}
             >
               {model.badge}
@@ -55,7 +55,7 @@ const DeliveryModels = () => (
             </h3>
 
             <div className="mt-3 flex items-baseline gap-1.5">
-              <span className="font-montserrat text-2xl font-extrabold text-brand-500">
+              <span className="font-montserrat text-2xl font-extrabold text-neutral-950">
                 {model.price}
               </span>
               <span className="text-sm text-slate-400">{model.period}</span>
@@ -78,11 +78,11 @@ const DeliveryModels = () => (
                   variants={listItem}
                   className="flex items-start gap-2.5"
                 >
-                  <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-brand-100">
+                  <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-neutral-100">
                     <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
                       <path
                         d="M1.5 5l2.5 2.5 4.5-4.5"
-                        stroke="#053959"
+                        stroke="#0f0f0f"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"

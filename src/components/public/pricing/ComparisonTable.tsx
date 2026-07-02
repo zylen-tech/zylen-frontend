@@ -6,10 +6,10 @@ import { SectionHeading } from '../../ui/SectionHeading';
 
 const CheckIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <circle cx="9" cy="9" r="9" fill="#053959" fillOpacity="0.1" />
+    <circle cx="9" cy="9" r="9" fill="#0f0f0f" fillOpacity="0.1" />
     <path
       d="M4.5 9l3 3 6-6"
-      stroke="#053959"
+      stroke="#0f0f0f"
       strokeWidth="1.6"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -80,12 +80,12 @@ const ComparisonTable = () => (
                 <th
                   key={tier.name}
                   className={`px-4 py-5 text-center font-montserrat text-sm font-extrabold ${
-                    tier.highlight ? 'text-brand-500' : 'text-slate-900'
+                    tier.highlight ? 'text-neutral-950' : 'text-slate-900'
                   }`}
                 >
                   {tier.name}
                   {tier.highlight && (
-                    <span className="ml-2 rounded-full bg-brand-100 px-2 py-0.5 text-[10px] font-semibold text-brand-500">
+                    <span className="ml-2 rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-semibold text-neutral-950">
                       Popular
                     </span>
                   )}
@@ -121,7 +121,7 @@ const ComparisonTable = () => (
                     } else {
                       cellContent = (
                         <span
-                          className={`font-medium ${j === 1 ? 'text-brand-500' : 'text-slate-700'}`}
+                          className={`font-medium ${j === 1 ? 'text-neutral-950' : 'text-slate-700'}`}
                         >
                           {val}
                         </span>

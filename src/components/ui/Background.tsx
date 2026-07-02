@@ -3,10 +3,10 @@ import type { ElementType, ReactNode } from 'react';
 export type BackgroundVariant =
   | 'blur' // blur-img-bg-1 — hero + footer (dark tinted image)
   | 'blur-alt' // blur-img-bg — secondary blur image
-  | 'gradient' // hero-gradient (135deg #020a14 → #053959)
+  | 'gradient' // hero-gradient
   | 'white'
-  | 'light' // brand-100 (#e8eff4)
-  | 'dark' // brand-900 (#021724)
+  | 'light' // neutral-100
+  | 'dark' // neutral-950
   | 'none';
 
 type BackgroundPosition = 'top' | 'center' | 'bottom';
@@ -25,8 +25,8 @@ const BASE: Record<BackgroundVariant, string> = {
     "bg-cover bg-no-repeat bg-[url('/assets/background/blur-img-bg.png')]",
   gradient: 'bg-hero-gradient',
   white: 'bg-white',
-  light: 'bg-brand-100',
-  dark: 'bg-brand-900',
+  light: 'bg-neutral-100',
+  dark: 'bg-neutral-950',
   none: '',
 };
 

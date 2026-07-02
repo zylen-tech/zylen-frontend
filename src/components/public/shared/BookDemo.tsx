@@ -28,11 +28,11 @@ const BookDemo = () => (
               transition={{ duration: 0.45, delay: i * 0.08, ease: EASE }}
               className="flex items-start gap-3"
             >
-              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-100">
+              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-neutral-100">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                   <path
                     d="M1.5 5l2.5 2.5 4.5-4.5"
-                    stroke="#053959"
+                    stroke="#0f0f0f"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"

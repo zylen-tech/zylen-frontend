@@ -25,7 +25,7 @@ const ProblemStrip = () => (
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             className="rounded-xl border border-slate-200 bg-neutral-50 p-5 text-center sm:p-6 md:p-8"
           >
-            <div className="font-montserrat text-2xl font-extrabold text-brand-500 sm:text-3xl md:text-4xl">
+            <div className="font-montserrat text-2xl font-extrabold text-neutral-950 sm:text-3xl md:text-4xl">
               {value}
             </div>
             <div className="mt-2 text-sm font-medium text-slate-500">

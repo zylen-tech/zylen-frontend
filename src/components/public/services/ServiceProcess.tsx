@@ -54,10 +54,10 @@ const ServiceProcess = () => (
           >
             {/* Connector line (desktop only) */}
             {i < STEPS.length - 1 && (
-              <div className="absolute -right-3 top-10 z-10 hidden h-px w-6 bg-brand-200 lg:block" />
+              <div className="absolute -right-3 top-10 z-10 hidden h-px w-6 bg-slate-200 lg:block" />
             )}
 
-            <span className="font-montserrat text-3xl font-black text-brand-100 md:text-4xl">
+            <span className="font-montserrat text-3xl font-black text-neutral-200 md:text-4xl">
               {step.number}
             </span>
             <h3 className="mt-3 font-montserrat text-base font-extrabold text-neutral-950">

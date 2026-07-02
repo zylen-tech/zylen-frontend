@@ -62,7 +62,7 @@ const WhoWeWorkWith = () => (
                   transition: { duration: 0.35, ease },
                 },
               }}
-              className="rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-500"
+              className="rounded-full border border-slate-200 bg-neutral-50 px-4 py-1.5 text-sm font-semibold text-neutral-950"
             >
               {sys}
             </motion.span>

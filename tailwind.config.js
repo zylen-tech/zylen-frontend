@@ -125,7 +125,7 @@ module.exports = {
         '99p': '99%',
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #020a14, #053959)',
+        'hero-gradient': 'linear-gradient(180deg, #0d1f3c 0%, #000000 100%)',
       },
       boxShadow: {
         '3xl': '14px 17px 40px 4px',
@@ -148,11 +148,16 @@ module.exports = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        'glow-pulse': {
+          '0%, 100%': { opacity: '0.25' },
+          '50%': { opacity: '0.45' },
+        },
       },
       animation: {
         'slide-in': 'slide-in 0.25s ease-out forwards',
         'page-enter': 'page-enter 0.25s ease-out both',
         'logout-fade': 'logout-fade 0.3s ease-out both',
+        'glow-pulse': 'glow-pulse 6s ease-in-out infinite',
       },
     },
     screens: {
@@ -178,17 +183,17 @@ module.exports = {
 
       // ── Brand ───────────────────────────────────────────────────────────────
       brand: {
-        50: '#f0f5f8',
-        100: '#e8eff4',
-        200: '#c1ced5',
-        300: '#9bb0bd',
-        400: '#69889b',
-        500: '#0a6aaa',
-        600: '#053959',
-        700: '#04283f',
-        800: '#031f31',
-        900: '#021724',
-        950: '#010e1a',
+        50: '#eef9ff',
+        100: '#d9f0ff',
+        200: '#bce6ff',
+        300: '#8dd8ff',
+        400: '#58c2ff',
+        500: '#31a6ff',
+        600: '#1384f5',
+        700: '#1370e2',
+        800: '#165ab7',
+        900: '#184e90',
+        950: '#143057',
       },
 
       // ── Slate (UI neutrals — text, borders, backgrounds) ───────────────────

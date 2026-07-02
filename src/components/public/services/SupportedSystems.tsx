@@ -52,8 +52,8 @@ const HubDiagram = () => {
       <defs>
         {/* Gradient for center circle */}
         <linearGradient id="hub-grad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0a6aaa" />
-          <stop offset="100%" stopColor="#053959" />
+          <stop offset="0%" stopColor="#31a6ff" />
+          <stop offset="100%" stopColor="#1370e2" />
         </linearGradient>
 
         {/* Drop shadow for center icon */}
@@ -62,7 +62,7 @@ const HubDiagram = () => {
             dx="0"
             dy="12"
             stdDeviation="16"
-            floodColor="#053959"
+            floodColor="#1370e2"
             floodOpacity="0.2"
           />
         </filter>
@@ -130,7 +130,7 @@ const HubDiagram = () => {
       })}
 
       {/* Outer glow ring */}
-      <circle cx={CX} cy={CY} r={CR + 14} fill="#0a6aaa" fillOpacity="0.07" />
+      <circle cx={CX} cy={CY} r={CR + 14} fill="#31a6ff" fillOpacity="0.08" />
 
       {/* Center circle — gradient */}
       <circle
@@ -184,7 +184,7 @@ const SupportedSystems = () => (
         Using something not listed?{' '}
         <Link
           href="/contact"
-          className="font-semibold text-brand-500 hover:underline"
+          className="font-semibold text-neutral-950 hover:underline"
         >
           Talk to us
         </Link>{' '}

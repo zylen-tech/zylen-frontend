@@ -14,7 +14,7 @@ const ArrowIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="text-brand-300"
+    className="text-slate-400"
   >
     <line x1="5" y1="12" x2="19" y2="12" />
     <polyline points="12 5 19 12 12 19" />
@@ -39,7 +39,7 @@ const FlowNode = ({
     transition={{ duration: 0.55, delay, ease }}
     className={`flex flex-col items-center justify-center rounded-2xl px-6 py-5 text-center sm:px-8 sm:py-7 ${
       accent
-        ? 'bg-brand-500 shadow-[0_8px_40px_rgba(5,57,89,0.25)]'
+        ? 'bg-neutral-950 shadow-[0_8px_40px_rgba(0,0,0,0.25)]'
         : 'border border-slate-200 bg-white shadow-sm'
     }`}
   >
@@ -116,7 +116,7 @@ const ServiceOverview = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5, ease }}
-          className="mt-8 rounded-xl border border-brand-100 bg-brand-50 px-6 py-4 text-center text-sm leading-relaxed text-brand-500"
+          className="mt-8 rounded-xl border border-slate-100 bg-neutral-50 px-6 py-4 text-center text-sm leading-relaxed text-slate-600"
         >
           No manual re-entry. No LHDN portal logins. No compliance risk. Your
           invoices flow automatically — from your software to MyInvois in

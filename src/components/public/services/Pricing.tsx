@@ -25,22 +25,22 @@ const Pricing = () => (
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
             className={`relative flex flex-col rounded-xl border bg-white p-8 ${
               tier.recommended
-                ? 'border-brand-500 shadow-[0_0_0_2px_#05395920]'
+                ? 'border-neutral-950 shadow-[0_0_0_2px_rgba(15,23,42,0.08)]'
                 : 'border-slate-200'
             }`}
           >
             {tier.recommended && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-4 py-0.5 text-xs font-semibold text-white">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-neutral-950 px-4 py-0.5 text-xs font-semibold text-white">
                 Recommended
               </span>
             )}
 
             <div className="flex-1">
-              <h3 className="font-montserrat text-base font-bold text-brand-500">
+              <h3 className="font-montserrat text-base font-bold text-neutral-950">
                 {tier.name}
               </h3>
               <div className="mt-3">
-                <span className="font-montserrat text-2xl font-extrabold text-brand-500">
+                <span className="font-montserrat text-2xl font-extrabold text-neutral-950">
                   {tier.price}
                 </span>
                 <span className="ml-1 text-sm text-slate-500">
@@ -62,12 +62,12 @@ const Pricing = () => (
                         cx="8"
                         cy="8"
                         r="8"
-                        fill="#053959"
+                        fill="#0f0f0f"
                         fillOpacity="0.10"
                       />
                       <path
                         d="M4.5 8l2.5 2.5 4.5-4.5"
-                        stroke="#053959"
+                        stroke="#0f0f0f"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"

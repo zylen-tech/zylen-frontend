@@ -33,7 +33,7 @@ const MissionStatement = () => (
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, delay: 0.3, ease }}
-          className="mx-auto my-8 h-px w-16 origin-left bg-brand-300"
+          className="mx-auto my-8 h-px w-16 origin-left bg-slate-300"
         />
 
         <motion.p

@@ -91,7 +91,7 @@ const OldWayCard = () => (
 const ZylenWayCard = () => (
   <div
     className="py-16 md:py-24"
-    style={{ background: 'linear-gradient(145deg, #053959 0%, #0a6aaa 100%)' }}
+    style={{ background: 'linear-gradient(145deg, #184e90 0%, #1370e2 100%)' }}
   >
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mx-auto max-w-2xl">

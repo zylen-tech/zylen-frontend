@@ -41,7 +41,7 @@ const ConnectorsStrip = () => (
           <motion.span
             key={item.name}
             variants={pillItem}
-            className="rounded-full border border-slate-200 bg-neutral-50 px-3 py-1.5 text-xs font-semibold text-brand-500 sm:px-5 sm:py-2 sm:text-sm"
+            className="rounded-full border border-brand-100 bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-600 sm:px-5 sm:py-2 sm:text-sm"
           >
             {item.name}
           </motion.span>
@@ -53,7 +53,7 @@ const ConnectorsStrip = () => (
           {CONNECTORS.fallback}{' '}
           <Link
             href={CONNECTORS.fallbackCta.href}
-            className="font-semibold text-brand-500 underline-offset-2 hover:underline"
+            className="font-semibold text-neutral-950 underline-offset-2 hover:underline"
           >
             {CONNECTORS.fallbackCta.label} →
           </Link>

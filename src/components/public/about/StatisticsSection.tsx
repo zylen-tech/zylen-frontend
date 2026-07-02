@@ -62,7 +62,7 @@ const StatisticsSection = () => (
           transition={{ duration: 0.5, delay: 0.08, ease }}
           className="font-montserrat text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl"
         >
-          Compliance <span className="text-brand-500">&amp;</span> The Reality
+          Compliance &amp; The Reality
         </motion.h2>
       </div>
 
@@ -77,12 +77,12 @@ const StatisticsSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1, ease }}
             className={
               stat.filled
-                ? 'rounded-2xl bg-gradient-to-br from-[#053959] to-[#0a6aaa] p-8'
-                : 'rounded-2xl border border-[#e2e6ec] bg-[#f8fafc] p-8'
+                ? 'rounded-2xl bg-neutral-950 p-8'
+                : 'rounded-2xl border border-slate-200 bg-neutral-50 p-8'
             }
           >
             <p
-              className={`text-5xl font-bold leading-none ${stat.filled ? 'text-white' : 'text-[#053959]'}`}
+              className={`text-5xl font-bold leading-none ${stat.filled ? 'text-white' : 'text-neutral-950'}`}
             >
               {stat.arrow && <span className="mr-0.5">↑</span>}
               {stat.value}

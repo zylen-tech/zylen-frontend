@@ -13,7 +13,7 @@ const CoreInsightBanner = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease }}
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#053959] to-[#0a6aaa] px-8 py-12 md:px-12 md:py-16"
+        className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#184e90] to-[#1370e2] px-8 py-12 md:px-12 md:py-16"
       >
         <div className="relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
           {/* Left: text */}

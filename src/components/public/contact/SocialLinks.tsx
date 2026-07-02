@@ -61,7 +61,7 @@ const SocialLinks = () => (
               <p className="font-montserrat text-sm font-extrabold text-neutral-950">
                 {s.label}
               </p>
-              <p className="text-xs text-brand-500">{s.handle}</p>
+              <p className="text-xs text-slate-500">{s.handle}</p>
               <p className="mt-0.5 text-xs text-slate-500">{s.description}</p>
             </div>
           </motion.a>

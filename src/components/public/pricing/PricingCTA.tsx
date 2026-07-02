@@ -8,7 +8,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const PricingCTA = () => (
   <section
     className="relative overflow-hidden py-24 md:py-32"
-    style={{ background: 'linear-gradient(160deg, #020a14 0%, #053959 100%)' }}
+    style={{ background: 'linear-gradient(160deg, #0d1f3c 0%, #1370e2 100%)' }}
   >
     {/* Line grid */}
     <div
@@ -40,7 +40,7 @@ const PricingCTA = () => (
       >
         Book a Free Consultation.
         <br />
-        <span className="text-brand-300">We&rsquo;ll find the right fit.</span>
+        <span className="text-white/60">We&rsquo;ll find the right fit.</span>
       </motion.h2>
 
       <motion.p

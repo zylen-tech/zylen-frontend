@@ -5,7 +5,7 @@ type PageHeroProps = {
 };
 
 const PageHero = ({ eyebrow, headline, description }: PageHeroProps) => (
-  <section className="bg-brand-900 pb-20 pt-[calc(70px+5rem)] md:pb-28 md:pt-[calc(80px+7rem)]">
+  <section className="bg-neutral-950 pb-20 pt-[calc(70px+5rem)] md:pb-28 md:pt-[calc(80px+7rem)]">
     <div className="mx-auto max-w-7xl px-5 text-center md:px-8">
       <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white/80">
         {eyebrow}

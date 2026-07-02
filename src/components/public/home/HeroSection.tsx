@@ -33,9 +33,9 @@ const HeroSection = () => {
     >
       {/* Radial glow — center top */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 -translate-y-1/4 rounded-full opacity-30 blur-[120px] md:h-[600px] md:w-[900px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 -translate-y-1/4 animate-glow-pulse rounded-full blur-[120px] md:h-[600px] md:w-[900px]"
         style={{
-          background: 'radial-gradient(ellipse, #053959 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, #1370e2 0%, transparent 70%)',
         }}
       />
 
@@ -61,9 +61,7 @@ const HeroSection = () => {
         >
           Connect Your Business to <br className="hidden sm:block" />
           {"Malaysia's E-Invoice System "}
-          <span className="bg-gradient-to-r from-brand-300 to-white bg-clip-text text-transparent">
-            — In 7 Days
-          </span>
+          <span className="text-white/70">— In 7 Days</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -93,9 +91,9 @@ const HeroSection = () => {
       >
         {/* Glow behind dashboard */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-64 -translate-y-1/2 opacity-40 blur-[80px]"
+          className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-64 -translate-y-1/2 animate-glow-pulse blur-[80px]"
           style={{
-            background: 'radial-gradient(ellipse, #053959 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, #1370e2 0%, transparent 70%)',
           }}
         />
 

@@ -234,7 +234,7 @@ const HowItWorks = () => {
           <div className="absolute left-[88px] top-4 hidden h-[calc(100%-2rem)] w-px bg-slate-200 md:block">
             <motion.div
               style={{ scaleY: lineScaleY, originY: 0 }}
-              className="size-full bg-brand-300"
+              className="size-full bg-brand-400"
             />
           </div>
 
@@ -283,7 +283,7 @@ const HowItWorks = () => {
                     transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
                     className="flex flex-col justify-center"
                   >
-                    <p className="mb-1 text-sm font-semibold text-brand-400">
+                    <p className="mb-1 text-sm font-semibold text-slate-400">
                       {extra?.subtitle}
                     </p>
                     <h3 className="mb-5 font-montserrat text-2xl font-black uppercase tracking-tight text-slate-900 md:text-3xl">
@@ -304,7 +304,7 @@ const HowItWorks = () => {
                           }}
                           className="flex items-start gap-3"
                         >
-                          <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-400" />
+                          <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-slate-400" />
                           <span className="text-base leading-relaxed text-slate-500">
                             <span className="font-bold text-slate-900">
                               {b.bold}

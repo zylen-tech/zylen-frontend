@@ -104,7 +104,7 @@ const FoundationSection = () => {
             Who We Are
           </p>
           <h2 className="mt-3 font-montserrat text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl">
-            Vision, Mission <span className="text-brand-500">&amp;</span> Values
+            Vision, Mission &amp; Values
           </h2>
         </motion.div>
 
@@ -179,7 +179,7 @@ const FoundationSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.6, ease }}
-                className="w-full rounded-2xl bg-gradient-to-br from-[#053959] to-[#0a6aaa] p-8 md:p-10"
+                className="w-full rounded-2xl bg-gradient-to-br from-[#184e90] to-[#1370e2] p-8 md:p-10"
               >
                 <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-white/15 text-white">
                   <TargetIcon />

@@ -18,9 +18,9 @@ const ReusableHero = ({
   <section className="relative overflow-hidden bg-hero-gradient pb-16 pt-[calc(70px+2.5rem)] md:pb-20 md:pt-[calc(80px+3.5rem)]">
     {/* Radial glow */}
     <div
-      className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-20 blur-[120px]"
+      className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/3 animate-glow-pulse rounded-full blur-[120px]"
       style={{
-        background: 'radial-gradient(ellipse, #1d6fa4 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, #1370e2 0%, transparent 70%)',
       }}
     />
 
@@ -56,7 +56,7 @@ const ReusableHero = ({
         {headlineAccent && (
           <>
             {' '}
-            <span className="text-brand-300">{headlineAccent}</span>
+            <span className="text-white/60">{headlineAccent}</span>
           </>
         )}
       </motion.h1>

@@ -15,7 +15,7 @@ const ChevronIcon = ({ open }: { open: boolean }) => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={`shrink-0 transition-colors duration-200 ${open ? 'text-brand-500' : 'text-slate-400'}`}
+    className={`shrink-0 transition-colors duration-200 ${open ? 'text-brand-600' : 'text-slate-400'}`}
   >
     <polyline points="6 9 12 15 18 9" />
   </motion.svg>
@@ -29,9 +29,8 @@ const FaqSection = () => {
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <h2 className="mb-12 text-center font-montserrat text-3xl font-bold leading-tight tracking-[-0.02em] text-brand-900 md:text-4xl lg:text-5xl">
-          {FAQ.headline}{' '}
-          <span className="text-brand-500">{FAQ.headlineAccent}</span>
+        <h2 className="mb-12 text-center font-montserrat text-3xl font-bold leading-tight tracking-[-0.02em] text-neutral-950 md:text-4xl lg:text-5xl">
+          {FAQ.headline} <span>{FAQ.headlineAccent}</span>
         </h2>
 
         <div className="flex flex-col gap-3">
@@ -42,7 +41,7 @@ const FaqSection = () => {
                 key={item.question}
                 className={`rounded-xl border transition-colors duration-200 ${
                   isOpen
-                    ? 'border-brand-200 bg-brand-50'
+                    ? 'border-slate-200 bg-neutral-50'
                     : 'border-slate-200 bg-white'
                 }`}
               >
@@ -53,7 +52,7 @@ const FaqSection = () => {
                 >
                   <span
                     className={`text-base font-medium leading-snug transition-colors duration-200 ${
-                      isOpen ? 'text-brand-500' : 'text-slate-700'
+                      isOpen ? 'text-brand-600' : 'text-slate-700'
                     }`}
                   >
                     {item.question}
@@ -71,7 +70,7 @@ const FaqSection = () => {
                       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-brand-100 px-6 pb-6 pt-4">
+                      <div className="border-t border-slate-100 px-6 pb-6 pt-4">
                         <p className="text-sm leading-relaxed text-slate-600">
                           {item.answer}
                         </p>

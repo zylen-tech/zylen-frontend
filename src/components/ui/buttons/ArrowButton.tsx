@@ -34,10 +34,10 @@ const cls =
 const ArrowButton = ({ href, children, className = '' }: ArrowButtonProps) => {
   const inner = (
     <>
-      <span className="text-sm font-semibold text-brand-500 sm:text-base">
+      <span className="text-sm font-semibold text-neutral-950 sm:text-base">
         {children}
       </span>
-      <span className="flex size-10 shrink-0 -rotate-45 items-center justify-center rounded-full bg-brand-100 text-brand-500 transition-transform duration-300 group-hover:rotate-0">
+      <span className="flex size-10 shrink-0 -rotate-45 items-center justify-center rounded-full bg-neutral-100 text-neutral-950 transition-all duration-300 group-hover:rotate-0 group-hover:bg-brand-600 group-hover:text-white">
         <ArrowIcon />
       </span>
     </>

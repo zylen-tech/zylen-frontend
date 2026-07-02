@@ -94,7 +94,7 @@ const ContactOptions = () => (
               <p className="font-montserrat text-sm font-extrabold text-neutral-950">
                 {c.label}
               </p>
-              <p className="mt-1 font-medium text-brand-500">{c.value}</p>
+              <p className="mt-1 font-medium text-neutral-950">{c.value}</p>
               <p className="mt-1 text-xs text-slate-500">{c.sub}</p>
             </div>
           </motion.a>

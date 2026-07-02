@@ -43,13 +43,13 @@ const CompanyTimeline = () => {
                 className="flex gap-5 md:gap-8"
               >
                 {/* Dot */}
-                <div className="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-brand-400 bg-white">
-                  <div className="size-2.5 rounded-full bg-brand-500" />
+                <div className="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-brand-300 bg-white">
+                  <div className="size-2.5 rounded-full bg-brand-600" />
                 </div>
 
                 {/* Content */}
                 <div className="pb-2 pt-1">
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-400">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-500">
                     {item.year}
                   </span>
                   <h3 className="mt-1 font-montserrat text-lg font-extrabold text-slate-900">

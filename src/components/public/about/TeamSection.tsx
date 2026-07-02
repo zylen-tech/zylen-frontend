@@ -32,8 +32,8 @@ const TeamSection = () => (
             <div
               className="mb-6 flex size-20 items-center justify-center rounded-full font-montserrat text-2xl font-extrabold text-white"
               style={{
-                background: 'linear-gradient(135deg, #1d6fa4, #053959)',
-                boxShadow: '0 0 0 3px rgba(5,57,89,0.2)',
+                background: 'linear-gradient(135deg, #404040, #0f0f0f)',
+                boxShadow: '0 0 0 3px rgba(15,23,42,0.15)',
               }}
             >
               {member.initials}
@@ -43,7 +43,7 @@ const TeamSection = () => (
               {member.name}
             </h3>
 
-            <p className="mt-1 text-base font-medium italic text-brand-500">
+            <p className="mt-1 text-base font-medium italic text-slate-500">
               {member.role}
             </p>
 
@@ -61,7 +61,7 @@ const TeamSection = () => (
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-200 px-4 py-1.5 text-xs font-semibold text-brand-500 transition-colors duration-200 hover:bg-brand-50"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-1.5 text-xs font-semibold text-slate-600 transition-colors duration-200 hover:bg-neutral-50"
             >
               <LinkedInIcon />
               LinkedIn

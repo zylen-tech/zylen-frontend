@@ -32,7 +32,7 @@ const AddOns = () => (
             <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
               {addon.description}
             </p>
-            <p className="mt-5 font-montserrat text-sm font-bold text-brand-500">
+            <p className="mt-5 font-montserrat text-sm font-bold text-neutral-950">
               {addon.price}
             </p>
           </motion.div>

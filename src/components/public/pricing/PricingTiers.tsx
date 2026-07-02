@@ -10,10 +10,10 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const CheckIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-    <circle cx="7" cy="7" r="7" fill="#053959" fillOpacity="0.12" />
+    <circle cx="7" cy="7" r="7" fill="#0f0f0f" fillOpacity="0.12" />
     <path
       d="M3.5 7l2.5 2.5 4.5-4.5"
-      stroke="#053959"
+      stroke="#0f0f0f"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -50,7 +50,7 @@ const PricingTiers = () => {
             type="button"
             onClick={() => setAnnual(!annual)}
             className={`relative h-6 w-11 rounded-full transition-colors duration-200 focus:outline-none ${
-              annual ? 'bg-brand-500' : 'bg-slate-200'
+              annual ? 'bg-neutral-950' : 'bg-slate-200'
             }`}
             aria-label="Toggle annual billing"
           >
@@ -81,12 +81,12 @@ const PricingTiers = () => {
               transition={{ duration: 0.55, delay: i * 0.1, ease }}
               className={`relative flex flex-col rounded-2xl border p-6 md:p-7 ${
                 tier.highlight
-                  ? 'border-brand-500 shadow-[0_0_0_3px_rgba(5,57,89,0.08)]'
+                  ? 'border-neutral-950 shadow-[0_0_0_3px_rgba(15,23,42,0.08)]'
                   : 'border-slate-200 bg-white'
               }`}
             >
               {tier.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand-500 px-4 py-0.5 text-xs font-semibold text-white">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-neutral-950 px-4 py-0.5 text-xs font-semibold text-white">
                   Most Popular
                 </span>
               )}
@@ -101,12 +101,12 @@ const PricingTiers = () => {
 
                 <div className="mt-5">
                   {tier.enterprise ? (
-                    <span className="font-montserrat text-3xl font-extrabold text-brand-500">
+                    <span className="font-montserrat text-3xl font-extrabold text-neutral-950">
                       Custom
                     </span>
                   ) : (
                     <>
-                      <span className="font-montserrat text-3xl font-extrabold text-brand-500">
+                      <span className="font-montserrat text-3xl font-extrabold text-neutral-950">
                         {annual ? tier.annualPrice : tier.monthlyPrice}
                       </span>
                       <span className="ml-1 text-sm text-slate-400">
