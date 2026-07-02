@@ -108,7 +108,7 @@ const WhyZylen = () => (
             variants={cardItem}
             className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(5,57,89,0.08)] md:p-7"
           >
-            <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
+            <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-neutral-100 text-neutral-950 transition-colors duration-300 group-hover:bg-neutral-950 group-hover:text-white">
               <Icon />
             </div>
             <h3 className="mb-3 font-montserrat text-base font-bold leading-snug tracking-[-0.01em] text-neutral-950 md:text-lg">

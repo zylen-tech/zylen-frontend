@@ -54,20 +54,6 @@ const HeroSection = () => {
         style={{ y: contentY, opacity: contentOpacity }}
         className="relative mx-auto max-w-7xl px-5 text-center md:px-8"
       >
-        {/* Badge */}
-        <motion.div
-          {...fadeUp(0)}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 backdrop-blur-sm"
-        >
-          <span className="relative flex size-2">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-60" />
-            <span className="relative inline-flex size-2 rounded-full bg-green-400" />
-          </span>
-          <span className="text-xs font-semibold uppercase tracking-widest text-white/75">
-            {HERO.badge}
-          </span>
-        </motion.div>
-
         {/* Headline */}
         <motion.h1
           {...fadeUp(0.1)}

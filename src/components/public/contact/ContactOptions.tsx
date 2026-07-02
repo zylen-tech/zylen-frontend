@@ -87,7 +87,7 @@ const ContactOptions = () => (
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
             className="flex flex-col items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center transition-shadow duration-200 hover:shadow-md"
           >
-            <div className="flex size-14 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+            <div className="flex size-14 items-center justify-center rounded-xl bg-neutral-100 text-neutral-950">
               {c.icon}
             </div>
             <div>

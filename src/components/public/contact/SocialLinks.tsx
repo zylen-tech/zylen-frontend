@@ -54,7 +54,7 @@ const SocialLinks = () => (
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
             className="flex flex-1 items-center gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-5 transition-shadow duration-200 hover:shadow-md"
           >
-            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-neutral-950">
               {s.icon}
             </div>
             <div>

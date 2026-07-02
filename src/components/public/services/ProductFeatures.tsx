@@ -111,7 +111,7 @@ const ProductFeatures = () => (
             transition={{ duration: 0.55, delay: i * 0.1, ease }}
             className="rounded-2xl border border-slate-200 bg-white p-6 transition-shadow duration-200 hover:shadow-md md:p-7"
           >
-            <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+            <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-neutral-100 text-neutral-950">
               {icon}
             </div>
             <h3 className="font-montserrat text-sm font-extrabold text-neutral-950 md:text-base">

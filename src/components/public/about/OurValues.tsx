@@ -94,7 +94,7 @@ const OurValues = () => (
               transition={{ duration: 0.55, delay: i * 0.1, ease }}
               className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
             >
-              <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+              <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-neutral-100 text-neutral-950">
                 <Icon />
               </div>
               <h3 className="font-montserrat text-base font-extrabold text-neutral-950">

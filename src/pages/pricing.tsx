@@ -3,7 +3,6 @@ import type { ReactElement } from 'react';
 import { Meta } from '../components/layout/Meta';
 import { AddOns } from '../components/public/pricing/AddOns';
 import { ComparisonTable } from '../components/public/pricing/ComparisonTable';
-import { PricingCTA } from '../components/public/pricing/PricingCTA';
 import { PricingFaq } from '../components/public/pricing/PricingFaq';
 import { PricingTiers } from '../components/public/pricing/PricingTiers';
 import { PricingTrustBar } from '../components/public/pricing/PricingTrustBar';
@@ -28,7 +27,6 @@ const PricingPage: NextPageWithLayout = () => (
     <ComparisonTable />
     <AddOns />
     <PricingFaq />
-    <PricingCTA />
   </>
 );
 

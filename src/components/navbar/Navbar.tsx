@@ -87,7 +87,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   const getNavBg = () => {
     if (scrolled) return 'bg-white shadow-md border-b border-slate-100';
     return isDark
-      ? 'bg-transparent border-b border-white/10'
+      ? 'bg-transparent'
       : 'bg-white border-b border-slate-100 shadow-sm';
   };
 

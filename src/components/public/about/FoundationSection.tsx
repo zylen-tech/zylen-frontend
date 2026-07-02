@@ -153,7 +153,7 @@ const FoundationSection = () => {
                 transition={{ duration: 0.6, ease }}
                 className="w-full rounded-2xl border border-slate-200 bg-white p-8 md:p-10"
               >
-                <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+                <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-neutral-100 text-neutral-950">
                   <EyeIcon />
                 </div>
                 <h3 className="font-montserrat text-2xl font-bold text-neutral-950">
@@ -209,7 +209,7 @@ const FoundationSection = () => {
                 transition={{ duration: 0.6, ease }}
                 className="w-full rounded-2xl border border-slate-200 bg-white p-8 md:p-10"
               >
-                <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+                <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-neutral-100 text-neutral-950">
                   <ValuesIcon />
                 </div>
                 <h3 className="font-montserrat text-2xl font-bold text-neutral-950">
