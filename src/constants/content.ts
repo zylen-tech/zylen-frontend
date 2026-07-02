@@ -240,11 +240,11 @@ export const ABOUT = {
   body: 'Zylen is a software agency founded by engineers based in Malaysia. We built the agency we always wished existed — one that delivers on time, communicates honestly, and stays with you after go-live.',
   team: [
     {
-      name: 'Ibnu Jabir',
+      name: 'Kedir Jabir',
       role: 'Co-Founder · Software Engineer',
       tagline: 'Full-Stack Developer & ALX-SE Graduate',
       bio: 'Based in Alor Setar, Kedah. ALX-SE Graduate, previously at Byte of Bread Technologies.',
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/ibnu-jabir/',
       initials: 'IJ',
     },
     {
@@ -252,7 +252,7 @@ export const ABOUT = {
       role: 'Co-Founder · Frontend Developer',
       tagline: 'Software Engineer pursuing MSc at Universiti Malaya',
       bio: 'CS graduate specialising in Software Engineering & Web Systems. Based in Petaling, Selangor.',
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/adnan-madi417/',
       initials: 'AM',
     },
     {
@@ -260,7 +260,7 @@ export const ABOUT = {
       role: 'Co-Founder · Software Engineering',
       tagline: 'Building data-driven apps with Django & REST',
       bio: 'Based in Alor Setar, Kedah. Focused on backend web applications with Django and REST Framework.',
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/abderrahmanebouzemlal/',
       initials: 'AB',
     },
   ],
