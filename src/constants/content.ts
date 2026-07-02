@@ -257,7 +257,7 @@ export const ABOUT = {
     },
     {
       name: 'Abderrahmane Bouzemlal',
-      role: 'Software Engineering',
+      role: 'Co-Founder · Software Engineering',
       tagline: 'Building data-driven apps with Django & REST',
       bio: 'Based in Alor Setar, Kedah. Focused on backend web applications with Django and REST Framework.',
       linkedin: '#',
