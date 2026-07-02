@@ -20,12 +20,12 @@ export const ASSETS = {
 export const BRAND = {
   name: 'Zylen',
   tagline: 'E-Invoice Integration Made Simple.',
-  email: 'hello@zylen.com.my',
+  email: 'hello@zylen.tech',
   phone: '+60 3-3977 3973',
   website: 'zylen.tech',
   whatsapp: 'https://wa.me/60339773973',
   calendly: 'https://calendly.com/zylen',
-  ssm: 'SSM: 202301012345 (1234567-X)',
+  ssm: 'SSM: Pending registration',
   businessHours: 'Mon–Fri 9am–6pm · Sat 9am–1pm (MYT)',
   social: {
     linkedin: 'https://linkedin.com/company/zylen',
@@ -372,10 +372,10 @@ export const BOOK_DEMO = {
 export const TRUST_STRIP = {
   label: 'Trusted by finance teams across Malaysia',
   stats: [
-    { value: '99.9%', label: 'Uptime SLA' },
-    { value: '1M+', label: 'Invoices Processed' },
-    { value: '50+', label: 'ERP Integrations' },
-    { value: 'SOC 2', label: 'Type II Certified' },
+    { value: '7-day', label: 'Setup' },
+    { value: '4', label: 'Accounting Systems' },
+    { value: '100%', label: 'LHDN Compliant' },
+    { value: 'Phase 4', label: 'Ready' },
   ],
 };
 
@@ -388,8 +388,6 @@ export const CONNECTORS = {
     { name: 'SQL Accounting' },
     { name: 'Xero' },
     { name: 'QuickBooks' },
-    { name: 'Odoo' },
-    { name: 'SAP Business One' },
   ],
   fallback: 'Using a custom system or in-house ERP?',
   fallbackCta: { label: 'We handle those too', href: '/contact' },
@@ -464,7 +462,7 @@ export const FAQ = {
     {
       question: 'How long does the integration take?',
       answer:
-        'Standard accounting software integrations take 7–10 working days from project kick-off to go-live. Custom ERP or POS systems typically take 10–14 days. Enterprise multi-entity setups are scoped individually but rarely exceed 4 weeks.',
+        'Most integrations go live within 7–14 days. Discovery call on Day 1, proposal within 24 hours, build starts immediately after approval. We work around your schedule.',
     },
     {
       question: 'What exactly is LHDN MyInvois?',
@@ -494,7 +492,7 @@ export const FAQ = {
     {
       question: 'Do you guarantee LHDN approval after integration?',
       answer:
-        'Yes. Every integration goes through full LHDN sandbox validation before go-live — including credit notes, debit notes, cancellations, and rejection scenarios. We do not sign off until your setup is fully validated against the official MyInvois test environment.',
+        "Zylen builds to LHDN's official API specification and runs full sandbox validation before go-live. While LHDN approval depends on your data quality and business registration, our integrations have a 100% sandbox pass rate.",
     },
   ],
 };

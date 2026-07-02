@@ -127,7 +127,6 @@ const Footer = () => (
             Legal
           </h4>
           <ul className="flex flex-col gap-2.5">
-            <li className="text-xs text-white/35">{BRAND.ssm}</li>
             {FOOTER.legal.map(({ label, href }) => (
               <li key={label}>
                 <Link
@@ -143,7 +142,7 @@ const Footer = () => (
       </div>
 
       <div className="mt-12 border-t border-white/[0.10] pt-6 text-center text-xs text-white/35">
-        © {new Date().getFullYear()} Zylen Sdn Bhd. All rights reserved. ·{' '}
+        © {new Date().getFullYear()} Zylen. All rights reserved. ·{' '}
         {BRAND.website}
       </div>
     </div>

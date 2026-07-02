@@ -107,7 +107,7 @@ const HeroSection = () => {
             </div>
             <div className="flex flex-1 items-center justify-center">
               <span className="rounded-md bg-white/[0.07] px-6 py-1 text-xs text-white/30">
-                app.zylen.com.my/dashboard
+                app.zylen.tech/dashboard
               </span>
             </div>
           </div>
