@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-import { ASSETS, BRAND, FOOTER } from '../../constants/content';
+import { BRAND, FOOTER } from '../../constants/content';
 
 const LinkedInIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -22,19 +21,9 @@ const Footer = () => (
         {/* Brand column */}
         <div className="sm:col-span-2 md:col-span-1">
           <Link href="/" className="mb-5 flex items-center gap-3 no-underline">
-            <Image
-              src={ASSETS.logo.whiteIconBg}
-              alt="Zylen icon"
-              width={40}
-              height={40}
-              className="h-10 w-auto object-contain"
-            />
             <div className="flex flex-col leading-none">
               <span className="font-montserrat text-lg font-extrabold tracking-tight text-white">
                 ZYLEN
-              </span>
-              <span className="mt-1 font-montserrat text-[0.5rem] font-medium tracking-[0.12em] text-white/50">
-                E-INVOICE INTEGRATION
               </span>
             </div>
           </Link>

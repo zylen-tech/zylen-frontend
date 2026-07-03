@@ -1,10 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { ASSETS, BRAND, NAV_LINKS } from '../../constants/content';
+import { BRAND, NAV_LINKS } from '../../constants/content';
 import { Button } from '../ui/buttons/Button';
 import {
   SolutionsDropdown,
@@ -105,8 +104,6 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
       ? 'text-slate-600 hover:bg-neutral-100 hover:text-neutral-950'
       : 'text-white hover:bg-white/10';
   const getLogoNameCls = () => (light ? 'text-neutral-950' : 'text-white');
-  const getLogoSubCls = () => (light ? 'text-slate-400' : 'text-white/60');
-  const getLogoSrc = () => (light ? ASSETS.logo.icon : ASSETS.logo.whiteIconBg);
   const getWhatsappVariant = () =>
     (light ? 'secondary' : 'outline-white') as 'secondary' | 'outline-white';
   const getCallVariant = () =>
@@ -122,24 +119,11 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
       <div className="mx-auto flex h-[70px] max-w-7xl items-center justify-between gap-6 px-5 md:h-[80px] md:px-8">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <Image
-            src={getLogoSrc()}
-            alt="Zylen"
-            width={40}
-            height={40}
-            className="h-9 w-auto object-contain transition-all duration-300 md:h-10"
-            priority
-          />
           <div className="flex flex-col leading-none">
             <p
               className={`font-montserrat text-sm font-bold leading-tight transition-colors duration-300 md:text-base ${getLogoNameCls()}`}
             >
               ZYLEN
-            </p>
-            <p
-              className={`hidden font-montserrat text-[0.5rem] font-medium tracking-[0.12em] transition-colors duration-300 md:block ${getLogoSubCls()}`}
-            >
-              E-INVOICE INTEGRATION
             </p>
           </div>
         </Link>
