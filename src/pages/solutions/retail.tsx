@@ -1,11 +1,21 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import type { ReactElement } from 'react';
 import { useState } from 'react';
-import { LuChartBar, LuPackage, LuPlugZap, LuZap } from 'react-icons/lu';
+import {
+  LuChartBar,
+  LuPackage,
+  LuPlugZap,
+  LuTriangleAlert,
+  LuZap,
+} from 'react-icons/lu';
 
 import { Meta } from '../../components/layout/Meta';
 import { BookDemo } from '../../components/public/shared/BookDemo';
 import { HowItWorks } from '../../components/public/shared/HowItWorks';
+import { BeforeAfterComparison } from '../../components/solutions/BeforeAfterComparison';
+import { RelatedSolutions } from '../../components/solutions/RelatedSolutions';
+import { TrustBadges } from '../../components/solutions/TrustBadges';
+import { UrgencyCallout } from '../../components/solutions/UrgencyCallout';
 import { Button } from '../../components/ui/buttons/Button';
 import { FadeIn } from '../../components/ui/FadeIn';
 import { ReusableHero } from '../../components/ui/hero';
@@ -141,6 +151,9 @@ const RetailPage: NextPageWithLayout = () => {
         description="Retailers, wholesalers, and trading companies above RM 1M must submit every invoice through LHDN MyInvois. Zylen automates high-volume invoice submissions — from POS transactions to B2B trade invoices."
       />
 
+      {/* ── Trust badges ─────────────────────────────────────────────────────── */}
+      <TrustBadges />
+
       {/* ── Mandate stats ────────────────────────────────────────────────────── */}
       <section className="border-b border-slate-100 bg-white py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -165,6 +178,40 @@ const RetailPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Before / After ───────────────────────────────────────────────────── */}
+      <BeforeAfterComparison
+        eyebrow="The Reality"
+        left={{
+          label: 'Without Zylen',
+          headline: 'Manual. High-risk. Unscalable.',
+          bullets: [
+            'Manually upload hundreds of invoices to MyInvois daily',
+            'B2C consolidated daily invoice done by hand',
+            'POS system has no native MyInvois connection',
+            'One formatting error rejects the entire batch',
+            'Operations team drowning in compliance work',
+          ],
+        }}
+        right={{
+          label: 'With Zylen',
+          headline: 'Automated. Real-time. Scalable.',
+          bullets: [
+            'Every POS transaction auto-submitted to MyInvois instantly',
+            'Consolidated B2C daily invoice generated and submitted automatically',
+            'High-volume batches handled without manual intervention',
+            'Errors caught and retried automatically',
+            'Operations team focuses on sales — not submissions',
+          ],
+        }}
+      />
+
+      {/* ── Urgency callout ──────────────────────────────────────────────────── */}
+      <UrgencyCallout
+        Icon={LuTriangleAlert}
+        headline="B2C retailers can consolidate daily transactions — but only if done correctly."
+        body="LHDN allows retailers to issue a single consolidated e-invoice for all B2C transactions each day — instead of one per customer. However, this consolidated invoice must be correctly formatted, submitted by end of day, and include all required fields. Zylen handles this automatically from your POS system."
+      />
 
       {/* ── Benefits ─────────────────────────────────────────────────────────── */}
       <section className="bg-hero-gradient py-20 md:py-28">
@@ -312,6 +359,9 @@ const RetailPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Related solutions ────────────────────────────────────────────────── */}
+      <RelatedSolutions exclude="retail" />
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
       <BookDemo />

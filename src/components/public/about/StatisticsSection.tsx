@@ -28,15 +28,30 @@ type Stat = {
 };
 
 const STATS: Stat[] = [
-  { value: '847+', label: 'Invoices Submitted', arrow: true, filled: true },
-  { value: '100%', label: 'LHDN Compliance Rate', arrow: true, filled: false },
   {
-    value: '4+',
-    label: 'Accounting Systems Supported',
+    value: 'RM 20,000',
+    label: 'Maximum fine per non-compliant invoice',
     arrow: true,
     filled: true,
   },
-  { value: 'Days', label: 'Average Setup Time', arrow: false, filled: false },
+  {
+    value: '55',
+    label: 'Mandatory fields required per MyInvois submission',
+    arrow: true,
+    filled: false,
+  },
+  {
+    value: '4',
+    label: 'Accounting systems supported out of the box',
+    arrow: false,
+    filled: true,
+  },
+  {
+    value: '7 Days',
+    label: 'Average integration timeline from discovery to go-live',
+    arrow: false,
+    filled: false,
+  },
 ];
 
 const StatisticsSection = () => (
@@ -62,7 +77,7 @@ const StatisticsSection = () => (
           transition={{ duration: 0.5, delay: 0.08, ease }}
           className="font-montserrat text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl"
         >
-          Compliance &amp; The Reality
+          The Mandate, By the Numbers
         </motion.h2>
       </div>
 

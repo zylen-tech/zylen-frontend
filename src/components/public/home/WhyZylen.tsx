@@ -69,18 +69,18 @@ const LockIcon = () => (
 const FEATURES = [
   {
     Icon: ShieldIcon,
-    title: '100% Compliance with LHDN e-Invoice Guideline',
-    body: "Zylen is always up to date with LHDN's latest e-Invoice Malaysia requirements. Our integration middleware ensures full compliance for businesses of all sizes while streamlining the submission process through secure, automated reporting to MyInvois.",
+    title: 'Built to LHDN Specification — All 55 Fields',
+    body: "Zylen maps your invoice data to all 55 mandatory MyInvois fields before submission. Every integration is validated against LHDN's sandbox environment before a single live invoice is sent.",
   },
   {
     Icon: PlugIcon,
-    title: 'Seamless Integration for e-Invoicing Malaysia',
-    body: 'Zylen connects with the accounting software Malaysian businesses already use — AutoCount, SQL Accounting, Xero, and QuickBooks. Our integration layer enables a unified e-Invoice workflow without disrupting your existing systems.',
+    title: 'Keep Using Your Existing Accounting Software',
+    body: 'AutoCount, SQL Accounting, Xero, QuickBooks — Zylen builds the integration layer on top of what you already use. Your team opens the same software tomorrow. We handle MyInvois in the background.',
   },
   {
     Icon: LockIcon,
-    title: 'Secure & Reliable e-Invoice Platform',
-    body: 'Zylen is built with security and data integrity at its core. Enterprise-grade encryption safeguards every e-Invoice transaction, ensuring reliability and data protection for Malaysian SMEs throughout the entire submission process.',
+    title: 'Encrypted Submission. Zero Data Retention.',
+    body: 'Every invoice travels through an encrypted API bridge. Zylen does not store your financial data — the code lives in your infrastructure, not ours. You own it entirely on go-live.',
   },
 ];
 
@@ -89,9 +89,9 @@ const WhyZylen = () => (
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
         <SectionHeading
-          eyebrow="Why choose Zylen?"
-          headline="All Your e-Invoicing Needs in One Place"
-          subtext="Say goodbye to compliance headaches, e-Invoice system integration issues, or manual invoicing overload with Zylen — Malaysia's trusted e-Invoice integration middleware for SMEs and growing businesses."
+          eyebrow="Why Zylen"
+          headline="The Integration Layer Malaysian SMEs Actually Need"
+          subtext="We connect your existing accounting software to LHDN MyInvois — in 7 to 14 days, at a fixed price, with full source code handover. No new software. No vendor lock-in."
         />
       </div>
 

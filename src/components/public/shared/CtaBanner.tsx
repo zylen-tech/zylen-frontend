@@ -7,9 +7,9 @@ const CtaBanner = () => (
   <section className="bg-white py-20 md:py-28">
     <div className="mx-auto max-w-7xl px-5 text-center md:px-8">
       <SectionHeading
-        eyebrow="Get Started Today"
-        headline="Ready to simplify your e-invoicing workflow?"
-        subtext="Join hundreds of finance teams already using Zylen to automate compliance, cut processing time, and scale without friction."
+        eyebrow="The Deadline Is Real"
+        headline="Ready to Be Compliant Before 1 January 2027?"
+        subtext="Book a free call — we review your setup, confirm the integration path, and deliver a fixed-price proposal within 24 hours. No commitment required."
       />
 
       <FadeIn delay={0.5}>
@@ -25,7 +25,8 @@ const CtaBanner = () => (
 
       <FadeIn delay={0.65}>
         <p className="mt-6 text-xs text-gray-400">
-          No credit card required · Free consultation · No commitment
+          Fixed-price proposal within 24 hours · Source code yours · No
+          long-term contracts
         </p>
       </FadeIn>
     </div>

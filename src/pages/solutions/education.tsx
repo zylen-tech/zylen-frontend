@@ -6,11 +6,16 @@ import {
   LuCalendarCheck,
   LuLayoutDashboard,
   LuPlugZap,
+  LuTriangleAlert,
 } from 'react-icons/lu';
 
 import { Meta } from '../../components/layout/Meta';
 import { BookDemo } from '../../components/public/shared/BookDemo';
 import { HowItWorks } from '../../components/public/shared/HowItWorks';
+import { BeforeAfterComparison } from '../../components/solutions/BeforeAfterComparison';
+import { RelatedSolutions } from '../../components/solutions/RelatedSolutions';
+import { TrustBadges } from '../../components/solutions/TrustBadges';
+import { UrgencyCallout } from '../../components/solutions/UrgencyCallout';
 import { Button } from '../../components/ui/buttons/Button';
 import { FadeIn } from '../../components/ui/FadeIn';
 import { ReusableHero } from '../../components/ui/hero';
@@ -147,6 +152,9 @@ const EducationPage: NextPageWithLayout = () => {
         description="Private schools, colleges, and tuition centres above RM 1M annual revenue must issue e-invoices through LHDN MyInvois. Zylen automates your student billing — tuition fees, registration, and more."
       />
 
+      {/* ── Trust badges ─────────────────────────────────────────────────────── */}
+      <TrustBadges />
+
       {/* ── Mandate stats ────────────────────────────────────────────────────── */}
       <section className="border-b border-slate-100 bg-white py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -171,6 +179,40 @@ const EducationPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Before / After ───────────────────────────────────────────────────── */}
+      <BeforeAfterComparison
+        eyebrow="The Reality"
+        left={{
+          label: 'Without Zylen',
+          headline: 'Manual. Slow. Error-prone.',
+          bullets: [
+            'Upload student fee invoices one by one to MyInvois portal',
+            'Manually map tuition fees to 55 required fields',
+            'PTPTN and scholarship invoices handled separately',
+            'Rejected invoices require manual correction and resubmission',
+            'Admin team overwhelmed every intake cycle',
+          ],
+        }}
+        right={{
+          label: 'With Zylen',
+          headline: 'Automated. Accurate. Scalable.',
+          bullets: [
+            'All student fee invoices auto-submitted from your existing system',
+            'PTPTN, scholarship, and cash fees handled correctly',
+            'Batch submission for entire intake in minutes',
+            'Errors caught before submission — zero rejected invoices',
+            'Admin team processes intake in hours, not days',
+          ],
+        }}
+      />
+
+      {/* ── Urgency callout ──────────────────────────────────────────────────── */}
+      <UrgencyCallout
+        Icon={LuTriangleAlert}
+        headline="Private schools and colleges above RM 1M must comply by 1 January 2027."
+        body="The LHDN e-invoice mandate applies to all private education providers — including tuition centres, language schools, private colleges, and universities. Tuition fees, registration fees, examination fees, and any other student billing must be submitted through MyInvois."
+      />
 
       {/* ── Benefits ─────────────────────────────────────────────────────────── */}
       <section className="bg-hero-gradient py-20 md:py-28">
@@ -318,6 +360,9 @@ const EducationPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Related solutions ────────────────────────────────────────────────── */}
+      <RelatedSolutions exclude="education" />
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
       <BookDemo />

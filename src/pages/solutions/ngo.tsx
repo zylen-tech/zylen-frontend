@@ -1,11 +1,22 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import type { ReactElement } from 'react';
 import { useState } from 'react';
-import { LuFileText, LuLayers, LuPlugZap, LuReceipt } from 'react-icons/lu';
+import {
+  LuFileText,
+  LuLayers,
+  LuPlugZap,
+  LuReceipt,
+  LuTriangleAlert,
+} from 'react-icons/lu';
 
 import { Meta } from '../../components/layout/Meta';
 import { BookDemo } from '../../components/public/shared/BookDemo';
 import { HowItWorks } from '../../components/public/shared/HowItWorks';
+import { BeforeAfterComparison } from '../../components/solutions/BeforeAfterComparison';
+import { NgoComplianceChecker } from '../../components/solutions/NgoComplianceChecker';
+import { RelatedSolutions } from '../../components/solutions/RelatedSolutions';
+import { TrustBadges } from '../../components/solutions/TrustBadges';
+import { UrgencyCallout } from '../../components/solutions/UrgencyCallout';
 import { Button } from '../../components/ui/buttons/Button';
 import { FadeIn } from '../../components/ui/FadeIn';
 import { ReusableHero } from '../../components/ui/hero';
@@ -194,6 +205,46 @@ const NgoPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Section 44(6) compliance checker (NGO-only) ──────────────────────── */}
+      <NgoComplianceChecker />
+
+      {/* ── Trust badges ─────────────────────────────────────────────────────── */}
+      <TrustBadges />
+
+      {/* ── Before / After ───────────────────────────────────────────────────── */}
+      <BeforeAfterComparison
+        eyebrow="The Reality"
+        left={{
+          label: 'Without Zylen',
+          headline: 'Manual. Risky. Non-compliant.',
+          bullets: [
+            'Log into MyInvois portal every month manually',
+            'Track every donation in a spreadsheet',
+            'Miss the 7-day consolidated submission deadline',
+            'No individual e-invoice system for donors',
+            'Finance team overwhelmed during Ramadan campaigns',
+          ],
+        }}
+        right={{
+          label: 'With Zylen',
+          headline: 'Automated. Compliant. Effortless.',
+          bullets: [
+            'Donations auto-submitted to MyInvois from AutoCount or SQL',
+            'Individual donor e-invoices generated automatically',
+            'Consolidated monthly submission before the 7-day deadline',
+            'Full audit trail for LHDN compliance',
+            'Finance team focuses on mission — not paperwork',
+          ],
+        }}
+      />
+
+      {/* ── Urgency callout ──────────────────────────────────────────────────── */}
+      <UrgencyCallout
+        Icon={LuTriangleAlert}
+        headline="Section 44(6) approved organisations must issue e-invoices for every donation."
+        body="Under LHDN guidelines updated July 2025, all organisations approved under Section 44(6), 44(6B), 44(11B), 44(11C) and 44(11D) must issue e-invoices for all monetary donations — regardless of amount or payment method. A consolidated e-invoice must be submitted to MyInvois within 7 days of each month-end."
+      />
 
       {/* ── Benefits ─────────────────────────────────────────────────────────── */}
       <section className="bg-hero-gradient py-20 md:py-28">
@@ -392,6 +443,9 @@ const NgoPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Related solutions ────────────────────────────────────────────────── */}
+      <RelatedSolutions exclude="ngo" />
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
       <BookDemo />

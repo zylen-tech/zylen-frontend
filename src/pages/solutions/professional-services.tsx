@@ -1,11 +1,21 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import type { ReactElement } from 'react';
 import { useState } from 'react';
-import { LuBadgeCheck, LuClock, LuPlugZap, LuSignature } from 'react-icons/lu';
+import {
+  LuBadgeCheck,
+  LuClock,
+  LuPlugZap,
+  LuShieldAlert,
+  LuSignature,
+} from 'react-icons/lu';
 
 import { Meta } from '../../components/layout/Meta';
 import { BookDemo } from '../../components/public/shared/BookDemo';
 import { HowItWorks } from '../../components/public/shared/HowItWorks';
+import { BeforeAfterComparison } from '../../components/solutions/BeforeAfterComparison';
+import { RelatedSolutions } from '../../components/solutions/RelatedSolutions';
+import { TrustBadges } from '../../components/solutions/TrustBadges';
+import { UrgencyCallout } from '../../components/solutions/UrgencyCallout';
 import { Button } from '../../components/ui/buttons/Button';
 import { FadeIn } from '../../components/ui/FadeIn';
 import { ReusableHero } from '../../components/ui/hero';
@@ -141,6 +151,9 @@ const ProfessionalServicesPage: NextPageWithLayout = () => {
         description="Law firms, accounting practices, engineering consultancies, and management firms above RM 1M must issue e-invoices through LHDN MyInvois. Zylen automates your client invoicing without changing how you work."
       />
 
+      {/* ── Trust badges ─────────────────────────────────────────────────────── */}
+      <TrustBadges />
+
       {/* ── Mandate stats ────────────────────────────────────────────────────── */}
       <section className="border-b border-slate-100 bg-white py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -165,6 +178,40 @@ const ProfessionalServicesPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Before / After ───────────────────────────────────────────────────── */}
+      <BeforeAfterComparison
+        eyebrow="The Reality"
+        left={{
+          label: 'Without Zylen',
+          headline: 'Manual. Exposed. Risky.',
+          bullets: [
+            'Export invoices from Xero or QuickBooks manually',
+            'Re-enter client billing data into MyInvois portal',
+            'Sensitive client billing information exposed during upload',
+            'Multi-currency and disbursements handled separately',
+            'Fee earners distracted by compliance admin',
+          ],
+        }}
+        right={{
+          label: 'With Zylen',
+          headline: 'Automated. Secure. Compliant.',
+          bullets: [
+            'Invoices auto-submitted directly from Xero or QuickBooks',
+            'Zero re-entry — client data never leaves your system',
+            'Multi-currency and disbursements mapped correctly',
+            'Full audit trail across all client matters',
+            'Fee earners stay focused on client work',
+          ],
+        }}
+      />
+
+      {/* ── Urgency callout ──────────────────────────────────────────────────── */}
+      <UrgencyCallout
+        Icon={LuShieldAlert}
+        headline="Your client billing data stays in your system — never on ours."
+        body="Zylen builds a direct API bridge between your accounting software and LHDN MyInvois. We never store, log, or retain your client invoicing data. All transmissions are encrypted end-to-end. Your client confidentiality is protected throughout the entire compliance process."
+      />
 
       {/* ── Benefits ─────────────────────────────────────────────────────────── */}
       <section className="bg-hero-gradient py-20 md:py-28">
@@ -312,6 +359,9 @@ const ProfessionalServicesPage: NextPageWithLayout = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Related solutions ────────────────────────────────────────────────── */}
+      <RelatedSolutions exclude="professional-services" />
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
       <BookDemo />
