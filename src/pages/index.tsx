@@ -4,6 +4,7 @@ import { Meta } from '../components/layout/Meta';
 import { ComparisonSection } from '../components/public/home/ComparisonSection';
 import { ConnectorsStrip } from '../components/public/home/ConnectorsStrip';
 import { DeliveryModels } from '../components/public/home/DeliveryModels';
+import { FeatureTabs } from '../components/public/home/FeatureTabs';
 import { FinalCTA } from '../components/public/home/FinalCTA';
 import { HeroSection } from '../components/public/home/HeroSection';
 import { ProblemIllustration } from '../components/public/home/ProblemIllustration';
@@ -24,6 +25,7 @@ const HomePage: NextPageWithLayout = () => (
     <ProblemStrip />
     <WhyZylen />
     <ComparisonSection />
+    <FeatureTabs />
     <HowItWorks />
     <DeliveryModels />
     <ConnectorsStrip />
