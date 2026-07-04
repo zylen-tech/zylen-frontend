@@ -154,7 +154,7 @@ const HubDiagram = () => {
 };
 
 const SupportedSystems = () => (
-  <section className="bg-white py-16 md:py-20">
+  <section id="supported-systems" className="bg-white py-16 md:py-20">
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-14 text-center">
         <SectionHeading

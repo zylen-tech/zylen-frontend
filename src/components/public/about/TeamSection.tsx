@@ -12,7 +12,10 @@ const LinkedInIcon = () => (
 );
 
 const TeamSection = () => (
-  <section className="relative overflow-hidden bg-white py-16 md:py-20">
+  <section
+    id="team"
+    className="relative overflow-hidden bg-white py-16 md:py-20"
+  >
     <div className="relative mx-auto max-w-7xl px-5 md:px-8">
       <div className="mb-12 text-center">
         <SectionHeading eyebrow="The People" headline="The Team Behind Zylen" />

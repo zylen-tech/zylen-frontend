@@ -709,13 +709,13 @@ export const FOOTER = {
   services: [
     { label: 'E-Invoice Integration', href: '/services' },
     { label: 'How It Works', href: '/services#solutions' },
-    { label: 'Supported Systems', href: '/services#solutions' },
+    { label: 'Supported Systems', href: '/services#supported-systems' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Book a Free Call', href: '/contact' },
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Meet the Team', href: '/about' },
+    { label: 'Meet the Team', href: '/about#team' },
     { label: 'Services', href: '/services' },
     { label: 'Contact', href: '/contact' },
   ],
