@@ -98,28 +98,31 @@ const HeroSection = () => {
         />
 
         {/* Browser chrome */}
-        <div className="overflow-hidden rounded-t-2xl shadow-[0_-12px_80px_rgba(5,57,89,0.6)]">
-          <div className="flex items-center gap-3 bg-[#0d1f2d] px-4 py-3">
-            <div className="flex items-center gap-1.5">
-              <span className="size-3 rounded-full bg-red-400/50" />
-              <span className="size-3 rounded-full bg-yellow-400/50" />
-              <span className="size-3 rounded-full bg-green-400/50" />
-            </div>
-            <div className="flex flex-1 items-center justify-center">
-              <span className="rounded-md bg-white/[0.07] px-6 py-1 text-xs text-white/30">
-                app.zylen.tech/dashboard
-              </span>
-            </div>
-          </div>
 
-          <Image
-            src="/assets/img/brand/dashnoard.jpg"
-            alt="Zylen e-invoice dashboard"
-            width={1280}
-            height={720}
-            className="w-full object-cover object-top"
-            priority
-          />
+        <div className="rounded-2xl border border-white/20 bg-white/10 p-2 backdrop-blur-xl">
+          <div className="overflow-hidden rounded-2xl shadow-[0_-12px_80px_rgba(5,57,89,0.6)]">
+            <div className="flex items-center gap-3 bg-slate-900 px-4 py-3">
+              <div className="flex items-center gap-1.5">
+                <span className="size-3 rounded-full bg-red-400/50" />
+                <span className="size-3 rounded-full bg-yellow-400/50" />
+                <span className="size-3 rounded-full bg-green-400/50" />
+              </div>
+              <div className="flex flex-1 items-center justify-center">
+                <span className="rounded-md bg-white/[0.07] px-6 py-1 text-xs text-white/30">
+                  app.zylen.tech/dashboard
+                </span>
+              </div>
+            </div>
+
+            <Image
+              src="/assets/img/brand/dashnoard.jpg"
+              alt="Zylen e-invoice dashboard"
+              width={1280}
+              height={720}
+              className="w-full object-cover object-top"
+              priority
+            />
+          </div>
         </div>
       </motion.div>
     </section>
