@@ -54,7 +54,6 @@ const HeroSection = () => {
         style={{ y: contentY, opacity: contentOpacity }}
         className="relative mx-auto max-w-7xl px-5 text-center md:px-8"
       >
-        {/* Headline */}
         <motion.h1
           {...fadeUp(0.1)}
           className="mx-auto max-w-4xl font-montserrat text-3xl font-extrabold leading-[1.08] tracking-[-0.03em] text-white sm:text-4xl md:text-6xl lg:text-[4.25rem]"
