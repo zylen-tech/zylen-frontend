@@ -234,7 +234,7 @@ const PrivacyPage: NextPageWithLayout = () => (
               contact@zylen.tech
             </a>
             <br />
-            WhatsApp: +60 3-3977 3973
+            WhatsApp: +60 11-6080 3604
             <br />
             Website: zylen.tech
           </p>
