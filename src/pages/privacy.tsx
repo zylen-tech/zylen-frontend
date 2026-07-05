@@ -245,7 +245,7 @@ const PrivacyPage: NextPageWithLayout = () => (
 );
 
 PrivacyPage.getLayout = (page: ReactElement) => (
-  <PublicLayout navVariant="light">{page}</PublicLayout>
+  <PublicLayout>{page}</PublicLayout>
 );
 
 export default PrivacyPage;
