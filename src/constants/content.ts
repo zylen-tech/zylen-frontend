@@ -21,7 +21,7 @@ export const ASSETS = {
 export const BRAND = {
   name: 'Zylen',
   tagline: 'E-Invoice Compliance Without Changing How You Work.',
-  email: 'hello@zylen.tech',
+  email: 'contact@zylen.tech',
   phone: '+60 3-3977 3973',
   website: 'zylen.tech',
   whatsapp: 'https://wa.me/60339773973',

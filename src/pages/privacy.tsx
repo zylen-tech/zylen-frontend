@@ -46,10 +46,10 @@ const PrivacyPage: NextPageWithLayout = () => (
             services connecting businesses to LHDN MyInvois. Our registered
             contact email is{' '}
             <a
-              href="mailto:hello@zylen.tech"
+              href="mailto:contact@zylen.tech"
               className="font-medium text-neutral-950 underline underline-offset-2"
             >
-              hello@zylen.tech
+              contact@zylen.tech
             </a>
             .
           </p>
@@ -184,10 +184,10 @@ const PrivacyPage: NextPageWithLayout = () => (
           <p>
             To exercise any of these rights, contact us at{' '}
             <a
-              href="mailto:hello@zylen.tech"
+              href="mailto:contact@zylen.tech"
               className="font-medium text-neutral-950 underline underline-offset-2"
             >
-              hello@zylen.tech
+              contact@zylen.tech
             </a>
             . We will respond within 21 days.
           </p>
@@ -228,10 +228,10 @@ const PrivacyPage: NextPageWithLayout = () => (
           <p>
             Email:{' '}
             <a
-              href="mailto:hello@zylen.tech"
+              href="mailto:contact@zylen.tech"
               className="font-medium text-neutral-950 underline underline-offset-2"
             >
-              hello@zylen.tech
+              contact@zylen.tech
             </a>
             <br />
             WhatsApp: +60 3-3977 3973

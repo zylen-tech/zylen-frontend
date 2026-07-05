@@ -234,10 +234,10 @@ const TermsPage: NextPageWithLayout = () => (
           <p>
             Email:{' '}
             <a
-              href="mailto:hello@zylen.tech"
+              href="mailto:contact@zylen.tech"
               className="font-medium text-neutral-950 underline underline-offset-2"
             >
-              hello@zylen.tech
+              contact@zylen.tech
             </a>
             <br />
             WhatsApp: +60 3-3977 3973
