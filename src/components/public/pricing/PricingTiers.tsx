@@ -64,7 +64,7 @@ const PricingTiers = () => {
             className={`text-sm font-medium ${annual ? 'text-slate-900' : 'text-slate-400'}`}
           >
             Annual
-            <span className="bg-emerald-100 text-emerald-700 ml-2 rounded-full px-2 py-0.5 text-xs font-semibold">
+            <span className="ml-2 rounded-full bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-700">
               Save ~17%
             </span>
           </span>

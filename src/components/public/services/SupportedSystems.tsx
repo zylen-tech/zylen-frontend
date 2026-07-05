@@ -169,9 +169,11 @@ const SupportedSystems = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease }}
-        className="mx-auto max-w-3xl"
+        className="mx-auto max-w-3xl overflow-x-auto"
       >
-        <HubDiagram />
+        <div className="min-w-[560px]">
+          <HubDiagram />
+        </div>
       </motion.div>
 
       <motion.p

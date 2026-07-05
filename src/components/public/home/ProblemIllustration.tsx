@@ -22,7 +22,7 @@ const CARDS: CardConfig[] = [
     avatarText: 'AC',
     invoice: 'Invoice #00421',
     status: 'Submitted',
-    statusCls: 'text-emerald-600',
+    statusCls: 'text-green-600',
     meta: 'yesterday',
     motionY: 28,
     rotate: -2,
@@ -131,11 +131,13 @@ const ProblemIllustration = () => (
         </p>
       </motion.div>
 
-      {/* Cards — staggered row */}
-      <div className="flex items-center justify-center gap-6 overflow-visible">
-        {CARDS.map((card) => (
-          <IllustrationCard key={card.label} {...card} />
-        ))}
+      {/* Cards — staggered row, scrollable on mobile */}
+      <div className="-mx-5 overflow-x-auto px-5 md:mx-0 md:overflow-visible md:px-0">
+        <div className="flex min-w-max items-center justify-center gap-6 pb-4 md:pb-0">
+          {CARDS.map((card) => (
+            <IllustrationCard key={card.label} {...card} />
+          ))}
+        </div>
       </div>
 
       {/* Bottom caption */}
