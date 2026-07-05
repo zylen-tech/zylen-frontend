@@ -260,6 +260,7 @@ const DashboardPreview: NextPage = () => (
   <>
     <Head>
       <title>Dashboard — Zylen</title>
+      <meta name="robots" content="noindex, nofollow" />
     </Head>
 
     <div className="flex h-screen overflow-hidden bg-neutral-50 font-sans antialiased">
