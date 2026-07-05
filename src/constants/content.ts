@@ -24,7 +24,8 @@ export const BRAND = {
   email: 'contact@zylen.tech',
   phone: '+60 11-6080 3604',
   website: 'zylen.tech',
-  whatsapp: 'https://wa.me/601160803604',
+  whatsapp:
+    'https://wa.me/601160803604?text=Hi%20Zylen%2C%20I%27m%20interested%20in%20your%20LHDN%20MyInvois%20e-invoice%20integration%20service.%20Could%20you%20please%20share%20more%20details%20on%20the%20solution%20and%20pricing%20for%20my%20business%3F%20Thank%20you.',
   calendly: 'https://calendly.com/zylen',
   ssm: 'SSM: Pending registration',
   businessHours: 'Mon–Fri 9am–6pm · Sat 9am–1pm (MYT)',
