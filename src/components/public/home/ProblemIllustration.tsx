@@ -131,9 +131,9 @@ const ProblemIllustration = () => (
         </p>
       </motion.div>
 
-      {/* Cards — staggered row, scrollable on mobile */}
-      <div className="-mx-5 overflow-x-auto px-5 md:mx-0 md:overflow-visible md:px-0">
-        <div className="flex min-w-max items-center justify-center gap-6 pb-4 md:pb-0">
+      {/* Cards — staggered row, scrollable until xl */}
+      <div className="-mx-5 overflow-x-auto px-5 [-ms-overflow-style:none] [scrollbar-width:none] xl:mx-0 xl:overflow-visible xl:px-0 [&::-webkit-scrollbar]:hidden">
+        <div className="flex min-w-max items-center justify-center gap-6 pb-4 xl:pb-0">
           {CARDS.map((card) => (
             <IllustrationCard key={card.label} {...card} />
           ))}

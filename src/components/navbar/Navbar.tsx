@@ -103,7 +103,6 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
     light
       ? 'text-slate-600 hover:bg-neutral-100 hover:text-neutral-950'
       : 'text-white hover:bg-white/10';
-  const getLogoNameCls = () => (light ? 'text-neutral-950' : 'text-white');
   const getWhatsappVariant = () =>
     (light ? 'secondary' : 'outline-white') as 'secondary' | 'outline-white';
   const getCallVariant = () =>
@@ -118,14 +117,12 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
     >
       <div className="mx-auto flex h-[70px] max-w-7xl items-center justify-between gap-6 px-5 md:h-[80px] md:px-8">
         {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <div className="flex flex-col leading-none">
-            <p
-              className={`font-montserrat text-sm font-bold leading-tight transition-colors duration-300 md:text-base ${getLogoNameCls()}`}
-            >
-              ZYLEN
-            </p>
-          </div>
+        <Link href="/" className="flex shrink-0 items-center">
+          <span
+            className={`font-montserrat text-xl font-extrabold tracking-tight transition-colors duration-300 md:text-2xl ${light ? 'text-neutral-950' : 'text-white'}`}
+          >
+            Zylen
+          </span>
         </Link>
 
         {/* Desktop nav */}

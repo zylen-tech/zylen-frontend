@@ -14,12 +14,10 @@ const Footer = () => (
       <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         {/* Brand column */}
         <div className="sm:col-span-2 md:col-span-1">
-          <Link href="/" className="mb-5 flex items-center gap-3 no-underline">
-            <div className="flex flex-col leading-none">
-              <span className="font-montserrat text-lg font-extrabold tracking-tight text-white">
-                ZYLEN
-              </span>
-            </div>
+          <Link href="/" className="mb-5 inline-flex no-underline">
+            <span className="font-montserrat text-2xl font-extrabold tracking-tight text-white">
+              Zylen
+            </span>
           </Link>
 
           <p className="mb-5 text-sm leading-relaxed text-white/55">

@@ -13,31 +13,28 @@ const WhatsAppIcon = () => (
 );
 
 const WhatsAppFloat = () => (
-  <a
-    href={BRAND.whatsapp}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with us on WhatsApp"
-    className="group fixed bottom-6 right-6 z-50 flex size-14 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2"
-    style={
-      {
-        backgroundColor: '#25D366',
-        focusRingColor: '#25D366',
-      } as React.CSSProperties
-    }
-  >
-    {/* Pulse ring */}
-    <span
-      className="absolute inset-0 animate-ping rounded-full opacity-30"
-      style={{ backgroundColor: '#25D366' }}
-    />
-    <WhatsAppIcon />
+  <div className="group fixed bottom-6 right-6 z-50">
+    <a
+      href={BRAND.whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+      className="relative flex size-14 items-center justify-center overflow-hidden rounded-full text-white shadow-lg transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2"
+      style={{ backgroundColor: '#25D366' } as React.CSSProperties}
+    >
+      {/* Pulse ring — overflow-hidden on parent clips it to the button boundary */}
+      <span
+        className="absolute inset-0 animate-ping rounded-full opacity-30"
+        style={{ backgroundColor: '#25D366' }}
+      />
+      <WhatsAppIcon />
+    </a>
 
-    {/* Tooltip */}
+    {/* Tooltip — outside the overflow-hidden anchor so it can overflow upward */}
     <span className="pointer-events-none absolute bottom-full right-0 mb-2 w-max max-w-[220px] rounded-lg bg-neutral-950 px-3 py-2 text-xs leading-snug text-white opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100">
       Chat with us on WhatsApp
     </span>
-  </a>
+  </div>
 );
 
 export { WhatsAppFloat };
