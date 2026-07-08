@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { Footer } from '../components/layout/Footer';
 import { Navbar } from '../components/navbar';
-import { WhatsAppFloat } from '../components/ui/WhatsAppFloat';
 
 type PublicLayoutProps = {
   children: ReactNode;
@@ -14,7 +13,6 @@ const PublicLayout = ({ children, navVariant = 'dark' }: PublicLayoutProps) => (
     <Navbar variant={navVariant} />
     <main>{children}</main>
     <Footer />
-    <WhatsAppFloat />
   </div>
 );
 
