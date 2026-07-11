@@ -28,7 +28,7 @@ export const BRAND = {
   businessHours: 'Mon–Fri 9am–6pm · Sat 9am–1pm (MYT)',
   social: {
     linkedin: 'https://linkedin.com/company/zylen',
-    instagram: 'https://instagram.com/zylen.tech',
+    instagram: 'https://www.instagram.com/zylen.invoce?utm_source=qr',
   },
 };
 
