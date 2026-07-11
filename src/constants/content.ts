@@ -29,6 +29,7 @@ export const BRAND = {
   social: {
     linkedin: 'https://linkedin.com/company/zylen',
     instagram: 'https://www.instagram.com/zylen.invoce?utm_source=qr',
+    facebook: 'https://www.facebook.com/share/1BoN37mHcY/?mibextid=wwXIfr',
   },
 };
 
