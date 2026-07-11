@@ -2,9 +2,6 @@
 
 export const ASSETS = {
   logo: {
-    icon: '/assets/img/brand/logo/icon.png',
-    logo: '/assets/img/brand/logo/logo.png',
-    whiteIcon: '/assets/img/brand/logo/white-icon.png',
     whiteLogo: '/assets/img/brand/logo/white-logo.png',
     whiteIconBg: '/assets/img/brand/logo/white-icon-bg.png',
     whiteLogoBg: '/assets/img/brand/logo/white-logo-bg.png',

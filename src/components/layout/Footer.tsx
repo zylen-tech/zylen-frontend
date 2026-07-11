@@ -1,6 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
-import { BRAND, FOOTER } from '../../constants/content';
+import { ASSETS, BRAND, FOOTER } from '../../constants/content';
 
 const InstagramIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -15,9 +16,13 @@ const Footer = () => (
         {/* Brand column */}
         <div className="sm:col-span-2 md:col-span-1">
           <Link href="/" className="mb-5 inline-flex no-underline">
-            <span className="font-montserrat text-2xl font-extrabold tracking-tight text-white">
-              Zylen
-            </span>
+            <Image
+              src={ASSETS.logo.whiteLogo}
+              alt="Zylen"
+              width={110}
+              height={34}
+              className="h-8 w-auto object-contain"
+            />
           </Link>
 
           <p className="mb-5 text-sm leading-relaxed text-white/55">

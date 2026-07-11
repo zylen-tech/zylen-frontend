@@ -1,9 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { BRAND, NAV_LINKS } from '../../constants/content';
+import { ASSETS, BRAND, NAV_LINKS } from '../../constants/content';
 import { Button } from '../ui/buttons/Button';
 import {
   SolutionsDropdown,
@@ -118,11 +119,20 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
       <div className="mx-auto flex h-[70px] max-w-7xl items-center justify-between gap-6 px-5 md:h-[80px] md:px-8">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center">
-          <span
-            className={`font-montserrat text-xl font-extrabold tracking-tight transition-colors duration-300 md:text-2xl ${light ? 'text-neutral-950' : 'text-white'}`}
-          >
-            Zylen
-          </span>
+          {light ? (
+            <span className="font-montserrat text-xl font-extrabold tracking-tight text-neutral-950 md:text-2xl">
+              Zylen
+            </span>
+          ) : (
+            <Image
+              src={ASSETS.logo.whiteLogo}
+              alt="Zylen"
+              width={100}
+              height={32}
+              className="h-8 w-auto object-contain"
+              priority
+            />
+          )}
         </Link>
 
         {/* Desktop nav */}
