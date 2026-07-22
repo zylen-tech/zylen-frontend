@@ -119,7 +119,7 @@ const HubDiagram = () => {
               y={pill.y + 5}
               textAnchor="middle"
               fontSize="13"
-              fontFamily="system-ui, -apple-system, sans-serif"
+              fontFamily="Inter, system-ui, -apple-system, sans-serif"
               fontWeight="400"
               fill="#334155"
             >
