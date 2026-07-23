@@ -62,8 +62,8 @@ const ServiceOverview = () => (
       <div className="mb-14 text-center">
         <SectionHeading
           eyebrow="Core Service"
-          headline="One Integration. Full Compliance."
-          subtext="Zylen sits between your accounting software and LHDN's MyInvois API — handling formatting, validation, submission, and error recovery automatically."
+          headline="One Setup. Full Compliance."
+          subtext="Zylen sits between however you keep your books and LHDN's MyInvois API — handling formatting, validation, submission, and error recovery automatically."
         />
       </div>
 
@@ -71,8 +71,8 @@ const ServiceOverview = () => (
       <div className="mx-auto max-w-3xl">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-stretch sm:justify-between">
           <FlowNode
-            label="Your System"
-            sublabel="AutoCount · SQL · Xero · Custom ERP"
+            label="Your Records"
+            sublabel="Spreadsheet · Wave · Manual · Custom ERP"
             delay={0}
           />
 
@@ -119,7 +119,7 @@ const ServiceOverview = () => (
           className="mt-8 rounded-xl border border-slate-100 bg-neutral-50 px-6 py-4 text-center text-sm leading-relaxed text-slate-600"
         >
           No manual re-entry. No LHDN portal logins. No compliance risk. Your
-          invoices flow automatically — from your software to MyInvois in
+          invoices flow automatically — from your records to MyInvois in
           seconds.
         </motion.div>
       </div>

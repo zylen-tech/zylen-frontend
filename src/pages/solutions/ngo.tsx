@@ -59,19 +59,19 @@ const BENEFITS = [
   },
   {
     Icon: LuPlugZap,
-    title: 'Works With Your Existing Software',
+    title: 'Works With However You Keep Records',
     description:
-      'Already on AutoCount or SQL Accounting? We build the integration layer — you keep using exactly what you know.',
+      'Spreadsheets, Wave, manual bookkeeping, or no system at all — we build the missing piece so you keep working exactly as you do today.',
   },
 ];
 
 const PRICING_TIERS = [
   {
-    name: 'Basic Connect',
+    name: 'Guided Setup',
     price: 'From RM 4,000',
     note: 'one-time · source code yours',
     description:
-      'For NGOs already using AutoCount, SQL Accounting, Xero, or QuickBooks.',
+      'For NGOs on spreadsheets, Wave, manual bookkeeping, or no system at all.',
     features: [
       '7–10 day delivery',
       'LHDN sandbox testing included',
@@ -114,9 +114,10 @@ const FAQ_ITEMS = [
       'This is one of the most common concerns we hear. MyInvois e-invoices and Section 44(6) tax exemption receipts serve different purposes — one is an LHDN submission requirement, the other is a donor tax deduction document. You can continue issuing your existing Section 44(6) receipts to donors alongside the MyInvois e-invoice. We advise all NGO clients to confirm the specific treatment with their tax adviser, and we ensure our integration does not interfere with your existing receipt workflow.',
   },
   {
-    question: 'We use AutoCount or SQL Accounting. Do we need to change?',
+    question:
+      "We're already using AutoCount or SQL Accounting — is this still for us?",
     answer:
-      'No. Zylen builds an integration layer that sits between your existing accounting software and LHDN MyInvois. You continue using what you have today — we handle the connection to the government portal.',
+      "Possibly not, and we'll tell you honestly. If your platform already has certified MyInvois support, you may already be covered — worth checking with your provider first. Zylen is built specifically for NGOs on spreadsheets, Wave, or manual bookkeeping, where that built-in support doesn't exist.",
   },
   {
     question: 'How long does setup take for an NGO?',
@@ -230,7 +231,7 @@ const NgoPage: NextPageWithLayout = () => {
           label: 'With Zylen',
           headline: 'Automated. Compliant. Effortless.',
           bullets: [
-            'Donations auto-submitted to MyInvois from AutoCount or SQL',
+            'Donations auto-submitted to MyInvois from whatever you use',
             'Individual donor e-invoices generated automatically',
             'Consolidated monthly submission before the 7-day deadline',
             'Full audit trail for LHDN compliance',
@@ -293,7 +294,7 @@ const NgoPage: NextPageWithLayout = () => {
             <SectionHeading
               eyebrow="Transparent Pricing"
               headline="Fixed Price. No Surprises."
-              subtext="Choose the package that fits your system. Both include full source code and 30-day post-launch support."
+              subtext="Choose the package that fits your system. Both include full source code and 30-day post-launch support. Prices shown are starting estimates, confirmed on a free call."
             />
           </div>
 

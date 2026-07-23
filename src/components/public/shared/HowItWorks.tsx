@@ -182,9 +182,12 @@ const STEP_EXTRAS = [
     ],
   },
   {
-    subtitle: 'The Build',
+    subtitle: 'The Setup',
     bullets: [
-      { bold: 'API bridge', rest: ' between your software & MyInvois' },
+      {
+        bold: 'TIN registration & MSIC mapping',
+        rest: ' handled for you',
+      },
       { bold: 'Staging environment', rest: ' access for your team to review' },
       { bold: 'Zero disruption', rest: ' to your existing workflow' },
     ],

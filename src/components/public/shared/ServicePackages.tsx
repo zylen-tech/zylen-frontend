@@ -65,6 +65,13 @@ const ServicePackages = () => (
           </motion.div>
         ))}
       </div>
+
+      <FadeIn delay={0.2}>
+        <p className="mt-8 text-center text-sm text-slate-500">
+          Prices shown are starting estimates — your exact quote is confirmed on
+          a free discovery call.
+        </p>
+      </FadeIn>
     </div>
   </section>
 );

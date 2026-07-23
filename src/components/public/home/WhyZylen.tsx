@@ -74,8 +74,8 @@ const FEATURES = [
   },
   {
     Icon: PlugIcon,
-    title: 'Keep Using Your Existing Accounting Software',
-    body: 'AutoCount, SQL Accounting, Xero, QuickBooks — Zylen builds the integration layer on top of what you already use. Your team opens the same software tomorrow. We handle MyInvois in the background.',
+    title: 'Keep Using Whatever You Use Today',
+    body: "Spreadsheets, Wave, manual bookkeeping, or no system at all — Zylen builds the missing piece so you don't have to switch tools or retrain your team. We handle MyInvois in the background.",
   },
   {
     Icon: LockIcon,
@@ -90,8 +90,8 @@ const WhyZylen = () => (
       <div className="mb-14 text-center">
         <SectionHeading
           eyebrow="Why Zylen"
-          headline="The Integration Layer Malaysian SMEs Actually Need"
-          subtext="We connect your existing accounting software to LHDN MyInvois — in 7 to 14 days, at a fixed price, with full source code handover. No new software. No vendor lock-in."
+          headline="Built for Teams Whose Tools Don't Do This Yet"
+          subtext="If you're on Wave, spreadsheets, or manual bookkeeping, MyInvois compliance isn't something your setup handles for you. Zylen builds and manages that missing piece — fully set up, fully guided, at a fixed price. No new software. No vendor lock-in."
         />
       </div>
 

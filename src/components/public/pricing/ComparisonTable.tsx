@@ -31,7 +31,7 @@ const CrossIcon = () => (
 
 const FEATURE_ROWS = [
   'Invoices/month',
-  'Accounting systems',
+  'Connected setups',
   'Real-time MyInvois submission',
   'Dashboard & audit logs',
   'Support',
@@ -43,7 +43,7 @@ const FEATURE_ROWS = [
 
 const CELL_VALUES: Record<string, string[]> = {
   'Invoices/month': ['500', '3,000', 'Unlimited', 'Unlimited'],
-  'Accounting systems': ['1', 'Up to 3', 'Unlimited', 'Unlimited'],
+  'Connected setups': ['1', 'Up to 3', 'Unlimited', 'Unlimited'],
   'Real-time MyInvois submission': ['✓', '✓', '✓', '✓'],
   'Dashboard & audit logs': ['Basic', 'Full', 'Full', 'Full'],
   Support: ['Email', 'Email & chat', 'Priority', 'Dedicated'],

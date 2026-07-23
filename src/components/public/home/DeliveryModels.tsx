@@ -106,6 +106,11 @@ const DeliveryModels = () => (
           </motion.div>
         ))}
       </div>
+
+      <p className="mt-8 text-center text-sm text-slate-500">
+        Prices shown are starting estimates — your exact quote is confirmed on a
+        free discovery call.
+      </p>
     </div>
   </section>
 );

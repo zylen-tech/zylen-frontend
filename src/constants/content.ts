@@ -50,10 +50,10 @@ export const NAV_LINKS = [
 export const PAGE_HEROES = {
   services: {
     eyebrow: 'What We Build',
-    headline: 'Your Accounting Software,',
-    headlineAccent: 'Connected to MyInvois.',
+    headline: 'Keep Your Tools,',
+    headlineAccent: 'Get Connected to MyInvois.',
     description:
-      'AutoCount, SQL Accounting, Xero, QuickBooks, or a fully custom ERP — Zylen builds the API bridge to LHDN MyInvois in 7 to 14 days. Fixed price. No system changes required. Source code is yours on go-live.',
+      'Spreadsheets, Wave, manual bookkeeping, or no system at all — Zylen sets up your full MyInvois compliance in 7 to 14 days. Fixed price. No new software required. Fully guided from registration to go-live.',
   },
   about: {
     eyebrow: 'Who We Are',
@@ -83,15 +83,14 @@ export const PAGE_HEROES = {
 // (recognition triggers) before stating benefits. Urgency line restated to name both consequences.
 
 export const HERO = {
-  badge: '🇲🇾 LHDN MyInvois Integration · Built in Malaysia',
-  headline:
-    "Your Accounting Software Isn't Connected to LHDN MyInvois. We Fix That — In 7 Days.",
+  badge: '🇲🇾 Guided MyInvois Setup · Built in Malaysia',
+  headline: "Keep Using What You Already Know. We'll Handle the Rest.",
   subheadline:
-    "Zylen builds the API bridge between AutoCount, SQL Accounting, Xero, or QuickBooks and LHDN's MyInvois portal. Fixed price. No disruption to how you work. Source code is yours.",
-  ctaPrimary: 'Get a Free Estimate',
-  ctaSecondary: 'Book a Discovery Call',
+    'If your books run on spreadsheets, Wave, or manual records, Zylen quietly handles your LHDN MyInvois compliance in the background — and guides you through the entire setup, step by step.',
+  ctaPrimary: 'Book a Free Call',
+  ctaSecondary: 'See How It Works',
   urgency:
-    '⚠️  Enforcement deadline: 1 January 2027 · Fine up to RM 20,000 per non-compliant invoice',
+    "Malaysia's e-invoicing rollout is phased in through 2027 — we make sure you're set up well ahead of your deadline.",
   trustItems: [],
 };
 
@@ -100,17 +99,16 @@ export const HERO = {
 // software produces natively. This is the "aha" moment for SME owners who assumed their software handled it.
 
 export const PROBLEM = {
-  eyebrow: 'The Mandate',
-  headline:
-    'Every Business Above RM 1M Must Be on MyInvois by 1 January 2027 — Fine Up to RM 20,000 Per Invoice',
+  eyebrow: 'The Gap',
+  headline: "If Your Books Don't Talk to MyInvois Yet, You're Not Alone",
   stats: [
-    { value: 'RM 20,000', label: 'Maximum fine per invoice' },
-    { value: '1 Jan 2027', label: 'Enforcement deadline' },
     { value: '55 fields', label: 'Required per submission' },
+    { value: '0', label: 'New software to learn' },
+    { value: '100%', label: 'Sandbox-tested before go-live' },
   ],
-  body: 'Every major accounting software used by Malaysian businesses — AutoCount, SQL Accounting, Xero, QuickBooks — requires a custom integration to communicate with LHDN MyInvois. MyInvois does not accept your existing invoice format. It requires XML or JSON with 55 mandatory fields, submitted in real time through a government API. Without that integration, every invoice is a compliance gap. That is the problem Zylen closes.',
+  body: "Spreadsheets, Wave, and manual bookkeeping keep your records in order — but they weren't built to submit e-invoices to LHDN. MyInvois requires structured XML or JSON with 55 mandatory fields, submitted in real time through a government API, which none of those tools do on their own. That's the one piece Zylen adds, quietly, without asking you to change how you keep your books.",
   warning:
-    'Each invoice is a separate offence. A business issuing 200 invoices a month with no compliance system could face fines exceeding RM 4 million per year.',
+    "Malaysia's e-invoicing mandate is rolling out in phases by revenue threshold through 2027. We'll help you find out where your organization stands and get you ready well ahead of your deadline.",
 };
 
 // ─── Services ─────────────────────────────────────────────────────────────────
@@ -121,11 +119,11 @@ export const SERVICES = {
   headline: 'Three Ways to Get Compliant',
   cards: [
     {
-      name: 'Basic Connect',
+      name: 'Guided Setup',
       price: 'From RM 4,000',
       timeline: '7–10 days',
       description:
-        'For businesses already on AutoCount, SQL Accounting, Xero, or QuickBooks — no system changes needed.',
+        'For organizations on spreadsheets, Wave, manual bookkeeping, or no system at all — no new software required.',
       cta: 'Get Started',
       popular: false,
     },
@@ -134,7 +132,7 @@ export const SERVICES = {
       price: 'From RM 6,000',
       timeline: '10–14 days',
       description:
-        'For businesses on proprietary ERP, custom POS systems, or in-house accounting tools.',
+        'For organizations on proprietary ERP, custom POS systems, or in-house accounting tools.',
       cta: 'Get Started',
       popular: true,
     },
@@ -143,7 +141,7 @@ export const SERVICES = {
       price: 'Custom Quote',
       timeline: '2–4 weeks',
       description:
-        'For multi-branch operations, high-volume environments, and businesses with multiple legal entities.',
+        'For multi-branch operations, high-volume environments, and organizations with multiple legal entities.',
       cta: 'Contact Us',
       popular: false,
     },
@@ -162,7 +160,7 @@ export const HOW_IT_WORKS = {
       number: '01',
       title: 'Discovery',
       description:
-        'Free 15-minute call. We learn your accounting software, invoice volume, and current submission process — or the lack of one.',
+        'Free 15-minute call. We learn how you currently keep your books — spreadsheet, Wave, paper, or nothing at all — and your invoice volume.',
     },
     {
       number: '02',
@@ -172,9 +170,9 @@ export const HOW_IT_WORKS = {
     },
     {
       number: '03',
-      title: 'Integration',
+      title: 'Setup',
       description:
-        'Our engineers build the API bridge between your software and LHDN MyInvois. You get staging access to review submissions before anything goes live.',
+        'We handle TIN registration, MSIC code mapping, and the technical setup — built around what you already use. You get staging access to review everything before it goes live.',
     },
     {
       number: '04',
@@ -239,7 +237,7 @@ export const PRICING = {
       features: [
         'Plug-and-play setup',
         'Dashboard & logs',
-        'AutoCount, SQL, Xero support',
+        'Works with spreadsheets, Wave & more',
         'Auto-updates included',
       ],
       cta: 'Join Waitlist',
@@ -340,7 +338,7 @@ export const ABOUT_TIMELINE = [
     year: '2024',
     title: 'Integration Architecture Built',
     description:
-      'Completed the core API bridge architecture and began full LHDN MyInvois sandbox testing across AutoCount, SQL Accounting, Xero, and QuickBooks.',
+      'Completed the core setup architecture and began full LHDN MyInvois sandbox testing across spreadsheets, common accounting systems, and manual workflows.',
   },
   {
     year: '2025',
@@ -379,7 +377,13 @@ export const ABOUT_WHO_WE_WORK_WITH = {
         'Registered societies, charitable foundations, and religious organisations above RM 1M annual revenue that must comply with the MyInvois mandate like any other entity.',
     },
   ],
-  systems: ['AutoCount', 'SQL Accounting', 'Xero', 'QuickBooks', 'Custom ERP'],
+  systems: [
+    'Spreadsheets',
+    'Wave',
+    'Manual Bookkeeping',
+    'AutoCount / Xero / QuickBooks',
+    'Custom ERP',
+  ],
 };
 
 // ─── Book Demo ────────────────────────────────────────────────────────────────
@@ -409,7 +413,7 @@ export const TRUST_STRIP = {
   label: 'What you get when you work with Zylen',
   stats: [
     { value: '7-day', label: 'Average Setup Time' },
-    { value: '4', label: 'Accounting Systems Supported' },
+    { value: '0', label: 'New Software to Learn' },
     { value: '100%', label: 'Sandbox Pass Rate' },
     { value: 'Phase 4', label: 'Mandate Ready' },
   ],
@@ -418,15 +422,18 @@ export const TRUST_STRIP = {
 // ─── Connectors Strip ─────────────────────────────────────────────────────────
 
 export const CONNECTORS = {
-  eyebrow: 'Works With Your Existing Software',
+  eyebrow: 'Built for the Tools You Already Use',
   items: [
-    { name: 'AutoCount' },
-    { name: 'SQL Accounting' },
-    { name: 'Xero' },
-    { name: 'QuickBooks' },
+    { name: 'Spreadsheets' },
+    { name: 'Wave' },
+    { name: 'Manual Bookkeeping' },
+    { name: 'No System at All' },
   ],
-  fallback: 'Running a custom system or in-house ERP?',
-  fallbackCta: { label: 'We handle those too', href: '/contact' },
+  fallback: 'Already on AutoCount, Xero, or QuickBooks?',
+  fallbackCta: {
+    label: "Those usually cover this already — ask us if you're unsure",
+    href: '/contact',
+  },
 };
 
 // ─── Delivery Models ──────────────────────────────────────────────────────────
@@ -439,15 +446,15 @@ export const DELIVERY_MODELS = {
   models: [
     {
       badge: 'Done For You',
-      name: 'Integration Project',
+      name: 'Guided Setup & Submission',
       price: 'RM 4,000 – RM 8,000',
       period: 'one-time',
       description:
-        'We design, build, and test the full API bridge between your accounting software and LHDN MyInvois. You own the source code on go-live — no ongoing dependency on Zylen unless you choose it.',
+        'We handle your entire MyInvois setup — TIN registration, MSIC code mapping, sandbox testing — and connect your invoicing quietly in the background. You keep working exactly as you do today.',
       features: [
-        '7–14 day delivery',
+        '7–14 day setup',
+        'TIN & MSIC mapping included',
         'LHDN sandbox testing included',
-        'Source code & documentation',
         '30-day post-launch support',
       ],
       cta: 'Get a Fixed-Price Quote',
@@ -460,9 +467,9 @@ export const DELIVERY_MODELS = {
       price: 'RM 150 – RM 500',
       period: 'per month',
       description:
-        'Our self-serve compliance platform — currently in development. Join the waitlist to get early access and founding member pricing at launch.',
+        'Our self-serve compliance platform — currently in development. Built for teams on spreadsheets, Wave, or manual records who want plug-and-play MyInvois compliance without a custom setup.',
       features: [
-        'AutoCount, SQL, Xero, QuickBooks',
+        'Works with spreadsheets, Wave & manual records',
         'Submission dashboard & error logs',
         'Auto-updates for LHDN API changes',
         'No developer needed',
@@ -479,14 +486,13 @@ export const DELIVERY_MODELS = {
 // this creates urgency with arithmetic, not empty pressure.
 
 export const FINAL_CTA = {
-  eyebrow: 'The Clock Is Running',
-  headline:
-    'The Deadline Is 1 January 2027. Your Integration Takes 7 Days. Start Now.',
+  eyebrow: 'Ready When You Are',
+  headline: 'Keep Your Tools. Let Us Handle MyInvois.',
   subtext:
-    'Fixed price. Fixed timeline. 30-day post-launch support included. Book a free discovery call and get your proposal within 24 hours.',
+    "Guided setup, fixed price, and full support — with plenty of runway before your organization's compliance deadline arrives. Book a free discovery call and get your proposal within 24 hours.",
   cta: 'Book a Free Discovery Call',
   ctaHref: '/contact',
-  note: 'No commitment required · Fixed-price proposal within 24 hours · Source code yours',
+  note: 'No commitment required · Fixed-price proposal within 24 hours · Setup handled end-to-end',
 };
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
@@ -499,9 +505,9 @@ export const FAQ = {
   headlineAccent: 'Questions',
   items: [
     {
-      question: 'Do I need to change my existing accounting software?',
+      question: 'Do I need to change how I currently keep my books?',
       answer:
-        'No — and this is the most important thing to understand. Zylen builds an integration layer that sits on top of what you already use. AutoCount, SQL Accounting, Xero, QuickBooks — your team opens the same software tomorrow morning. We handle the submission to LHDN MyInvois in the background. Nothing changes on your end except compliance.',
+        'No — and this is the most important thing to understand. Whether you run on spreadsheets, Wave, or manual bookkeeping, Zylen builds the missing piece so you keep working exactly as you do today. We handle the submission to LHDN MyInvois in the background. Nothing changes on your end except compliance.',
     },
     {
       question: 'How long does the integration take?',
@@ -529,9 +535,9 @@ export const FAQ = {
         'You choose. The Integration Project is a one-time fixed-price build — you own the source code, no lock-in. The Zylen Connect SaaS (in development) will be a monthly subscription with plug-and-play setup and automatic updates. Most clients on custom or complex systems start with the project, then add our maintenance plan for long-term peace of mind.',
     },
     {
-      question: 'What if we have a custom-built or in-house system?',
+      question: "What if we don't use any accounting software at all?",
       answer:
-        'That is exactly what our Custom Connect package is for. We analyse your data model, identify the correct field mappings to the 55 MyInvois requirements, and build a tailored API bridge. If your system has a database, API, or structured export format, we can integrate it. Contact us for a scoping call.',
+        "That's completely fine — many of the organizations we work with run on spreadsheets or manual records only. We set up MyInvois submission around whatever you're already doing, even if that's a shared spreadsheet. There's no requirement to adopt new software first.",
     },
     {
       question: 'Do you guarantee LHDN approval after integration?',
@@ -553,12 +559,12 @@ export const PRICING_TIERS = [
     monthlyPrice: 'RM 150',
     annualPrice: 'RM 125',
     annualNote: 'billed RM 1,500/year',
-    cta: 'Get Started',
+    cta: 'Join the Waitlist',
     highlight: false,
     enterprise: false,
     features: [
       { label: '500 invoices/month', included: true },
-      { label: '1 accounting system', included: true },
+      { label: '1 connected setup', included: true },
       { label: 'Real-time MyInvois submission', included: true },
       { label: 'Basic dashboard', included: true },
       { label: 'Email support', included: true },
@@ -575,12 +581,12 @@ export const PRICING_TIERS = [
     monthlyPrice: 'RM 350',
     annualPrice: 'RM 290',
     annualNote: 'billed RM 3,480/year',
-    cta: 'Get Started',
+    cta: 'Join the Waitlist',
     highlight: true,
     enterprise: false,
     features: [
       { label: '3,000 invoices/month', included: true },
-      { label: 'Up to 3 accounting systems', included: true },
+      { label: 'Up to 3 connected setups', included: true },
       { label: 'Real-time MyInvois submission', included: true },
       { label: 'Full dashboard & audit logs', included: true },
       { label: 'Priority email & chat support', included: true },
@@ -597,12 +603,12 @@ export const PRICING_TIERS = [
     monthlyPrice: 'RM 700',
     annualPrice: 'RM 580',
     annualNote: 'billed RM 6,960/year',
-    cta: 'Get Started',
+    cta: 'Join the Waitlist',
     highlight: false,
     enterprise: false,
     features: [
       { label: 'Unlimited invoices', included: true },
-      { label: 'Unlimited accounting systems', included: true },
+      { label: 'Unlimited connected setups', included: true },
       { label: 'Real-time MyInvois submission', included: true },
       { label: 'Full dashboard & audit logs', included: true },
       { label: 'Priority email & chat support', included: true },
@@ -624,7 +630,7 @@ export const PRICING_TIERS = [
     enterprise: true,
     features: [
       { label: 'Unlimited invoices', included: true },
-      { label: 'Unlimited accounting systems', included: true },
+      { label: 'Unlimited connected setups', included: true },
       { label: 'Real-time MyInvois submission', included: true },
       { label: 'Full dashboard & audit logs', included: true },
       { label: 'Priority email & chat support', included: true },
@@ -698,7 +704,7 @@ export const PRICING_FAQ = [
   {
     question: 'Which accounting systems are supported on each plan?',
     answer:
-      'Starter connects 1 system (AutoCount, SQL Accounting, Xero, or QuickBooks). Growth connects up to 3. Business and Enterprise support unlimited systems, including fully custom ERP connections.',
+      "Starter connects 1 setup — whether that's a spreadsheet, Wave, or a system like AutoCount, Xero, or QuickBooks. Growth connects up to 3. Business and Enterprise support unlimited systems, including fully custom ERP connections.",
   },
 ];
 

@@ -58,9 +58,9 @@ const BENEFITS = [
   },
   {
     Icon: LuPlugZap,
-    title: 'Works With Your Existing System',
+    title: 'Works With Whatever You Use Today',
     description:
-      'Already using AutoCount, SQL Accounting, or a student management system? We integrate directly — no disruption to your workflow.',
+      'Spreadsheets, a student management system, or no formal system at all — we build the missing piece without disrupting your workflow.',
   },
 ];
 
@@ -261,7 +261,7 @@ const EducationPage: NextPageWithLayout = () => {
             <SectionHeading
               eyebrow="Transparent Pricing"
               headline="One Fixed Price. No Surprises."
-              subtext="Standard accounting software integrations start from RM 4,000. Custom student management systems are scoped individually."
+              subtext="Guided setup starts from RM 4,000, confirmed on a free call. Custom student management systems are scoped individually."
             />
           </div>
 

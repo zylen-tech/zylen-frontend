@@ -58,9 +58,9 @@ const BENEFITS = [
   },
   {
     Icon: LuPlugZap,
-    title: 'Works With Your Existing System',
+    title: 'Works With Whatever You Use Today',
     description:
-      'Already using AutoCount, SQL Accounting, or a custom POS? We integrate directly — no disruption to your sales operations.',
+      "Spreadsheets, a custom POS, or no formal system at all — we build the missing piece so your sales operations don't change.",
   },
 ];
 
@@ -260,7 +260,7 @@ const RetailPage: NextPageWithLayout = () => {
             <SectionHeading
               eyebrow="Transparent Pricing"
               headline="One Fixed Price. No Surprises."
-              subtext="Standard accounting software integrations start from RM 4,000. High-volume POS and custom systems are scoped individually."
+              subtext="Guided setup starts from RM 4,000, confirmed on a free call. High-volume POS and custom systems are scoped individually."
             />
           </div>
 

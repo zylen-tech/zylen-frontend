@@ -122,22 +122,22 @@ const TABS: TabData[] = [
     mockupLabel: 'Audit Log Table',
   },
   {
-    label: 'Integrations',
-    headline: 'Works with the software you already use.',
+    label: 'Setup',
+    headline: "Works with whatever you're using today — even a spreadsheet.",
     checklist: [
-      'AutoCount — direct database integration',
-      'SQL Accounting — API bridge',
-      'Xero — OAuth 2.0 connection',
-      'QuickBooks — official API connector',
-      'Custom ERP and POS — scoped individually',
+      'Spreadsheets, CSV exports, or manual entry — all supported',
+      'Wave and other tools without built-in MyInvois support',
+      'No new software to learn or migrate to',
+      'Guided TIN registration and MSIC code mapping included',
+      'Sandbox testing before anything goes live',
     ],
     // TODO: replace with real client quote
     quote:
-      'We stayed on AutoCount. Zylen connected it to MyInvois in 9 days. No disruption at all.',
-    authorInitials: 'BO',
-    authorLabel: 'Business Owner',
-    authorRole: 'Retail chain',
-    mockupLabel: 'Integration Diagram',
+      "We were still doing everything by spreadsheet. Zylen set the whole thing up for us — we never had to touch LHDN's portal ourselves.",
+    authorInitials: 'NC',
+    authorLabel: 'NGO Admin Coordinator',
+    authorRole: 'Registered society, KL',
+    mockupLabel: 'Setup Checklist',
   },
 ];
 
@@ -168,8 +168,8 @@ const FeatureTabs = () => {
             How Zylen Works
           </h2>
           <p className="mt-2 max-w-lg text-base text-slate-500">
-            From your accounting software to LHDN MyInvois — automated,
-            validated, and submitted in real time.
+            From however you keep your books today to LHDN MyInvois — validated,
+            submitted, and monitored for you.
           </p>
         </div>
 

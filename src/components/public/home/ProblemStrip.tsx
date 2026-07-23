@@ -42,13 +42,10 @@ const ProblemStrip = () => (
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-l-4 border-orange-200 border-l-orange-500 bg-orange-50 p-4 sm:p-6">
-          <div className="flex gap-3">
-            <span className="mt-0.5 text-xl">⚠️</span>
-            <p className="text-sm font-medium leading-relaxed text-orange-800">
-              {PROBLEM.warning}
-            </p>
-          </div>
+        <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-l-4 border-slate-200 border-l-brand-500 bg-slate-50 p-4 sm:p-6">
+          <p className="text-sm font-medium leading-relaxed text-slate-600">
+            {PROBLEM.warning}
+          </p>
         </div>
       </FadeIn>
     </div>

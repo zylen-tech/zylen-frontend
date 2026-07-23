@@ -58,9 +58,9 @@ const BENEFITS = [
   },
   {
     Icon: LuPlugZap,
-    title: 'Works With Your Existing Software',
+    title: 'Works With However You Bill Today',
     description:
-      'Using Xero, QuickBooks, or a custom practice management system? We build the integration layer — you keep your workflow.',
+      "Spreadsheets, a custom practice management system, or no formal system at all — we build the missing piece so your workflow doesn't change.",
   },
 ];
 
@@ -88,15 +88,14 @@ const FAQ_ITEMS = [
       'Disbursements billed to clients must also be submitted as e-invoices. We map all line items — including expenses, taxes, and discounts — to the correct MyInvois fields.',
   },
   {
-    question:
-      'We use Xero or QuickBooks. Will integration break our existing workflow?',
+    question: "We're already using Xero or QuickBooks — is this still for us?",
     answer:
-      'No. The integration runs alongside your current software. Your team continues working in Xero or QuickBooks as normal — our layer silently submits each invoice to MyInvois in the background.',
+      "Possibly not, and we'll tell you honestly. If your platform already has certified MyInvois support, you may already be covered — worth checking with your provider first. Zylen is built for firms on spreadsheets, manual billing, or practice management systems without that support built in.",
   },
   {
     question: 'How long does the setup take?',
     answer:
-      'Standard accounting software integrations (Xero, QuickBooks, SQL) go live in 7–10 days. Custom practice management systems typically take 10–14 days. We start immediately after proposal approval.',
+      'Standard setups go live in 7–10 days. Custom practice management systems typically take 10–14 days. We start immediately after proposal approval.',
   },
 ];
 
@@ -186,7 +185,7 @@ const ProfessionalServicesPage: NextPageWithLayout = () => {
           label: 'Without Zylen',
           headline: 'Manual. Exposed. Risky.',
           bullets: [
-            'Export invoices from Xero or QuickBooks manually',
+            'Export invoices manually from spreadsheets or documents',
             'Re-enter client billing data into MyInvois portal',
             'Sensitive client billing information exposed during upload',
             'Multi-currency and disbursements handled separately',
@@ -197,7 +196,7 @@ const ProfessionalServicesPage: NextPageWithLayout = () => {
           label: 'With Zylen',
           headline: 'Automated. Secure. Compliant.',
           bullets: [
-            'Invoices auto-submitted directly from Xero or QuickBooks',
+            'Invoices auto-submitted directly from whatever you use',
             'Zero re-entry — client data never leaves your system',
             'Multi-currency and disbursements mapped correctly',
             'Full audit trail across all client matters',
@@ -210,7 +209,7 @@ const ProfessionalServicesPage: NextPageWithLayout = () => {
       <UrgencyCallout
         Icon={LuShieldAlert}
         headline="Your client billing data stays in your system — never on ours."
-        body="Zylen builds a direct API bridge between your accounting software and LHDN MyInvois. We never store, log, or retain your client invoicing data. All transmissions are encrypted end-to-end. Your client confidentiality is protected throughout the entire compliance process."
+        body="Zylen builds a direct bridge between however you bill and LHDN MyInvois. We never store, log, or retain your client invoicing data. All transmissions are encrypted end-to-end. Your client confidentiality is protected throughout the entire compliance process."
       />
 
       {/* ── Benefits ─────────────────────────────────────────────────────────── */}
@@ -260,7 +259,7 @@ const ProfessionalServicesPage: NextPageWithLayout = () => {
             <SectionHeading
               eyebrow="Transparent Pricing"
               headline="One Fixed Price. No Surprises."
-              subtext="Standard accounting software integrations start from RM 4,000. Custom practice management systems are scoped individually."
+              subtext="Guided setup starts from RM 4,000, confirmed on a free call. Custom practice management systems are scoped individually."
             />
           </div>
 

@@ -18,11 +18,11 @@ const CR = 82;
 type Pill = { name: string; x: number; y: number; w: number; color: string };
 
 const PILLS: Pill[] = [
-  // Row 1 — accounting systems
-  { name: 'AutoCount', x: 119, y: 54, w: 138, color: '#3b82f6' },
-  { name: 'SQL Accounting', x: 307, y: 54, w: 138, color: '#8b5cf6' },
-  { name: 'Xero', x: 495, y: 54, w: 138, color: '#06b6d4' },
-  { name: 'QuickBooks', x: 683, y: 54, w: 138, color: '#10b981' },
+  // Row 1 — how organizations keep records today
+  { name: 'Spreadsheets', x: 119, y: 54, w: 138, color: '#3b82f6' },
+  { name: 'Wave', x: 307, y: 54, w: 138, color: '#8b5cf6' },
+  { name: 'Manual Bookkeeping', x: 495, y: 54, w: 138, color: '#06b6d4' },
+  { name: 'Custom ERP', x: 683, y: 54, w: 138, color: '#10b981' },
   // Row 2 — LHDN / integration features
   { name: 'MyInvois', x: 77, y: 148, w: 110, color: '#f59e0b' },
   { name: 'LHDN API', x: 210, y: 148, w: 110, color: '#ef4444' },
@@ -159,8 +159,8 @@ const SupportedSystems = () => (
       <div className="mb-14 text-center">
         <SectionHeading
           eyebrow="Compatibility"
-          headline="Works With Your Existing System"
-          subtext="We integrate with all major Malaysian accounting platforms — and any custom system via our API bridge."
+          headline="Works With However You Keep Records"
+          subtext="Spreadsheets, Wave, manual bookkeeping, or a custom system — we build the missing piece around what you already use, including major Malaysian accounting platforms."
         />
       </div>
 
@@ -183,14 +183,14 @@ const SupportedSystems = () => (
         transition={{ duration: 0.5, delay: 0.4, ease }}
         className="mt-2 text-center text-sm text-slate-400"
       >
-        Using something not listed?{' '}
+        Already on AutoCount, Xero, or QuickBooks?{' '}
         <Link
           href="/contact"
           className="font-semibold text-neutral-950 hover:underline"
         >
           Talk to us
         </Link>{' '}
-        — if it has an API or export, we can connect it.
+        — those usually cover this already, but we&apos;ll confirm.
       </motion.p>
     </div>
   </section>

@@ -17,36 +17,36 @@ type CardConfig = {
 
 const CARDS: CardConfig[] = [
   {
-    label: 'AutoCount',
-    avatarBg: '#f59e0b',
-    avatarText: 'AC',
+    label: 'Spreadsheet',
+    avatarBg: '#3b82f6',
+    avatarText: 'XL',
     invoice: 'Invoice #00421',
-    status: 'Submitted',
-    statusCls: 'text-green-600',
-    meta: 'yesterday',
+    status: 'Not MyInvois format',
+    statusCls: 'text-slate-500',
+    meta: '',
     motionY: 28,
     rotate: -2,
     delay: 0.1,
   },
   {
-    label: 'SQL Accounting',
-    avatarBg: '#3b82f6',
-    avatarText: 'SQ',
+    label: 'Wave',
+    avatarBg: '#1370e2',
+    avatarText: 'W',
     invoice: 'Invoice #00422',
-    status: 'Rejected',
-    statusCls: 'text-red-500',
-    meta: 'INV-403',
+    status: 'No LHDN submission',
+    statusCls: 'text-slate-500',
+    meta: '',
     motionY: -10,
     rotate: 0.5,
     delay: 0.2,
   },
   {
-    label: 'MyInvois Portal',
+    label: 'Manual Bookkeeping',
     avatarBg: '#94a3b8',
     avatarText: '?',
-    invoice: 'Anonymous submission',
-    status: 'Status unknown',
-    statusCls: 'text-slate-400',
+    invoice: 'Handwritten ledger',
+    status: 'No compliance trail',
+    statusCls: 'text-slate-500',
     meta: '',
     motionY: 22,
     rotate: 2.5,
@@ -123,11 +123,11 @@ const ProblemIllustration = () => (
         className="mb-20 text-center"
       >
         <h2 className="font-sans text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl">
-          Your invoices are everywhere.
+          Great for bookkeeping. Not built for MyInvois.
         </h2>
         <p className="mx-auto mt-5 max-w-[480px] text-lg leading-relaxed text-slate-500">
-          Your AutoCount data is here. Your SQL exports are there. Your MyInvois
-          rejections are somewhere else.
+          Spreadsheets, Wave, and manual records keep your books in order — they
+          just weren&apos;t designed to submit e-invoices to LHDN.
         </p>
       </motion.div>
 
@@ -148,7 +148,7 @@ const ProblemIllustration = () => (
         transition={{ duration: 0.5, delay: 0.5, ease: EASE }}
         className="mt-20 text-center text-lg font-bold text-neutral-950"
       >
-        Three systems. Same invoice. No single source of truth.
+        Same invoices. One quiet addition: LHDN-ready submission.
       </motion.p>
     </div>
   </section>

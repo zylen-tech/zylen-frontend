@@ -8,21 +8,21 @@ import { SectionHeading } from '../../ui/SectionHeading';
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const OLD_WAY = [
-  'Manual e-invoice submission to MyInvois',
-  'Constant LHDN error codes with no guidance',
-  'Retyping data from your accounting system',
-  'Compliance failures and audit risk',
+  'Manually re-entering invoice details into MyInvois',
+  'LHDN error codes with no one to explain them',
+  'Spreadsheets or notebooks with no compliance trail',
+  "Uncertainty about whether you're doing it right",
   'No real-time submission status',
-  'IT team overwhelmed by integration work',
+  'No technical person in-house to set anything up',
 ];
 
 const ZYLEN_WAY = [
-  'Auto-sync invoices from your accounting system',
+  'Auto-submission straight from what you already use',
   'Real-time MyInvois submission & validation',
   'LHDN error codes decoded automatically',
   'Full audit trail and compliance logs',
   'Zero manual re-entry of data',
-  'Live submission status dashboard',
+  'A guided setup team that handles it with you',
 ];
 
 const XIcon = () => (
@@ -56,7 +56,7 @@ const OldWayCard = () => (
           The Usual Way
         </span>
         <h3 className="font-montserrat text-2xl font-extrabold tracking-tight text-neutral-950 md:text-3xl">
-          Manual. Risky. Stressful.
+          Manual. Uncertain. Time-Consuming.
         </h3>
         <p className="mt-2 text-sm text-slate-400">
           How most businesses handle e-invoicing today.

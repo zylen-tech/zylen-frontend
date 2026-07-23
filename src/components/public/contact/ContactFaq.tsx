@@ -17,7 +17,7 @@ const ITEMS = [
   {
     question: 'Do I need to prepare anything before the call?',
     answer:
-      "No preparation needed. It helps if you know which accounting software you use (AutoCount, SQL, Xero, etc.) and roughly how many invoices you issue per month — but even if you don't, we can work through it together.",
+      "No preparation needed. It helps if you know how you currently keep your books (spreadsheet, Wave, manual, or an accounting system) and roughly how many invoices you issue per month — but even if you don't, we can work through it together.",
   },
   {
     question: 'Is the consultation really free?',

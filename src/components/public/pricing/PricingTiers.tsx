@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useState } from 'react';
 
-import { BRAND, PRICING_TIERS } from '../../../constants/content';
+import { PRICING_TIERS } from '../../../constants/content';
 import { Button } from '../../ui/buttons/Button';
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -39,6 +40,24 @@ const PricingTiers = () => {
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
+        {/* Coming soon notice */}
+        <div className="mx-auto mb-10 max-w-2xl rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-center">
+          <p className="text-sm leading-relaxed text-slate-600">
+            <span className="font-semibold text-neutral-950">
+              Coming Soon —
+            </span>{' '}
+            these are early-access prices for Zylen Connect, our self-serve
+            platform, currently in development. Need MyInvois compliance now?{' '}
+            <Link
+              href="/services#pricing"
+              className="font-semibold text-neutral-950 underline-offset-2 hover:underline"
+            >
+              See our guided setup pricing
+            </Link>
+            .
+          </p>
+        </div>
+
         {/* Toggle */}
         <div className="mb-12 flex items-center justify-center gap-4">
           <span
@@ -137,7 +156,7 @@ const PricingTiers = () => {
 
               <div className="mt-auto">
                 <Button
-                  href={tier.enterprise ? '/contact' : BRAND.calendly}
+                  href="/contact"
                   variant={tier.highlight ? 'primary' : 'secondary'}
                   className="w-full"
                 >

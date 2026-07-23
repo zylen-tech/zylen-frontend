@@ -58,9 +58,8 @@ const HeroSection = () => {
           {...fadeUp(0.1)}
           className="mx-auto max-w-4xl font-montserrat text-3xl font-extrabold leading-[1.08] tracking-[-0.03em] text-white sm:text-4xl md:text-6xl lg:text-[4.25rem]"
         >
-          Connect Your Business to <br className="hidden sm:block" />
-          {"Malaysia's E-Invoice System "}
-          <span className="text-white/70">— In 7 Days</span>
+          Keep Using What You Already Know. <br className="hidden sm:block" />
+          <span className="text-white/70">{"We'll Handle the Rest."}</span>
         </motion.h1>
 
         {/* Subtitle */}
